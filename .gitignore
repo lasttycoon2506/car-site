@@ -1,0 +1,32 @@
+# Laravel & PHP
+/vendor
+/node_modules
+/public/storage
+/storage/*.key
+.env
+.phpunit.result.cache
+
+# IDEs & OS
+/.vscode
+/.idea
+.DS_Store
+Thumbs.db
+
+# Composer
+composer.lock
+
+# Docker
+docker-compose.override.yml
+
+# Logs
+/storage/logs
+*.log
+
+# Cache
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/views
+
+# Misc
+npm-debug.log
+yarn-error.log
