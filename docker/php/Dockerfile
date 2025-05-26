@@ -17,14 +17,13 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www
 
-# Copy existing application directory contents
-COPY ./src .
+# Copy existing application directory permissions
+COPY --chown=www-data:www-data . /var/www
 
-# Install PHP dependencies
-RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+# Install PHP extensions
+RUN docker-php-ext-install pdo pdo_mysql
 
 # Expose port 9000
 EXPOSE 9000
 
-# Start the PHP FastCGI Process Manager
 CMD ["php-fpm"]

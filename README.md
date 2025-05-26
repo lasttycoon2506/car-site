@@ -1,52 +1,63 @@
 # Laravel Application
 
-This is a Laravel application set up to run in a Docker container. Below are the instructions for setting up and using the application.
+This project is a Laravel application that is set up to run within Docker containers. It includes a MySQL database and Composer for dependency management.
 
-## Prerequisites
+## Project Structure
 
-- Docker
-- Docker Compose
+- **src/app**: Core application code, including models, controllers, and components.
+- **src/bootstrap**: Files for bootstrapping the Laravel application.
+- **src/config**: Configuration files for various aspects of the application.
+- **src/database**: Database-related files, including migrations and seeders.
+- **src/public**: Public-facing files, including the entry point `index.php`.
+- **src/resources**: Views, raw assets, and language files.
+- **src/routes**: Route definitions for the application.
+- **src/storage**: Storage for compiled views and file uploads.
+- **src/tests**: Test files for the application.
+- **src/composer.json**: Composer configuration file.
 
-## Setup Instructions
+## Docker Setup
 
-1. **Clone the repository:**
-   ```bash
+This project uses Docker to create a consistent development environment. The following services are defined:
+
+- **MySQL**: The database service, configured in `docker/mysql/my.cnf`.
+- **PHP**: The application service, built using the Dockerfile located in `docker/php/Dockerfile`.
+
+## Environment Configuration
+
+An example environment configuration file is provided as `.env.example`. Copy this file to `.env` and update the variables as needed for your local setup.
+
+## Installation
+
+1. Clone the repository:
+   ```
    git clone <repository-url>
    cd laravel-app
    ```
 
-2. **Build the Docker image:**
-   ```bash
-   docker-compose build
+2. Copy the example environment file:
+   ```
+   cp .env.example .env
    ```
 
-3. **Run the application:**
-   ```bash
+3. Build and start the Docker containers:
+   ```
    docker-compose up -d
    ```
 
-4. **Access the application:**
-   Open your browser and navigate to `http://localhost`.
+4. Install Composer dependencies:
+   ```
+   docker-compose exec php composer install
+   ```
 
-## Directory Structure
-
-- `src/app`: Core application code (models, controllers, middleware).
-- `src/bootstrap`: Bootstrap files for the Laravel application.
-- `src/config`: Configuration files for the application.
-- `src/database`: Database migrations, factories, and seeders.
-- `src/public`: Front-facing files, including the entry point.
-- `src/resources`: Views, assets, and language files.
-- `src/routes`: Route definitions for the application.
-- `src/storage`: Compiled templates and generated files.
-- `src/tests`: Test cases for the application.
-- `docker/Dockerfile`: Instructions for building the Docker image.
-- `docker/php.ini`: Custom PHP configuration settings.
-- `docker-compose.yml`: Defines services and how to run the application.
-- `composer.json`: Lists dependencies for the application.
-- `composer.lock`: Locks versions of dependencies.
+5. Run database migrations:
+   ```
+   docker-compose exec php php artisan migrate
+   ```
 
 ## Usage
 
-After setting up the application, you can start developing your Laravel application. Use the provided directories to organize your code and assets. 
+You can access the application at `http://localhost` after the containers are up and running. Use the Laravel Artisan commands to manage your application as needed.
 
-For more information on Laravel, please refer to the [Laravel documentation](https://laravel.com/docs).
+## Contributing
+
+Feel free to submit issues or pull requests for improvements or bug fixes.
