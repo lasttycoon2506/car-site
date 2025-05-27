@@ -1,20 +1,22 @@
-version: '3.8'
-
 services:
   app:
-    image: php:8.0-fpm
-    container_name: laravel-app
     build:
       context: ./docker/php
+      dockerfile: Dockerfile
+    image: laravel-app
+    container_name: laravel-app
+    ports:
+      - "9000:9000"
     volumes:
-      - ./src:/var/www/html
-    networks:
-      - laravel-network
+      - ./src:/var/www
+    depends_on:
+      - db
 
-  mysql:
-    image: mysql:5.7
-    container_name: mysql-db
-    restart: always
+  db:
+    image: mysql:lts
+    container_name: mysql
+    ports:
+      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: laravel
@@ -23,12 +25,6 @@ services:
     volumes:
       - db_data:/var/lib/mysql
       - ./docker/mysql/my.cnf:/etc/mysql/my.cnf
-    networks:
-      - laravel-network
-
-networks:
-  laravel-network:
-    driver: bridge
 
 volumes:
   db_data:

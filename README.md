@@ -1,62 +1,65 @@
 # Laravel Application
 
-This project is a Laravel application that is set up to run within Docker containers. It includes a MySQL database and Composer for dependency management.
+This is a Laravel application setup with Docker, including PHP and MySQL.
 
 ## Project Structure
 
-- **src/app**: Core application code, including models, controllers, and components.
-- **src/bootstrap**: Files for bootstrapping the Laravel application.
-- **src/config**: Configuration files for various aspects of the application.
-- **src/database**: Database-related files, including migrations and seeders.
-- **src/public**: Public-facing files, including the entry point `index.php`.
-- **src/resources**: Views, raw assets, and language files.
-- **src/routes**: Route definitions for the application.
-- **src/storage**: Storage for compiled views and file uploads.
-- **src/tests**: Test files for the application.
-- **src/composer.json**: Composer configuration file.
+- **src/**: Contains the main application code.
+  - **app/**: Application logic, including controllers and models.
+  - **bootstrap/**: Files that bootstrap the Laravel application.
+  - **config/**: Configuration files for various aspects of the application.
+  - **database/**: Database-related files, including migrations and seeders.
+  - **public/**: Public-facing files, including the entry point `index.php`.
+  - **resources/**: Views, raw assets, and language files.
+  - **routes/**: Route definitions for handling requests.
+  - **storage/**: Compiled templates, sessions, and caches.
+  - **tests/**: Test files for unit and feature testing.
+  - **composer.json**: Composer configuration file listing dependencies.
 
-## Docker Setup
+- **docker/**: Contains Docker-related files.
+  - **mysql/**: MySQL configuration.
+    - **my.cnf**: MySQL configuration settings.
+  - **php/**: PHP Dockerfile for building the PHP image.
+    - **Dockerfile**: Instructions to build the PHP Docker image.
 
-This project uses Docker to create a consistent development environment. The following services are defined:
+- **.env.example**: Example environment configuration file.
 
-- **MySQL**: The database service, configured in `docker/mysql/my.cnf`.
-- **PHP**: The application service, built using the Dockerfile located in `docker/php/Dockerfile`.
+- **docker-compose.yml**: Defines services, networks, and volumes for the Docker application.
 
-## Environment Configuration
+## Setup Instructions
 
-An example environment configuration file is provided as `.env.example`. Copy this file to `.env` and update the variables as needed for your local setup.
-
-## Installation
-
-1. Clone the repository:
+1. **Clone the repository**:
    ```
    git clone <repository-url>
    cd laravel-app
    ```
 
-2. Copy the example environment file:
-   ```
-   cp .env.example .env
-   ```
-
-3. Build and start the Docker containers:
+2. **Build and run the Docker containers**:
    ```
    docker-compose up -d
    ```
 
-4. Install Composer dependencies:
+3. **Install Composer dependencies**:
    ```
    docker-compose exec php composer install
    ```
 
-5. Run database migrations:
+4. **Set up the environment file**:
+   Copy `.env.example` to `.env` and configure your environment variables.
+
+5. **Generate the application key**:
+   ```
+   docker-compose exec php php artisan key:generate
+   ```
+
+6. **Run migrations**:
    ```
    docker-compose exec php php artisan migrate
    ```
 
 ## Usage
 
-You can access the application at `http://localhost` after the containers are up and running. Use the Laravel Artisan commands to manage your application as needed.
+Access the application at `http://localhost` after starting the Docker containers. 
 
 ## Contributing
 

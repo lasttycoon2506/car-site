@@ -2,12 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Web Routes
 Route::get('/', function () {
     return view('welcome');
 });
 
-// API Routes
-Route::prefix('api')->group(function () {
-    // Define your API routes here
-});
+// Additional routes can be defined here.
