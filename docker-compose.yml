@@ -11,6 +11,9 @@ services:
       - ./src:/var/www
     depends_on:
       - db
+    command: >
+      bash -c "cd demo-app
+      && php artisan serve --host=0.0.0.0"
 
   db:
     image: mysql:lts
