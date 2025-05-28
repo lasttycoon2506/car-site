@@ -8,6 +8,11 @@ services:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - db_data:/var/lib/mysql
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
   app:
     build:
       context: ./docker/php
@@ -23,10 +28,5 @@ services:
     command: >
       bash -c "cd demo-app
       && php artisan serve --host=0.0.0.0"
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - "8080:8080"
 volumes:
   db_data:
