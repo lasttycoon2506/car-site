@@ -1,4 +1,13 @@
 services:
+  db:
+    image: mysql:lts
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/mysql
   app:
     build:
       context: ./docker/php
@@ -14,20 +23,10 @@ services:
     command: >
       bash -c "cd demo-app
       && php artisan serve --host=0.0.0.0"
-
-  db:
-    image: mysql:lts
-    container_name: mysql
+  adminer:
+    image: adminer
+    restart: always
     ports:
-      - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: laravel
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-    volumes:
-      - db_data:/var/lib/mysql
-      - ./docker/mysql/my.cnf:/etc/mysql/my.cnf
-
+      - "8080:8080"
 volumes:
   db_data:
