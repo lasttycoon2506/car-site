@@ -17,7 +17,3 @@ WORKDIR /var/www
 COPY --chown=www-data:www-data . /var/www
 
 RUN docker-php-ext-install pdo pdo_mysql
-
-EXPOSE 9000
-
-CMD ["php-fpm"]
