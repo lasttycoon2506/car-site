@@ -35,7 +35,7 @@ class CarController extends Controller
     {
         Car::create($request->all());
 
-        return redirect()->route("car.index");
+        return redirect()->route("car.index")->with("success", "car created!");
     }
 
     /**
