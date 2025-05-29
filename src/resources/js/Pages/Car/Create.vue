@@ -1,5 +1,5 @@
 <template>
-    <form @submit="postCar">
+    <form @submit.prevent="postCar">
         <div>
             <label>Make</label>
             <input v-model="carForm.make" type="text">

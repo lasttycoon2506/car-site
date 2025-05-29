@@ -33,7 +33,9 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Car::create($request->all());
+
+        return redirect()->route("car.index");
     }
 
     /**
