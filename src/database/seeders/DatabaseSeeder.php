@@ -15,17 +15,17 @@ class DatabaseSeeder extends Seeder
     {
         // Car::factory(10)->create();
 
-        // Car::factory()->create([
-        //     'make' => 'ford',
-        //     'model' => 'mustang',
-        //     'condition' => 'good',
-        //     'transmission' => 'manual',
-        //     'drive_type' => 'rwd',
-        //     'year' => 1970,
-        //     'mpg' => 25,
-        //     'miles' => 95_000,
-        //     'price' => 70_000,
-        // ]);
+        Car::factory()->create([
+            'make' => 'ford',
+            'model' => 'mustang',
+            'condition' => 'good',
+            'transmission' => 'manual',
+            'drive_type' => 'rwd',
+            'year' => 1970,
+            'mpg' => 25,
+            'miles' => 95_000,
+            'price' => 70_000,
+        ]);
         Car::factory()->create([
             'make' => 'honda',
             'model' => 'civic',

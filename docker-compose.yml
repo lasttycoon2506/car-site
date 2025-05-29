@@ -6,7 +6,7 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: demo_db
+      MYSQL_DATABASE: car_site_db
     volumes:
       - db_data:/var/lib/mysql
   adminer:
@@ -26,8 +26,6 @@ services:
       - ./src:/var/www
     depends_on:
       - db
-    command: >
-      bash -c "cd demo-app
-      && php artisan serve --host=0.0.0.0"
+    command: php artisan serve --host=0.0.0.0
 volumes:
   db_data:
