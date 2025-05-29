@@ -17,7 +17,7 @@ return new class extends Migration
             $table->tinyText("condition");
             $table->tinyText("transmission");
             $table->tinyText("drive_type");
-            $table->unsignedTinyInteger("year");
+            $table->unsignedInteger("year");
             $table->unsignedTinyInteger("mpg");
             $table->unsignedInteger("miles");
             $table->unsignedInteger("price");
