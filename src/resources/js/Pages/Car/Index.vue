@@ -1,5 +1,5 @@
 <template>
-    <div v-if="page.props[0].flash.success">{{ page.props[0].flash.success }}</div>
+    <div v-if="createSuccessMsg">{{ createSuccessMsg }}</div>
     <div v-for="car in cars" :key="car.id">
         <Link :href="`/car/${car.id}`">
         {{ car.make }}
@@ -9,7 +9,9 @@
 
 <script setup>
 import { Link, usePage } from "@inertiajs/vue3"
+import { computed } from "vue"
 
 const page = usePage()
+const createSuccessMsg = computed(() => page.props[0].flash.success)
 defineProps({ cars: Array })
 </script>
