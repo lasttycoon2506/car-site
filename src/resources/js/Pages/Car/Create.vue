@@ -1,5 +1,5 @@
 <template>
-    <form>
+    <form @submit="postCar">
         <div>
             <label>Make</label>
             <input v-model="carForm.make" type="text">
@@ -8,7 +8,6 @@
             <label>Model</label>
             <input v-model="carForm.model" type="text">
         </div>
-        <!-- make model condition transmission drive_type year mpg miles price -->
         <div>
             <label>Condition</label>
             <input v-model="carForm.condition" type="text">
@@ -44,10 +43,13 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from "vue"
+import { useForm } from "@inertiajs/vue3"
 
-const carForm = reactive({
+const carForm = useForm({
     make: "", model: "", condition: "", transmission: "", drive_type: "", year: "",
     mpg: "", miles: "", price: ""
 })
+
+const postCar = () => carForm.post("/car")
+
 </script>
