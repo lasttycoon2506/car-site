@@ -33,7 +33,7 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        Car::create([...$request->all(), ...$request->validate([
+        Car::create($request->validate([
             "make" => "required",
             "model" => "required",
             "condition" => "required",
@@ -43,7 +43,8 @@ class CarController extends Controller
             "mpg" => "required|integer|min:1|max:100",
             "miles" => "required|integer|min:1|max:200000",
             "price" => "required|integer|min:10000|max:100000",
-        ])]);
+        ]));
+
         return redirect()->route("car.index")->with("success", "car created!");
     }
 
