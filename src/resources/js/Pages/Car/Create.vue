@@ -2,40 +2,40 @@
     <form>
         <div>
             <label>Make</label>
-            <input type="text">
+            <input v-model="carForm.make" type="text">
         </div>
         <div>
             <label>Model</label>
-            <input type="text">
+            <input v-model="carForm.model" type="text">
         </div>
         <!-- make model condition transmission drive_type year mpg miles price -->
         <div>
             <label>Condition</label>
-            <input type="text">
+            <input v-model="carForm.condition" type="text">
         </div>
         <div>
             <label>Transmission</label>
-            <input type="text">
+            <input v-model="carForm.transmission" type="text">
         </div>
         <div>
             <label>Drive Type</label>
-            <input type="text">
+            <input v-model="carForm.drive_type" type="text">
         </div>
         <div>
             <label>Year</label>
-            <input type="text">
+            <input v-model="carForm.year" type="text">
         </div>
         <div>
             <label>MPG</label>
-            <input type="text">
+            <input v-model="carForm.mpg" type="text">
         </div>
         <div>
             <label>Mi.</label>
-            <input type="text">
+            <input v-model="carForm.miles" type="text">
         </div>
         <div>
             <label>Price</label>
-            <input type="text">
+            <input v-model="carForm.price" type="text">
         </div>
         <div>
             <button type="submit">create </button>
@@ -44,5 +44,10 @@
 </template>
 
 <script setup lang="ts">
-const x: number = 4;
+import { reactive } from "vue"
+
+const carForm = reactive({
+    make: "", model: "", condition: "", transmission: "", drive_type: "", year: "",
+    mpg: "", miles: "", price: ""
+})
 </script>
