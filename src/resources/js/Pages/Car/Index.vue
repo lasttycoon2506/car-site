@@ -1,7 +1,8 @@
 <template>
     <NavBar></NavBar>
-    <Alert></Alert>
-    <div v-if="createSuccessMsg">{{ createSuccessMsg }}</div>
+    <div v-if="alertMsg">
+        <Alert :success="alertMsg" />
+    </div>
     <div v-for="car in cars" :key="car.id">
         <div>
             <Link :href="`/car/${car.id}`">
@@ -36,5 +37,5 @@ defineProps<{ cars: Car[] }>()
 
 const page = usePage<PageProps>()
 
-const createSuccessMsg: ComputedRef<string> = computed(() => page.props[0].flash?.success)
+const alertMsg: ComputedRef<string> = computed(() => page.props[0].flash?.success)
 </script>
