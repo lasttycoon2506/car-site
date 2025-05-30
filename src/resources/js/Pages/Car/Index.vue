@@ -1,4 +1,5 @@
 <template>
+    <NavBar></NavBar>
     <div v-if="createSuccessMsg">{{ createSuccessMsg }}</div>
     <div v-for="car in cars" :key="car.id">
         <div>
@@ -21,6 +22,7 @@
 </template>
 
 <script setup lang="ts">
+import NavBar from "../../Components/NavBar.vue"
 import { Link, usePage } from "@inertiajs/vue3"
 import { computed, ComputedRef } from "vue"
 import type { Car } from "@/resources/types/car"
