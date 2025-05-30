@@ -7,9 +7,7 @@ use Illuminate\Http\Request;
 
 class CarController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         return inertia(
@@ -18,9 +16,7 @@ class CarController extends Controller
         );
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
         return inertia(
@@ -28,9 +24,7 @@ class CarController extends Controller
         );
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
         Car::create($request->validate([
@@ -48,9 +42,7 @@ class CarController extends Controller
         return redirect()->route("car.index")->with("success", "car created!");
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show(Car $car)
     {
         return inertia(
@@ -59,9 +51,7 @@ class CarController extends Controller
         );
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit(Car $car)
     {
         return inertia(
@@ -70,9 +60,7 @@ class CarController extends Controller
         );
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+
     public function update(Request $request, Car $car)
     {
         $car->update($request->validate([
@@ -90,11 +78,11 @@ class CarController extends Controller
         return redirect()->route("car.index")->with("success", "car edited!");
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+
+    public function destroy(Car $car)
     {
-        //
+        $car->delete();
+
+        return redirect()->back()->with("success", "car deleted!");
     }
 }

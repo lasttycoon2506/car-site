@@ -12,6 +12,11 @@
             Edit
             </Link>
         </div>
+        <div>
+            <Link :href="`/car/${car.id}`" method="delete">
+            Delete
+            </Link>
+        </div>
     </div>
 </template>
 
@@ -21,12 +26,10 @@ import { computed, ComputedRef } from "vue"
 import type { Car } from "@/resources/types/car"
 type PageProps = {
     0: { flash: { success: string } },
-    cars: Car[],
-    errors: {}
 }
+defineProps<{ cars: Car[] }>()
 
 const page = usePage<PageProps>()
 
 const createSuccessMsg: ComputedRef<string> = computed(() => page.props[0].flash?.success)
-defineProps<{ cars: Car[] }>()
 </script>
