@@ -7,11 +7,12 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { Link, usePage } from "@inertiajs/vue3"
-import { computed } from "vue"
+import { computed, ComputedRef } from "vue"
+import type { PageProps } from "../../../types/pageProps"
 
-const page = usePage()
-const createSuccessMsg = computed(() => page.props[0].flash.success)
+const page = usePage<PageProps>()
+const createSuccessMsg: ComputedRef<string | undefined> = computed(() => page.props.flash.success)
 defineProps({ cars: Array })
 </script>
