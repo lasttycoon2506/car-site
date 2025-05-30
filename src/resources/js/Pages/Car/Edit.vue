@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent="createCar">
+    <form @submit.prevent="editCar">
         <div>
             <label>Make</label>
             <input v-model="carForm.make" type="text">
@@ -55,17 +55,19 @@
 import { Car } from "@/resources/types/car";
 import { InertiaForm, useForm } from "@inertiajs/vue3"
 
+const props = defineProps<{ car: Car }>()
+
 const carForm: InertiaForm<Car> = useForm<Car>({
-    make: "",
-    model: "",
-    condition: "",
-    transmission: "",
-    drive_type: "",
-    year: 0,
-    mpg: 0,
-    miles: 0,
-    price: 0
+    make: props.car.make,
+    model: props.car.model,
+    condition: props.car.condition,
+    transmission: props.car.transmission,
+    drive_type: props.car.drive_type,
+    year: props.car.year,
+    mpg: props.car.mpg,
+    miles: props.car.miles,
+    price: props.car.price
 })
 
-const createCar: () => void = () => carForm.post("/car")
+const editCar: () => void = () => carForm.put(`car/${props.car.id}`)
 </script>
