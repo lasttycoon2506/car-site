@@ -73,9 +73,21 @@ class CarController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Car $car)
     {
-        //
+        $car->update($request->validate([
+            "make" => "required",
+            "model" => "required",
+            "condition" => "required",
+            "transmission" => "required",
+            "drive_type" => "required",
+            "year" => "required|integer|min:1930|max:2025",
+            "mpg" => "required|integer|min:1|max:100",
+            "miles" => "required|integer|min:1|max:200000",
+            "price" => "required|integer|min:10000|max:100000",
+        ]));
+
+        return redirect()->route("car.index")->with("success", "car edited!");
     }
 
     /**
