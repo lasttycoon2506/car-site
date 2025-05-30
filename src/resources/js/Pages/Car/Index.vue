@@ -10,9 +10,11 @@
 <script setup lang="ts">
 import { Link, usePage } from "@inertiajs/vue3"
 import { computed, ComputedRef } from "vue"
-import type { PageProps } from "../../../types/pageProps"
+import type { PageProps } from "@/resources/types/pageProps"
+import type { Car } from "@/resources/types/car"
 
 const page = usePage<PageProps>()
-const createSuccessMsg: ComputedRef<string | undefined> = computed(() => page.props.flash.success)
-defineProps({ cars: Array })
+const createSuccessMsg: ComputedRef<string> = computed(() => page.props.flash?.success)
+
+defineProps<{ cars: Car[] }>()
 </script>

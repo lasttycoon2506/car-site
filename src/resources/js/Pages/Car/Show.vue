@@ -4,7 +4,8 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import type { Car } from '@/resources/types/car';
 
-defineProps({ car: Object })
+defineProps<{ car: Car }>()
 </script>
