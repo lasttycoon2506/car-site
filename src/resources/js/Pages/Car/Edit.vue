@@ -46,7 +46,7 @@
             <div v-if="carForm.errors.price">{{ carForm.errors.price }}</div>
         </div>
         <div>
-            <button type="submit">create </button>
+            <button type="submit">Edit </button>
         </div>
     </form>
 </template>

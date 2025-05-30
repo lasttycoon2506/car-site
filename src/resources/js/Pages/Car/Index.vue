@@ -1,9 +1,17 @@
 <template>
     <div v-if="createSuccessMsg">{{ createSuccessMsg }}</div>
     <div v-for="car in cars" :key="car.id">
-        <Link :href="`/car/${car.id}`">
-        {{ car.make }}
-        </Link>
+        <div>
+            <Link :href="`/car/${car.id}`">
+            {{ car.make }}, {{ car.model }}, {{ car.year }}, {{ car.condition }}, {{ car.drive_type }}, {{ car.miles }},
+            {{ car.mpg }}, {{ car.price }}, {{ car.transmission }}
+            </Link>
+        </div>
+        <div>
+            <Link :href="`/car/${car.id}/edit`">
+            Edit
+            </Link>
+        </div>
     </div>
 </template>
 
