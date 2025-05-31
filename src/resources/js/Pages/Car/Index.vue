@@ -3,7 +3,7 @@
     <div v-if="alertMsg">
         <Alert :success="alertMsg" />
     </div>
-    <div class="grid grid-cols-5 gap-3">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 px-10">
         <div v-for="car in cars" :key="car.id">
             <CarCard>
                 <div>
