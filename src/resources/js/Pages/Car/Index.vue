@@ -3,23 +3,25 @@
     <div v-if="alertMsg">
         <Alert :success="alertMsg" />
     </div>
-    <div v-for="car in cars" :key="car.id">
-        <div>
-            <Link :href="`/car/${car.id}`">
-            {{ car.make }}, {{ car.model }}, {{ car.year }}, {{ car.condition }}, {{ car.drive_type }}, {{ car.miles
-            }},
-            {{ car.mpg }}, {{ car.price }}, {{ car.transmission }}
-            </Link>
-        </div>
-        <div>
-            <Link :href="`/car/${car.id}/edit`">
-            Edit
-            </Link>
-        </div>
-        <div>
-            <Link :href="`/car/${car.id}`" method="delete">
-            Delete
-            </Link>
+    <div class="grid grid-cols-5 gap-3">
+        <div v-for="car in cars" :key="car.id">
+            <div>
+                <Link :href="`/car/${car.id}`">
+                {{ car.make }}, {{ car.model }}, {{ car.year }}, {{ car.condition }}, {{ car.drive_type }}, {{ car.miles
+                }},
+                {{ car.mpg }}, {{ car.price }}, {{ car.transmission }}
+                </Link>
+            </div>
+            <div>
+                <Link :href="`/car/${car.id}/edit`">
+                Edit
+                </Link>
+            </div>
+            <div>
+                <Link :href="`/car/${car.id}`" method="delete">
+                Delete
+                </Link>
+            </div>
         </div>
     </div>
 </template>
