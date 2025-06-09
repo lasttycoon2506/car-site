@@ -7,7 +7,7 @@
         <div v-for="car in cars" :key="car.id">
             <CarCard>
                 <div>
-                    <img src="$dgd">
+                    <img :src="`${car.pictures[0]}`">
                     <Link :href="`/car/${car.id}`">
                     {{ car.make }}, {{ car.model }}, {{ car.year }}, {{ car.condition }}, {{ car.drive_type }}, {{
                         car.miles
@@ -25,7 +25,7 @@
                     Delete
                     </Link>
                 </div>
-                <div>{{ car. }}</div>
+                <div>{{ car.pictures }}</div>
             </CarCard>
         </div>
     </div>
