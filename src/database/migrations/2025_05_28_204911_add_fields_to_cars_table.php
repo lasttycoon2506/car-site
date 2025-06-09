@@ -21,6 +21,7 @@ return new class extends Migration
             $table->unsignedTinyInteger("mpg");
             $table->unsignedInteger("miles");
             $table->unsignedInteger("price");
+            $table->json('pictures');
         });
     }
 
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropColumns("cars", ["make", "model", "condition", "transmission", "drive_type", "year", "mpg", "miles", "price"]);
+        Schema::dropColumns("cars", ["make", "model", "condition", "transmission", "drive_type", "year", "mpg", "miles", "price", "pictures"]);
     }
 };

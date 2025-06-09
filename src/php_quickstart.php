@@ -17,7 +17,7 @@
     use Cloudinary\Tag\ImageTag;
 
     // Configure an instance of your Cloudinary cloud
-    Configuration::instance("cloudinary://" . env("CLOUDINARY_API_KEY") . ":" . env("CLOUDINARY_API_SECRET") . "@" . env("CLOUDINARY_CLOUD_NAME") . "?secure=true");
+    Configuration::instance(env("CLOUDINARY_URL"));
 
     // Create the image tag with the transformed image
     $imgtag = (new ImageTag('d97fg4aoolyolinjvbs0'))

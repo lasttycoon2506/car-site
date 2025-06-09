@@ -26,6 +26,8 @@ services:
       - ./src:/var/www
     depends_on:
       - db
-    command: php artisan serve --host=0.0.0.0
+    command: >
+      bash -c "php /var/www/php_quickstart.php
+      && php artisan serve --host=0.0.0.0"
 volumes:
   db_data:

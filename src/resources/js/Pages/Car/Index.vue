@@ -7,6 +7,7 @@
         <div v-for="car in cars" :key="car.id">
             <CarCard>
                 <div>
+                    <img src="$dgd">
                     <Link :href="`/car/${car.id}`">
                     {{ car.make }}, {{ car.model }}, {{ car.year }}, {{ car.condition }}, {{ car.drive_type }}, {{
                         car.miles
