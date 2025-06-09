@@ -9,10 +9,17 @@
                 <div>
                     <img :src="`${car.pictures[0]}`" class="rounded-lg">
                     <Link :href="`/car/${car.id}`">
-                    {{ car.make }}, {{ car.model }}, {{ car.year }}, {{ car.condition }}, {{ car.drive_type }}, {{
-                        car.miles
-                    }},
-                    {{ car.mpg }}, {{ car.price }}, {{ car.transmission }}
+                    <span class="font-bold">{{ car.make }}</span> <span class="text-gray-500">|</span>
+                    <span class="font-bold">{{ car.model }}</span> <span class="text-gray-500">|</span>
+                    <span class="font-bold">{{ car.year }}</span> <span class="text-gray-500">|</span>
+                    <span class="font-bold">{{ car.condition }}</span> <span class="text-gray-500">|</span>
+                    <span class="font-bold">{{ car.drive_type }}</span> <span class="text-gray-500">|</span>
+                    <span class="font-bold">{{ car.miles }}</span> <span class="text-gray-500">|</span>
+                    <span class="font-bold">{{ car.mpg }}</span> <span class="text-gray-500">|</span>
+                    <span class="font-bold">
+                        <PriceFormatter :price=car.price></PriceFormatter>
+                    </span><span class="text-gray-500">|</span>
+                    <span class="font-bold">{{ car.transmission }}</span>
                     </Link>
                 </div>
                 <div>
@@ -37,6 +44,7 @@ import { computed, ComputedRef } from "vue"
 import type { Car } from "@/resources/types/car"
 import Alert from "../../Components/Alert.vue"
 import CarCard from "../../Components/CarCard.vue"
+import PriceFormatter from "../../Components/PriceFormatter.vue"
 type PageProps = {
     0: { flash: { success: string } },
 }
