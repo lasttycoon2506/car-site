@@ -1,5 +1,4 @@
 <template>
-    <NavBar></NavBar>
     <div v-if="alertMsg">
         <Alert :success="alertMsg" />
     </div>

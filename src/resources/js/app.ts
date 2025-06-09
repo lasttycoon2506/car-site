@@ -1,6 +1,7 @@
 import { createApp, h, DefineComponent } from "vue";
 import { createInertiaApp } from "@inertiajs/vue3";
 import "../css/app.css";
+import MainLayout from "./Layouts/MainLayout.vue";
 
 declare global {
     interface ImportMeta {
@@ -17,7 +18,9 @@ createInertiaApp({
             "./Pages/**/*.vue",
             { eager: true }
         );
-        return pages[`./Pages/${name}.vue`];
+        let page = pages[`./Pages/${name}.vue`];
+        page.default.layout = page.default.layout || MainLayout;
+        return page;
     },
     setup({ el, App, props, plugin }) {
         createApp({ render: () => h(App, props) })
