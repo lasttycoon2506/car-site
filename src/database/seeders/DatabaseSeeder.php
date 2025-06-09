@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             'mpg' => 25,
             'miles' => 95_000,
             'price' => 70_000,
-            "pictures" => ["https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1749487804/1970-ford-mustang-convertible_obw4ex.jpg"]
+            "pictures" => ["https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1749487804/1970-ford-mustang-convertible_obw4ex.jpg", "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1749499565/il_1588xN.4420850968_3jff_x9p36q.jpg", "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1749499605/1970-ford-mustang-fastback_somhlf.webp"]
         ]);
         Car::factory()->create([
             'make' => 'honda',
