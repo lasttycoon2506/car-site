@@ -9,4 +9,5 @@ export type Car = {
     mpg: number;
     miles: number;
     price: number;
+    pictures: string[];
 };

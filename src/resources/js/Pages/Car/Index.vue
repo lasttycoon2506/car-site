@@ -25,6 +25,7 @@
                     Delete
                     </Link>
                 </div>
+                <div>{{ car. }}</div>
             </CarCard>
         </div>
     </div>
