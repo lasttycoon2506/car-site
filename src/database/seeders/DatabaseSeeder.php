@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             'mpg' => 25,
             'miles' => 95_000,
             'price' => 70_000,
+            'pictures' => ["https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1737481409/zk5yvhuwwlpqruoiqayw.jpg", "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1734470617/d97fg4aoolyolinjvbs0.jpg"]
         ]);
         Car::factory()->create([
             'make' => 'honda',
@@ -36,6 +37,7 @@ class DatabaseSeeder extends Seeder
             'mpg' => 30,
             'miles' => 60_000,
             'price' => 20_000,
+            'pictures' => "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1734470617/d97fg4aoolyolinjvbs0.jpg"
         ]);
         Car::factory()->create([
             'make' => 'chevrolet',
@@ -47,6 +49,7 @@ class DatabaseSeeder extends Seeder
             'mpg' => 28,
             'miles' => 106_000,
             'price' => 60_000,
+            'pictures' => "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1734470617/d97fg4aoolyolinjvbs0.jpg"
         ]);
         Car::factory()->create([
             'make' => 'toyota',
@@ -58,6 +61,7 @@ class DatabaseSeeder extends Seeder
             'mpg' => 18,
             'miles' => 80_000,
             'price' => 26_000,
+            'pictures' => "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1734470617/d97fg4aoolyolinjvbs0.jpg"
         ]);
         Car::factory()->create([
             'make' => 'volvo',
@@ -69,6 +73,7 @@ class DatabaseSeeder extends Seeder
             'mpg' => 32,
             'miles' => 80_000,
             'price' => 36_000,
+            'pictures' => "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1734470617/d97fg4aoolyolinjvbs0.jpg"
         ]);
         Car::factory()->create([
             'make' => 'bmw',
@@ -80,6 +85,7 @@ class DatabaseSeeder extends Seeder
             'mpg' => 35,
             'miles' => 130_000,
             'price' => 40_000,
+            'pictures' => "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1734470617/d97fg4aoolyolinjvbs0.jpg"
         ]);
         Car::factory()->create([
             'make' => 'pontiac',
@@ -91,6 +97,7 @@ class DatabaseSeeder extends Seeder
             'mpg' => 22,
             'miles' => 145_000,
             'price' => 22_000,
+            'pictures' => "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1734470617/d97fg4aoolyolinjvbs0.jpg"
         ]);
         Car::factory()->create([
             'make' => 'ford',
@@ -102,6 +109,7 @@ class DatabaseSeeder extends Seeder
             'mpg' => 28,
             'miles' => 50_000,
             'price' => 27_000,
+            'pictures' => "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1734470617/d97fg4aoolyolinjvbs0.jpg"
         ]);
         Car::factory()->create([
             'make' => 'infiniti',
@@ -113,6 +121,7 @@ class DatabaseSeeder extends Seeder
             'mpg' => 31,
             'miles' => 120_000,
             'price' => 43_000,
+            'pictures' => "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1734470617/d97fg4aoolyolinjvbs0.jpg"
         ]);
         Car::factory()->create([
             'make' => 'audi',
@@ -124,6 +133,7 @@ class DatabaseSeeder extends Seeder
             'mpg' => 35,
             'miles' => 75_000,
             'price' => 40_000,
+            'pictures' => "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1734470617/d97fg4aoolyolinjvbs0.jpg"
         ]);
     }
 }

@@ -18,6 +18,11 @@ class Car extends Model
         'year',
         'mpg',
         'miles',
-        'price'
+        'price',
+        'pictures'
+    ];
+
+    protected $casts = [
+        'pictures' => 'array',
     ];
 }
