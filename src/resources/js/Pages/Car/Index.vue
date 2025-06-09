@@ -38,7 +38,6 @@
 </template>
 
 <script setup lang="ts">
-import NavBar from "../../Components/NavBar.vue"
 import { Link, usePage } from "@inertiajs/vue3"
 import { computed, ComputedRef } from "vue"
 import type { Car } from "@/resources/types/car"
