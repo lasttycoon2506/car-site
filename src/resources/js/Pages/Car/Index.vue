@@ -3,11 +3,11 @@
     <div v-if="alertMsg">
         <Alert :success="alertMsg" />
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 px-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 px-10">
         <div v-for="car in cars" :key="car.id">
             <CarCard>
                 <div>
-                    <img :src="`${car.pictures[0]}`">
+                    <img :src="`${car.pictures[0]}`" class="rounded-lg">
                     <Link :href="`/car/${car.id}`">
                     {{ car.make }}, {{ car.model }}, {{ car.year }}, {{ car.condition }}, {{ car.drive_type }}, {{
                         car.miles
