@@ -7,22 +7,23 @@
         <div v-for="car in cars" :key="car.id">
             <CarCard>
                 <div>
-                    <img :src="`${car.pictures[0]}`" class="rounded-lg">
                     <Link :href="`/car/${car.id}`">
-                    <span class="font-bold">{{ car.make }}</span> <span class="text-gray-500">|</span>
-                    <span class="font-bold">{{ car.model }}</span> <span class="text-gray-500">|</span>
-                    <span class="font-bold">{{ car.year }}</span> <span class="text-gray-500">|</span>
-                    <span class="font-bold">{{ car.condition }}</span> <span class="text-gray-500">|</span>
-                    <span class="font-bold">{{ car.drive_type }}</span> <span class="text-gray-500">|</span>
-                    <span class="font-bold">{{ car.miles }}</span> <span class="text-gray-500">|</span>
-                    <span class="font-bold">{{ car.mpg }}</span> <span class="text-gray-500">|</span>
+                    <img :src="`${car.pictures[0]}`" class="rounded-lg">
+                    <span class="font-bold">{{ car.make }}</span> <span class="text-gray-500">| </span>
+                    <span class="font-bold">{{ car.model }}</span> <span class="text-gray-500">| </span>
+                    <span class="font-bold">{{ car.year }}</span> <span class="text-gray-500">| </span>
+                    <span class="font-bold">{{ car.condition }}</span> <span class="text-gray-500">| </span>
+                    <span class="font-bold">{{ car.drive_type }}</span> <span class="text-gray-500">| </span>
+                    <span class="font-bold">{{ car.miles.toLocaleString() }}</span> <span class="text-gray-500">|
+                    </span>
+                    <span class="font-bold">{{ car.mpg }}</span> mpg <span class="text-gray-500">| </span>
                     <span class="font-bold">
                         <PriceFormatter :price=car.price></PriceFormatter>
-                    </span><span class="text-gray-500">|</span>
+                    </span><span class="text-gray-500"> | </span>
                     <span class="font-bold">{{ car.transmission }}</span>
                     </Link>
                 </div>
-                <div>
+                <!-- <div>
                     <Link :href="`/car/${car.id}/edit`">
                     Edit
                     </Link>
@@ -31,7 +32,7 @@
                     <Link :href="`/car/${car.id}`" method="delete">
                     Delete
                     </Link>
-                </div>
+                </div> -->
             </CarCard>
         </div>
     </div>
