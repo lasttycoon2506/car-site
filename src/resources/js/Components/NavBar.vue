@@ -6,7 +6,7 @@
             </div>
             </Link>
             <div class="shadow-xl font-bold shadow-white text-xl text-red-600">
-                <Link href="/car"> Carzies
+                <Link href="/car" class="bg-slate-600"> Carzies
                 </Link>
             </div>
         </div>

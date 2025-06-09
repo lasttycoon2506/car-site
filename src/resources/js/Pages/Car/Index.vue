@@ -2,18 +2,19 @@
     <div v-if="alertMsg">
         <Alert :success="alertMsg" />
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 px-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 px-10 py-3">
         <div v-for="car in cars" :key="car.id">
             <CarCard>
                 <div>
                     <Link :href="`/car/${car.id}`">
-                    <img :src="`${car.pictures[0]}`" class="rounded-lg">
+                    <img :src="`${car.pictures[0]}`" class="rounded-lg border border-black">
                     <span class="font-bold">{{ car.make }}</span> <span class="text-gray-500">| </span>
                     <span class="font-bold">{{ car.model }}</span> <span class="text-gray-500">| </span>
                     <span class="font-bold">{{ car.year }}</span> <span class="text-gray-500">| </span>
-                    <span class="font-bold">{{ car.condition }}</span> <span class="text-gray-500">| </span>
+                    <span>Condition: </span><span class="font-bold">{{ car.condition }}</span> <span
+                        class="text-gray-500">| </span>
                     <span class="font-bold">{{ car.drive_type }}</span> <span class="text-gray-500">| </span>
-                    <span class="font-bold">{{ car.miles.toLocaleString() }}</span> <span class="text-gray-500">|
+                    <span class="font-bold">{{ car.miles.toLocaleString() }}</span> mi. <span class="text-gray-500">|
                     </span>
                     <span class="font-bold">{{ car.mpg }}</span> mpg <span class="text-gray-500">| </span>
                     <span class="font-bold">
