@@ -40,9 +40,9 @@
         </div>
         <div class=" ms-8">
             <h1 class="font-bold text-xl mb-5">Pay As You Go!</h1>
-            <label class="block font-medium">Interest: {{ interestRate }}%</label>
+            <label class="block font-medium">Interest: <span class=" font-bold">{{ interestRate }}%</span></label>
             <input v-model.number="interestRate" type="range" min=".1" max="25" step=".1" class="cursor-pointer">
-            <label class="block font-medium">Period: {{ duration }} years</label>
+            <label class="block font-medium">Period: <span class="font-bold">{{ duration }} years</span></label>
             <input v-model.number="duration" type="range" min="1" max="25" step="1" class="cursor-pointer">
             <label class="block font-medium mt-2">You Pay: </label>
             <div class="flex justify-start items-center">
