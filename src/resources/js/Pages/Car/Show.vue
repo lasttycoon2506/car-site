@@ -57,19 +57,15 @@
 
 <script setup lang="ts">
 import type { Car } from '@/resources/types/car';
-import { computed, ComputedRef, Ref, ref } from 'vue'
+import { Ref, ref } from 'vue'
 import PriceFormatter from '../../Components/PriceFormatter.vue';
+import { useMonthlyPayment } from '../../Composables/useMonthlyPayment';
+useMonthlyPayment
 
 const props = defineProps<{ car: Car }>()
 const mainImage = ref(props.car.pictures[0])
 const interestRate: Ref<number> = ref(3)
 const duration: Ref<number> = ref(5)
+const monthlyPayment = useMonthlyPayment(props.car.price, interestRate, duration)
 
-const monthlyPayment: ComputedRef<number> = computed(() => {
-    const price = props.car.price
-    const monthlyInterest = interestRate.value / 100 / 12
-    const monthsOfPayment = duration.value * 12
-
-    return price * monthlyInterest * (Math.pow(1 + monthlyInterest, monthsOfPayment)) / (Math.pow(1 + monthlyInterest, monthsOfPayment) - 1)
-})
 </script>
