@@ -1,52 +1,61 @@
 <template>
+    <h1 class="flex text-shadow-lg font-bold justify-center text-4xl mt-5">Change your Car!</h1>
     <form @submit.prevent="editCar">
-        <div>
-            <label>Make</label>
-            <input v-model="carForm.make" type="text">
-            <div v-if="carForm.errors.make">{{ carForm.errors.make }}</div>
-        </div>
-        <div>
-            <label>Model</label>
-            <input v-model="carForm.model" type="text">
-            <div v-if="carForm.errors.model">{{ carForm.errors.model }}</div>
-        </div>
-        <div>
-            <label>Condition</label>
-            <input v-model="carForm.condition" type="text">
-            <div v-if="carForm.errors.condition">{{ carForm.errors.condition }}</div>
-        </div>
-        <div>
-            <label>Transmission</label>
-            <input v-model="carForm.transmission" type="text">
-            <div v-if="carForm.errors.transmission">{{ carForm.errors.transmission }}</div>
-        </div>
-        <div>
-            <label>Drive Type</label>
-            <input v-model="carForm.drive_type" type="text">
-            <div v-if="carForm.errors.drive_type">{{ carForm.errors.drive_type }}</div>
-        </div>
-        <div>
-            <label>Year</label>
-            <input v-model="carForm.year" type="text">
-            <div v-if="carForm.errors.year">{{ carForm.errors.year }}</div>
-        </div>
-        <div>
-            <label>MPG</label>
-            <input v-model="carForm.mpg" type="text">
-            <div v-if="carForm.errors.mpg">{{ carForm.errors.mpg }}</div>
-        </div>
-        <div>
-            <label>Mi.</label>
-            <input v-model="carForm.miles" type="text">
-            <div v-if="carForm.errors.miles">{{ carForm.errors.miles }}</div>
-        </div>
-        <div>
-            <label>Price</label>
-            <input v-model="carForm.price" type="text">
-            <div v-if="carForm.errors.price">{{ carForm.errors.price }}</div>
-        </div>
-        <div>
-            <button type="submit">Edit </button>
+        <div class="grid grid-cols-2 mx-12 my-5 bg-slate-400 rounded-lg py-5 px-12">
+            <div class="mx-12">
+                <label class="label">Make</label>
+                <input v-model="carForm.make" type="text" class="input">
+                <div v-if="carForm.errors.make">{{ carForm.errors.make }}</div>
+            </div>
+            <div class="mx-12">
+                <label class="label">Model</label>
+                <input v-model="carForm.model" type="text" class="input">
+                <div v-if="carForm.errors.model">{{ carForm.errors.model }}</div>
+            </div>
+            <div class="mx-12">
+                <label class="label">Condition</label>
+                <input v-model="carForm.condition" type="text" class="input">
+                <div v-if="carForm.errors.condition">{{ carForm.errors.condition }}</div>
+            </div>
+            <div class="mx-12">
+                <label class="label">Transmission</label>
+                <input v-model="carForm.transmission" type="text" class="input">
+                <div v-if="carForm.errors.transmission">{{ carForm.errors.transmission }}</div>
+            </div>
+            <div class="mx-12">
+                <label class="label">Drive Type</label>
+                <input v-model="carForm.drive_type" type="text" class="input">
+                <div v-if="carForm.errors.drive_type">{{ carForm.errors.drive_type }}</div>
+            </div>
+            <div class="mx-12">
+                <label class="label">Year</label>
+                <input v-model="carForm.year" type="text">
+                <div v-if="carForm.errors.year">{{ carForm.errors.year }}</div>
+            </div>
+            <div class="mx-12">
+                <label class="label">MPG</label>
+                <input v-model="carForm.mpg" type="text">
+                <div v-if="carForm.errors.mpg">{{ carForm.errors.mpg }}</div>
+            </div>
+            <div class="mx-12">
+                <label class="label">Mi.</label>
+                <input v-model="carForm.miles" type="text">
+                <div v-if="carForm.errors.miles">{{ carForm.errors.miles }}</div>
+            </div>
+            <div class="mx-12">
+                <label class="label">Price</label>
+                <input v-model="carForm.price" type="text">
+                <div v-if="carForm.errors.price">{{ carForm.errors.price }}</div>
+            </div>
+            <div class="mx-12">
+                <label class="label">Pictures</label>
+                <input type="file" multiple @change="handleFileChange">
+                <div v-if="carForm.errors.pictures">{{ carForm.errors.pictures }}</div>
+            </div>
+            <div class="col-span-2 justify-self-center">
+                <button type="submit" class="rounded-full bg-amber-600 py-3 px-12 mt-10 mb-2 font-semibold">Update!
+                </button>
+            </div>
         </div>
     </form>
 </template>
