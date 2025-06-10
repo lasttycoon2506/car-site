@@ -10,6 +10,10 @@
                 </Link>
             </div>
         </div>
+        <div class="flex justify-end">
+            <Link href="/car/create"> <button class="rounded-full bg-slate-200 py-1 px-1">Sell</button>
+            </Link>
+        </div>
     </header>
 </template>
 
