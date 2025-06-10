@@ -38,15 +38,15 @@
                     :class="{ 'border-black': mainImage === pic }" @click="mainImage = pic" />
             </div>
         </div>
-        <div class=" ms-5">
-            <h1 class="font-bold text-xl mb-4">Pay As You Go!</h1>
-            <label class="block">Interest:</label>
-            <input type="range" class="cursor-pointer">
-            <label class="block">Period:</label>
-            <input type="range" class="cursor-pointer">
-            <label class="block">You Pay: </label>
-            <div class="flex justify-start items-center mt-1">
-                <div class="text-2xl">
+        <div class=" ms-8">
+            <h1 class="font-bold text-xl mb-5">Pay As You Go!</h1>
+            <label class="block font-medium">Interest: {{ interestRate }}%</label>
+            <input v-model.number="interestRate" type="range" min=".1" max="25" step=".1" class="cursor-pointer">
+            <label class="block font-medium">Period: {{ duration }} years</label>
+            <input v-model.number="duration" type="range" min="1" max="25" step="1" class="cursor-pointer">
+            <label class="block font-medium mt-2">You Pay: </label>
+            <div class="flex justify-start items-center">
+                <div class="text-2xl font-bold">
                     <PriceFormatter :price="10"></PriceFormatter>
                 </div>
                 <span> &nbsp; / month</span>
@@ -57,9 +57,13 @@
 
 <script setup lang="ts">
 import type { Car } from '@/resources/types/car';
-import { ref } from 'vue'
+import { Ref, ref } from 'vue'
 import PriceFormatter from '../../Components/PriceFormatter.vue';
 
 const props = defineProps<{ car: Car }>()
 const mainImage = ref(props.car.pictures[0])
+const interestRate: Ref<number> = ref(3)
+const duration: Ref<number> = ref(5)
+
+
 </script>
