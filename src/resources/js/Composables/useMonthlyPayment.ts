@@ -1,13 +1,13 @@
-import { computed, Ref } from "vue";
+import { computed, ComputedRef, Ref } from "vue";
 
 export const useMonthlyPayment = (
     price: number,
     interestRate: Ref<number>,
     duration: Ref<number>
 ) => {
-    const monthlyPayment = computed(() => {
-        const monthlyInterest = interestRate.value / 100 / 12;
-        const monthsOfPayment = duration.value * 12;
+    const monthlyPayment: ComputedRef<number> = computed(() => {
+        const monthlyInterest: number = interestRate.value / 100 / 12;
+        const monthsOfPayment: number = duration.value * 12;
 
         return (
             (price *
