@@ -78,4 +78,12 @@ const carForm: InertiaForm<Car> = useForm<Car>({
 })
 
 const createCar: () => void = () => carForm.post("/car")
+
+function handleFileChange(event: Event) {
+    const target = event.target as HTMLInputElement;
+    if (target.files) {
+        // Convert FileList to Array and store in carForm.pictures
+        carForm.pictures = Array.from(target.files);
+    }
+}
 </script>
