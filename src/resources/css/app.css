@@ -10,4 +10,8 @@
     .input {
         @apply shadow-lg w-full;
     }
+
+    .input-error {
+        @apply text-sm text-red-600;
+    }
 }
