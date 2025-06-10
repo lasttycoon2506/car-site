@@ -4,6 +4,10 @@
 
 @layer components {
     .label {
-        @apply block py-1 px-1 font-medium;
+        @apply block py-1 px-1 font-medium w-full;
+    }
+
+    .input {
+        @apply shadow-lg w-full;
     }
 }

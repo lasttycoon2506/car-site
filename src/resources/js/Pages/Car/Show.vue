@@ -1,5 +1,5 @@
 <template>
-    <div class="grid grid-cols-3 gap-5 px-12 py-10">
+    <div class="grid grid-cols-3 gap-5 mx-12 my-10">
         <div
             class="grid col bg-sky-300/50 rounded-lg px-5 py-3 me-12 border border-black bg-clip-padding shadow-xl font-serif text-2xl font-bold">
             <div>
