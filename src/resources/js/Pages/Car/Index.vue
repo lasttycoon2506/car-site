@@ -23,6 +23,8 @@
                     <span class="font-bold">{{ car.transmission }}</span>
                     </Link>
                 </div>
+                <MonthlyPayment :car="car" />
+                <span> / month</span>
                 <!-- <div>
                     <Link :href="`/car/${car.id}/edit`">
                     Edit
@@ -45,12 +47,12 @@ import type { Car } from "@/resources/types/car"
 import Alert from "../../Components/Alert.vue"
 import CarCard from "../../Components/CarCard.vue"
 import PriceFormatter from "../../Components/PriceFormatter.vue"
+import MonthlyPayment from "../../Components/MonthlyPayment.vue"
 type PageProps = {
     0: { flash: { success: string } },
 }
 defineProps<{ cars: Car[] }>()
 
 const page = usePage<PageProps>()
-
 const alertMsg: ComputedRef<string> = computed(() => page.props[0].flash?.success)
 </script>
