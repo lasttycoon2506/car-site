@@ -47,6 +47,11 @@
                 <input v-model="carForm.price" type="text">
                 <div v-if="carForm.errors.price">{{ carForm.errors.price }}</div>
             </div>
+            <div class="mx-12">
+                <label class="label">Pictures</label>
+                <input type="file" multiple @change="handleFileChange">
+                <div v-if="carForm.errors.pictures">{{ carForm.errors.pictures }}</div>
+            </div>
             <div class="col-span-2 justify-self-center">
                 <button type="submit" class="rounded-full bg-amber-600 py-3 px-12 mt-10 mb-2 font-semibold">Sell!
                 </button>
