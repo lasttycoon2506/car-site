@@ -47,7 +47,7 @@
             <label class="block font-medium mt-2">You Pay: </label>
             <div class="flex justify-start items-center">
                 <div class="text-2xl font-bold">
-                    <PriceFormatter :price="10"></PriceFormatter>
+                    <PriceFormatter :price="monthlyPayment"></PriceFormatter>
                 </div>
                 <span> &nbsp; / month</span>
             </div>
@@ -57,7 +57,7 @@
 
 <script setup lang="ts">
 import type { Car } from '@/resources/types/car';
-import { Ref, ref } from 'vue'
+import { computed, ComputedRef, Ref, ref } from 'vue'
 import PriceFormatter from '../../Components/PriceFormatter.vue';
 
 const props = defineProps<{ car: Car }>()
@@ -65,5 +65,11 @@ const mainImage = ref(props.car.pictures[0])
 const interestRate: Ref<number> = ref(3)
 const duration: Ref<number> = ref(5)
 
+const monthlyPayment: ComputedRef<number> = computed(() => {
+    const price = props.car.price
+    const monthlyInterest = interestRate.value / 100 / 12
+    const monthsOfPayment = duration.value * 12
 
+    return price * monthlyInterest * (Math.pow(1 + monthlyInterest, monthsOfPayment)) / (Math.pow(1 + monthlyInterest, monthsOfPayment) - 1)
+})
 </script>
