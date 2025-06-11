@@ -11,9 +11,14 @@
                     </Link>
                 </div>
             </div>
-            <div class="flex justify-end items-center me-5">
-                <Link href="/car/create"> <button class="rounded-lg bg-lime-500 py-2 px-6 font-bold me-5">Sell</button>
+            <div v-if="user" class="flex justify-end items-center gap-4">
+                <div class=" text-lg text-rose-600">{{ user.email }}</div>
+                <Link href="/car/create"> <button class="rounded-lg bg-lime-500 py-2 px-6 font-bold">Sell</button>
                 </Link>
+                <Link href="/login"> <button class="rounded-lg bg-lime-500 py-2 px-6 font-bold me-4">Logout</button>
+                </Link>
+            </div>
+            <div v-else>
                 <Link href="/login"> <button class="rounded-lg bg-lime-500 py-2 px-6 font-bold">Login</button>
                 </Link>
             </div>
@@ -23,6 +28,14 @@
 </template>
 
 <script setup lang="ts">
-import { Link } from '@inertiajs/vue3';
+import { Link, usePage } from '@inertiajs/vue3';
+import type { User } from "@/resources/types/user"
+import { computed, ComputedRef } from 'vue';
+type PageProps = {
+    user: User
+}
 
+const page = usePage<PageProps>()
+
+const user: ComputedRef<User> = computed(() => page.props.user)
 </script>
