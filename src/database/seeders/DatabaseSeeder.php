@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Car;
+use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,7 +15,9 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // Car::factory(10)->create();
-        //php artisan migrate:refresh --seed
+        // php artisan migrate:refresh --seed
+
+        User::factory()->create(["name" => "test user", "email" => "test@test.com"]);
 
         Car::factory()->create([
             'make' => 'ford',
