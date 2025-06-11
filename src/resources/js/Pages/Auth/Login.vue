@@ -24,15 +24,15 @@
 </template>
 
 <script setup lang="ts">
-import { useForm } from '@inertiajs/vue3';
+import { InertiaForm, useForm } from '@inertiajs/vue3';
 type credentials = {
     email: string, password: string
 }
 
-const loginForm = useForm<credentials>({
+const loginForm: InertiaForm<credentials> = useForm<credentials>({
     email: "",
     password: ""
 })
 
-const login = () => loginForm.post("login")
+const login: () => void = () => loginForm.post("login")
 </script>
