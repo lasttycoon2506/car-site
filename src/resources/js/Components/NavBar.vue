@@ -14,7 +14,7 @@
             <div class="flex justify-end items-center me-5">
                 <Link href="/car/create"> <button class="rounded-lg bg-lime-500 py-2 px-6 font-bold me-5">Sell</button>
                 </Link>
-                <Link href="/car/create"> <button class="rounded-lg bg-lime-500 py-2 px-6 font-bold">Login</button>
+                <Link href="/login"> <button class="rounded-lg bg-lime-500 py-2 px-6 font-bold">Login</button>
                 </Link>
             </div>
         </div>

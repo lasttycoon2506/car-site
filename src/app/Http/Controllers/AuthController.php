@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
@@ -10,6 +12,20 @@ class AuthController extends Controller
     {
         return inertia("Auth/Login");
     }
-    public function store() {}
+
+    public function store(Request $request)
+    {
+        if (!Auth::attempt($request->validate([
+            "username" => "required|email|string",
+            "password" => "required|string"
+        ]), true)) {
+            throw ValidationException::withMessages(["email" => "invalid credentials"]);
+        }
+
+        $request->session()->regenerate();
+
+        return redirect()->route("car.index");
+    }
+
     public function destroy() {}
 }
