@@ -11,12 +11,12 @@
                     </Link>
                 </div>
             </div>
-            <div v-if="user" class="flex justify-end items-center gap-4">
+            <div v-if="user" class="flex justify-end items-center gap-6">
                 <div class="text-md text-rose-600">{{ user.email }}</div>
                 <Link href="/car/create"> <button class="rounded-lg bg-lime-500 py-2 px-6 font-bold">Sell</button>
                 </Link>
                 <Link href="/logout" method="delete"> <button
-                    class="rounded-lg bg-red-700 py-2 px-6 font-bold me-4">Logout</button>
+                    class="rounded-lg bg-red-700 py-2 px-6 font-bold me-6">Logout</button>
                 </Link>
             </div>
             <div v-else class="flex items-center me-10">
