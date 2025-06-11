@@ -1,16 +1,16 @@
 <template>
-    <form>
+    <form @submit.prevent="login">
         <div class="w-1/2 mx-auto border border-black mt-10 rounded bg-blue-300">
             <div class="flex justify-center">
                 <div class="mt-10">
                     <label class="w-full font-semibold">Username</label>
-                    <input class="w-full shadow-lg mt-1 rounded" type="text">
+                    <input v-model="loginForm.username" class="w-full shadow-lg mt-1 rounded" type="text">
                 </div>
             </div>
             <div class="flex justify-center">
                 <div class="mt-5">
                     <label class="w-full font-semibold">Password</label>
-                    <input class="w-full shadow-lg mt-1 rounded" type="password">
+                    <input v-model="loginForm.password" class="w-full shadow-lg mt-1 rounded" type="password">
                 </div>
             </div>
             <div class="flex justify-center">
@@ -22,4 +22,15 @@
 </template>
 
 <script setup lang="ts">
+import { useForm } from '@inertiajs/vue3';
+type credentials = {
+    username: string, password: string
+}
+
+const loginForm = useForm<credentials>({
+    username: "",
+    password: ""
+})
+
+const login = () => loginForm.post("login/store")
 </script>
