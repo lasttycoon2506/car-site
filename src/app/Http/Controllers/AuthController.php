@@ -33,6 +33,6 @@ class AuthController extends Controller
         $request->session()->regenerate();
         $request->session()->regenerateToken();
 
-        return redirect()->route("car.index")
+        return redirect()->route("car.index");
     }
 }
