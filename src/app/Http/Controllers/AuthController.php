@@ -27,5 +27,12 @@ class AuthController extends Controller
         return redirect()->intended("/car");
     }
 
-    public function destroy() {}
+    public function destroy(Request $request)
+    {
+        Auth::logout();
+        $request->session()->regenerate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route("car.index")
+    }
 }
