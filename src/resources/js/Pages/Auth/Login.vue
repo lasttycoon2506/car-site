@@ -32,5 +32,5 @@ const loginForm = useForm<credentials>({
     password: ""
 })
 
-const login = () => loginForm.post("login/store")
+const login = () => loginForm.post("login")
 </script>

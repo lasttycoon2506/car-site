@@ -16,7 +16,7 @@ class AuthController extends Controller
     public function store(Request $request)
     {
         if (!Auth::attempt($request->validate([
-            "username" => "required|email|string",
+            "email" => "required|email|string",
             "password" => "required|string"
         ]), true)) {
             throw ValidationException::withMessages(["email" => "invalid credentials"]);
@@ -24,7 +24,7 @@ class AuthController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->route("car.index");
+        return redirect()->intended("/car");
     }
 
     public function destroy() {}
