@@ -56,15 +56,18 @@
 import { Link, usePage } from "@inertiajs/vue3"
 import { computed, ComputedRef } from "vue"
 import type { Car } from "@/resources/types/car"
+import type { User } from "@/resources/types/user"
 import Alert from "../../Components/Alert.vue"
 import CarCard from "../../Components/CarCard.vue"
 import PriceFormatter from "../../Components/PriceFormatter.vue"
 import MonthlyPayment from "../../Components/MonthlyPayment.vue"
 type PageProps = {
-    0: { flash: { success: string } },
+    flash: { success: string },
+    user: User
 }
 defineProps<{ cars: Car[] }>()
 
 const page = usePage<PageProps>()
-const alertMsg: ComputedRef<string> = computed(() => page.props[0].flash?.success)
+const alertMsg: ComputedRef<string> = computed(() => page.props.flash?.success)
+const user: ComputedRef<User> = computed(() => page.props.user)
 </script>
