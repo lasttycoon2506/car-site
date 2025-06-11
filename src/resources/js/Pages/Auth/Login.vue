@@ -3,14 +3,16 @@
         <div class="w-1/2 mx-auto border border-black mt-10 rounded bg-blue-300">
             <div class="flex justify-center">
                 <div class="mt-10">
-                    <label class="w-full font-semibold">Username</label>
-                    <input v-model="loginForm.username" class="w-full shadow-lg mt-1 rounded" type="text">
+                    <label class="w-full font-semibold">Email</label>
+                    <input v-model="loginForm.email" class="w-full shadow-lg mt-1 rounded" type="text">
+                    <div class="input-error" v-if="loginForm.errors.email">{{ loginForm.errors.email }}</div>
                 </div>
             </div>
             <div class="flex justify-center">
                 <div class="mt-5">
                     <label class="w-full font-semibold">Password</label>
                     <input v-model="loginForm.password" class="w-full shadow-lg mt-1 rounded" type="password">
+                    <div class="input-error" v-if="loginForm.errors.email">{{ loginForm.errors.password }}</div>
                 </div>
             </div>
             <div class="flex justify-center">
@@ -24,11 +26,11 @@
 <script setup lang="ts">
 import { useForm } from '@inertiajs/vue3';
 type credentials = {
-    username: string, password: string
+    email: string, password: string
 }
 
 const loginForm = useForm<credentials>({
-    username: "",
+    email: "",
     password: ""
 })
 
