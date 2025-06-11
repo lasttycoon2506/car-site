@@ -19,8 +19,8 @@
                     class="rounded-lg bg-red-700 py-2 px-6 font-bold me-4">Logout</button>
                 </Link>
             </div>
-            <div v-else>
-                <Link href="/login"> <button class="rounded-lg bg-lime-500 py-2 px-6 font-bold">Login</button>
+            <div v-else class="flex items-center me-10">
+                <Link href="/login"> <button class="rounded-lg bg-lime-500 py-2 px-10 font-bold">Login</button>
                 </Link>
             </div>
         </div>
