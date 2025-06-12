@@ -74,7 +74,7 @@ const carForm: InertiaForm<Car> = useForm<Car>({
     mpg: 0,
     miles: 0,
     price: 0,
-    pictures: []
+    pictures: ["jkl"]
 })
 
 const createCar: () => void = () => carForm.post("/car")
