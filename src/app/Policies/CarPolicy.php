@@ -4,10 +4,21 @@ namespace App\Policies;
 
 use App\Models\Car;
 use App\Models\User;
+use Illuminate\Auth\Access\HandlesAuthorization;
 use Illuminate\Auth\Access\Response;
 
 class CarPolicy
 {
+
+    use HandlesAuthorization;
+
+    public function before(?User $user, $ability)
+    {
+        if ($user->is_admin) {
+            return true;
+        }
+    }
+
     /**
      * Determine whether the user can view any models.
      */
