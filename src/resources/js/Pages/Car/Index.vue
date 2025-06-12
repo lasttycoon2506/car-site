@@ -63,8 +63,9 @@ import MonthlyPayment from "../../Components/MonthlyPayment.vue"
 type PageProps = {
     flash: { success: string },
 }
-defineProps<{ cars: Car[] }>()
+defineProps<{ cars: { data: Car[] } }>()
 
 const page = usePage<PageProps>()
 const alertMsg: ComputedRef<string> = computed(() => page.props.flash?.success)
+console.log(page.props)
 </script>
