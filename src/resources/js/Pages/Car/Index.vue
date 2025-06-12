@@ -3,7 +3,7 @@
         <Alert :success="alertMsg" />
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 px-10 py-3">
-        <div v-for="car in cars" :key="car.id">
+        <div v-for="car in cars.data" :key="car.id">
             <CarCard>
                 <div>
                     <Link :href="`/car/${car.id}`">
@@ -55,7 +55,7 @@
 <script setup lang="ts">
 import { Link, usePage } from "@inertiajs/vue3"
 import { computed, ComputedRef } from "vue"
-import type { Car } from "@/resources/types/car"
+import type { Cars } from "@/resources/types/cars"
 import Alert from "../../Components/Alert.vue"
 import CarCard from "../../Components/CarCard.vue"
 import PriceFormatter from "../../Components/PriceFormatter.vue"
@@ -63,7 +63,7 @@ import MonthlyPayment from "../../Components/MonthlyPayment.vue"
 type PageProps = {
     flash: { success: string },
 }
-defineProps<{ cars: { data: Car[] } }>()
+defineProps<{ cars: Cars }>()
 
 const page = usePage<PageProps>()
 const alertMsg: ComputedRef<string> = computed(() => page.props.flash?.success)
