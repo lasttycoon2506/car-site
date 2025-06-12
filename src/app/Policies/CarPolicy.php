@@ -12,7 +12,7 @@ class CarPolicy
 
     use HandlesAuthorization;
 
-    public function before(?User $user, $ability)
+    public function before(?User $user)
     {
         if ($user && $user->is_admin) {
             return true;

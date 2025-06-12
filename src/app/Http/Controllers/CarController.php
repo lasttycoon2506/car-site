@@ -18,7 +18,7 @@ class CarController extends Controller
     {
         return inertia(
             "Car/Index",
-            ["cars" => Car::all()]
+            ["cars" => Car::orderByDesc("created_at")->paginate(8)]
         );
     }
 
