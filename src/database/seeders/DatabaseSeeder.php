@@ -17,7 +17,11 @@ class DatabaseSeeder extends Seeder
         // Car::factory(10)->create();
         // php artisan migrate:refresh --seed
 
-        User::factory()->create(["name" => "test user", "email" => "test@test.com"]);
+        User::factory()->create([
+            "name" => "test user",
+            "email" => "test@test.com",
+            "is_admin" => true
+        ]);
 
 
 
