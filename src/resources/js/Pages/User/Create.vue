@@ -4,23 +4,25 @@
             <div class="w-1/2 mx-auto">
                 <div class="mt-10">
                     <label class="font-semibold">Name</label>
-                    <input v-model="newUserForm.email" class="w-full shadow-lg mt-1 rounded" type="text">
-                    <div v-if="newUserForm.errors.name">{{ newUserForm.errors.name }}</div>
+                    <input v-model="newUserForm.name" class="w-full shadow-lg mt-1 rounded" type="text">
+                    <div v-if="newUserForm.errors.name" class="input-error">{{ newUserForm.errors.name }}</div>
                 </div>
                 <div class="mt-5">
                     <label class="font-semibold">Email</label>
                     <input v-model="newUserForm.email" class="w-full shadow-lg mt-1 rounded" type="text">
-                    <div v-if="newUserForm.errors.email">{{ newUserForm.errors.email }}</div>
+                    <div v-if="newUserForm.errors.email" class="input-error">{{ newUserForm.errors.email }}</div>
                 </div>
                 <div class="mt-5">
                     <label class="font-semibold">Password</label>
                     <input v-model="newUserForm.password" class="w-full shadow-lg mt-1 rounded" type="password">
-                    <div v-if="newUserForm.errors.password">{{ newUserForm.errors.password }}</div>
+                    <div v-if="newUserForm.errors.password" class="input-error">{{ newUserForm.errors.password }}</div>
                 </div>
                 <div class="mt-5">
                     <label class="font-semibold">Confirm Password</label>
-                    <input v-model="newUserForm.password" class="w-full shadow-lg mt-1 rounded" type="password">
-                    <div v-if="newUserForm.errors.password_conformation">{{ newUserForm.errors.password_conformation }}
+                    <input v-model="newUserForm.password_confirmation" class="w-full shadow-lg mt-1 rounded"
+                        type="password">
+                    <div v-if="newUserForm.errors.password_confirmation" class="input-error">{{
+                        newUserForm.errors.password_confirmation }}
                     </div>
                 </div>
             </div>
@@ -39,14 +41,14 @@ type newUser = {
     name: string
     email: string,
     password: string
-    password_conformation: string
+    password_confirmation: string
 }
 
 const newUserForm: InertiaForm<newUser> = useForm<newUser>({
     name: "",
     email: "",
     password: "",
-    password_conformation: ""
+    password_confirmation: ""
 
 })
 

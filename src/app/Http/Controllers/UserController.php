@@ -20,7 +20,7 @@ class UserController extends Controller
         $newUser = User::make($request->validate([
             "name" => "required",
             "email" => "required|email|unique:users",
-            "condition" => "required|min:8|confirmed",
+            "password" => "required|min:8|confirmed",
         ]));
 
         $newUser->save();
