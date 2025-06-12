@@ -37,7 +37,7 @@
                     </div>
                     </Link>
                 </div>
-                <!-- <div>
+                <div>
                     <Link :href="`/car/${car.id}/edit`">
                     Edit
                     </Link>
@@ -46,7 +46,7 @@
                     <Link :href="`/car/${car.id}`" method="delete">
                     Delete
                     </Link>
-                </div> -->
+                </div>
             </CarCard>
         </div>
     </div>
