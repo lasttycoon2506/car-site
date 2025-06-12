@@ -14,12 +14,19 @@
             </div>
             <div class="mx-12">
                 <label class="label">Condition</label>
-                <input v-model="carForm.condition" type="text" class="input">
+                <select v-model="carForm.condition" class="w-1/2">
+                    <option disabled>Select</option>
+                    <option value="Ok">Ok</option>
+                    <option value="Good">Good</option>
+                    <option value="Great">Great</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Like New">Like New</option>
+                </select>
                 <div v-if="carForm.errors.condition" class="input-error">{{ carForm.errors.condition }}</div>
             </div>
             <div class="mx-12">
                 <label class="label">Transmission</label>
-                <select v-model="carForm.transmission" class="input">
+                <select v-model="carForm.transmission" class="w-1/2">
                     <option disabled> Select</option>
                     <option value="manual">Manual</option>
                     <option value="automatic">Automatic</option>
@@ -28,7 +35,7 @@
             </div>
             <div class="mx-12">
                 <label class="label">Drive Type</label>
-                <select v-model="carForm.drive_type" class="input">
+                <select v-model="carForm.drive_type" class="w-1/2">
                     <option disabled>Select</option>
                     <option value="FWD">FWD</option>
                     <option value="RWD">RWD</option>
