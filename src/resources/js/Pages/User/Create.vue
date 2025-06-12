@@ -1,6 +1,7 @@
 <template>
+    <h1 class="flex text-shadow-lg font-bold justify-center text-4xl mt-5">Join Us!</h1>
     <form @submit.prevent="createUser">
-        <div class="w-1/2 mx-auto border border-black mt-10 rounded bg-blue-300">
+        <div class="w-1/2 mx-auto border border-black mt-5 rounded bg-blue-300">
             <div class="w-1/2 mx-auto">
                 <div class="mt-10">
                     <label class="font-semibold">Name</label>
