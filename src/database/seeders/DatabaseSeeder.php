@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->create(["name" => "test user", "email" => "test@test.com"]);
 
+
+
         Car::factory()->create([
             'make' => 'ford',
             'model' => 'mustang',
