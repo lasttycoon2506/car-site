@@ -2,6 +2,7 @@
     <div v-if="alertMsg">
         <Alert :success="alertMsg" />
     </div>
+    <Filter></Filter>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 px-10 py-3">
         <div v-for="car in cars.data" :key="car.id">
             <CarCard>
@@ -64,6 +65,7 @@ import CarCard from "../../Components/CarCard.vue"
 import PriceFormatter from "../../Components/PriceFormatter.vue"
 import MonthlyPayment from "../../Components/MonthlyPayment.vue"
 import Pagination from "../../Components/Pagination.vue"
+import Filter from "../../Components/Filter.vue"
 type PageProps = {
     flash: { success: string },
 }
