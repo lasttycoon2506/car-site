@@ -50,6 +50,9 @@
             </CarCard>
         </div>
     </div>
+    <div v-if="cars.data.length" class="flex justify-center mb-5">
+        <Pagination :links="cars.links" />
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -60,6 +63,7 @@ import Alert from "../../Components/Alert.vue"
 import CarCard from "../../Components/CarCard.vue"
 import PriceFormatter from "../../Components/PriceFormatter.vue"
 import MonthlyPayment from "../../Components/MonthlyPayment.vue"
+import Pagination from "../../Components/Pagination.vue"
 type PageProps = {
     flash: { success: string },
 }
@@ -67,5 +71,4 @@ defineProps<{ cars: Cars }>()
 
 const page = usePage<PageProps>()
 const alertMsg: ComputedRef<string> = computed(() => page.props.flash?.success)
-console.log(page.props)
 </script>
