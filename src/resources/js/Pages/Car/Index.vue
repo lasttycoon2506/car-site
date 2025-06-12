@@ -50,7 +50,7 @@
             </CarCard>
         </div>
     </div>
-    <div v-if="cars.data.length" class="flex justify-center mb-5">
+    <div v-if="cars.data.length" class="flex justify-center mt-5 mb-5">
         <Pagination :links="cars.links" />
     </div>
 </template>

@@ -24,7 +24,13 @@
             </div>
             <div class="mx-12">
                 <label class="label">Drive Type</label>
-                <input v-model="carForm.drive_type" type="text" class="input">
+                <select v-model="carForm.drive_type" type="text" class="input">
+                    <option disabled value="">Select</option>
+                    <option value="FWD">FWD</option>
+                    <option value="RWD">RWD</option>
+                    <option value="AWD">AWD</option>
+                    <option value="4WD">4WD</option>
+                </select>
                 <div v-if="carForm.errors.drive_type" class="input-error">{{ carForm.errors.drive_type }}</div>
             </div>
             <div class="mx-12">
