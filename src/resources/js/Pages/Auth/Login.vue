@@ -1,14 +1,12 @@
 <template>
     <form @submit.prevent="login">
         <div class="w-1/2 mx-auto border border-black mt-10 rounded bg-blue-300">
-            <div class="flex justify-center">
+            <div class="w-1/2 mx-auto">
                 <div class="mt-10">
                     <label class="w-full font-semibold">Email</label>
                     <input v-model="loginForm.email" class="w-full shadow-lg mt-1 rounded" type="text">
                     <div v-if="loginForm.errors.email">{{ loginForm.errors.email }}</div>
                 </div>
-            </div>
-            <div class="flex justify-center">
                 <div class="mt-5">
                     <label class="w-full font-semibold">Password</label>
                     <input v-model="loginForm.password" class="w-full shadow-lg mt-1 rounded" type="password">
