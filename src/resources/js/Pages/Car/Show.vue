@@ -60,7 +60,6 @@ import type { Car } from '@/resources/types/car';
 import { ComputedRef, Ref, ref } from 'vue'
 import PriceFormatter from '../../Components/PriceFormatter.vue';
 import { useMonthlyPayment } from '../../Composables/useMonthlyPayment';
-useMonthlyPayment
 
 const props = defineProps<{ car: Car }>()
 const mainImage: Ref<string> = ref(props.car.pictures[0])

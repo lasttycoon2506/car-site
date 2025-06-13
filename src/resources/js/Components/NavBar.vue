@@ -35,10 +35,10 @@
 import { Link, usePage } from '@inertiajs/vue3';
 import type { User } from "@/resources/types/user"
 import { computed, ComputedRef } from 'vue';
+
 type PageProps = {
     user: User
 }
-
 const page = usePage<PageProps>()
 
 const user: ComputedRef<User> = computed(() => page.props.user)

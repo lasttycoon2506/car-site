@@ -66,8 +66,11 @@ import PriceFormatter from "../../Components/PriceFormatter.vue"
 import MonthlyPayment from "../../Components/MonthlyPayment.vue"
 import Pagination from "../../Components/Pagination.vue"
 import Filter from "../../Components/Filter.vue"
+import { FilterOptions } from "@/resources/types/filterOptions"
+
 type PageProps = {
     flash: { success: string },
+    filters: FilterOptions
 }
 defineProps<{ cars: Cars }>()
 

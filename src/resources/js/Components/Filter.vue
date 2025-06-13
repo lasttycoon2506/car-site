@@ -37,17 +37,9 @@
 
 <script setup lang="ts">
 import { InertiaForm, useForm } from "@inertiajs/vue3"
+import type { FilterOptions } from "@/resources/types/filterOptions"
 
-type FilterOptions = {
-    condition: string
-    priceFrom: number | null
-    priceTo: number | null
-    transmission: string
-    driveType: string
-    miFrom: number | null
-    miTo: number | null
-}
-// defineProps<{ filters: FilterOptions }>()
+defineProps<{ filters: FilterOptions }>()
 const filterOptions: InertiaForm<FilterOptions> = useForm<FilterOptions>({
     condition: "",
     priceFrom: null,
