@@ -35,25 +35,23 @@
 import { InertiaForm, useForm } from "@inertiajs/vue3"
 type FilterOptions = {
     condition: string
-    priceFrom: number
-    priceTo: number
+    priceFrom: number | null
+    priceTo: number | null
     transmission: string
     driveType: string
-    miFrom: number
-    miTo: number
+    miFrom: number | null
+    miTo: number | null
 }
+// defineProps<{ filters: FilterOptions }>()
 
 
-const carForm: InertiaForm<FilterOptions> = useForm<FilterOptions>({
-    make: "",
-    model: "",
+const filterOptions: InertiaForm<FilterOptions> = useForm<FilterOptions>({
     condition: "",
+    priceFrom: null,
+    priceTo: null,
     transmission: "",
-    drive_type: "",
-    year: 0,
-    mpg: 0,
-    miles: 0,
-    price: 0,
-    pictures: ["jkl"]
+    driveType: "",
+    miFrom: null,
+    miTo: null
 })
 </script>
