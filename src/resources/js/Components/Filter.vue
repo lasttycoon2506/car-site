@@ -1,5 +1,5 @@
 <template>
-    <form action="">
+    <form @submit.prevent="applyFilter">
         <div class="flex justify-center mt-3 mx-10">
             <select v-model="filterOptions.condition" class="dropdown">
                 <option disabled value="">Condition</option>
@@ -37,6 +37,7 @@
 
 <script setup lang="ts">
 import { InertiaForm, useForm } from "@inertiajs/vue3"
+
 type FilterOptions = {
     condition: string
     priceFrom: number | null
@@ -47,8 +48,6 @@ type FilterOptions = {
     miTo: number | null
 }
 // defineProps<{ filters: FilterOptions }>()
-
-
 const filterOptions: InertiaForm<FilterOptions> = useForm<FilterOptions>({
     condition: "",
     priceFrom: null,
@@ -58,4 +57,8 @@ const filterOptions: InertiaForm<FilterOptions> = useForm<FilterOptions>({
     miFrom: null,
     miTo: null
 })
+
+const applyFilter: () => void = () => filterOptions.get("/car", { preserveScroll: true, preserveState: true })
+
+
 </script>
