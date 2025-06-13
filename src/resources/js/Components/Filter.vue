@@ -1,30 +1,34 @@
 <template>
     <form action="">
         <div class="flex justify-center mt-3">
-            <select class="dropdown">
-                <option disabled selected>Condition</option>
-                <option value="Ok">Ok</option>
-                <option value="Good">Good</option>
-                <option value="Great">Great</option>
-                <option value="Excellent">Excellent</option>
-                <option value="Like New">Like New</option>
+            <select v-model="filterOptions.condition" class="dropdown">
+                <option disabled value="">Condition</option>
+                <option value="Ok" class="text-black">Ok</option>
+                <option value="Good" class="text-black">Good</option>
+                <option value="Great" class="text-black">Great</option>
+                <option value="Excellent" class="text-black">Excellent</option>
+                <option value="Like New" class="text-black">Like New</option>
             </select>
-            <input class="w-1/12 rounded-l-lg ms-5 text-center" type="text" placeholder="price from">
-            <input class="w-1/12 rounded-r-lg me-5 text-center" type="text" placeholder="price to">
-            <select class="dropdown me-5">
-                <option disabled selected>Transmission</option>
-                <option value="Automatic">Automatic</option>
-                <option value="Manual">Manual</option>
+            <input v-model.number="filterOptions.priceFrom" class="w-1/12 rounded-l-lg ms-5 text-center" type="text"
+                placeholder="price from">
+            <input v-model.number="filterOptions.priceTo" class="w-1/12 rounded-r-lg me-5 text-center" type="text"
+                placeholder="price to">
+            <select v-model="filterOptions.transmission" class="dropdown me-5">
+                <option disabled value="">Transmission</option>
+                <option value="Automatic" class="text-black">Automatic</option>
+                <option value="Manual" class="text-black">Manual</option>
             </select>
-            <select class="dropdown">
-                <option disabled selected>Drive Type</option>
-                <option value="FWD">FWD</option>
-                <option value="RWD">RWD</option>
-                <option value="AWD">AWD</option>
-                <option value="4WD">4WD</option>
+            <select v-model="filterOptions.driveType" class="dropdown">
+                <option disabled value="">Drive Type</option>
+                <option value="FWD" class="text-black">FWD</option>
+                <option value="RWD" class="text-black">RWD</option>
+                <option value="AWD" class="text-black">AWD</option>
+                <option value="4WD" class="text-black">4WD</option>
             </select>
-            <input class="w-1/12 rounded-l-lg ms-5 text-center" type="text" placeholder="mi. from">
-            <input class="w-1/12 rounded-r-lg me-5 text-center" type="text" placeholder="mi. to">
+            <input v-model.number="filterOptions.miFrom" class="w-1/12 rounded-l-lg ms-5 text-center" type="text"
+                placeholder="mi. from">
+            <input v-model.number="filterOptions.miTo" class="w-1/12 rounded-r-lg me-5 text-center" type="text"
+                placeholder="mi. to">
             <button type="submit" class="bg-orange-400 px-10 rounded-lg me-5">filter</button>
             <button type="reset" class="bg-red-500 px-10 rounded-lg me-5">reset</button>
         </div>
