@@ -1,7 +1,7 @@
 <template>
     <form action="">
-        <div class="flex justify-start gap-5">
-            <select>
+        <div class="flex justify-center mt-3">
+            <select class="dropdown">
                 <option disabled selected>Condition</option>
                 <option value="Ok">Ok</option>
                 <option value="Good">Good</option>
@@ -9,25 +9,24 @@
                 <option value="Excellent">Excellent</option>
                 <option value="Like New">Like New</option>
             </select>
-            <input class="w-1/12" type="text" placeholder="price from">
-            <input class="w-1/12" type="text" placeholder="price to">
-            <select>
+            <input class="w-1/12 rounded-l-lg ms-5 text-center" type="text" placeholder="price from">
+            <input class="w-1/12 rounded-r-lg me-5 text-center" type="text" placeholder="price to">
+            <select class="dropdown me-5">
                 <option disabled selected>Transmission</option>
                 <option value="Automatic">Automatic</option>
                 <option value="Manual">Manual</option>
             </select>
-            <select>
-                <option disabled>Select</option>
+            <select class="dropdown">
+                <option disabled selected>Drive Type</option>
                 <option value="FWD">FWD</option>
                 <option value="RWD">RWD</option>
                 <option value="AWD">AWD</option>
                 <option value="4WD">4WD</option>
             </select>
-            <div>year</div>
-            <div>mpg</div>
-            <div>mi</div>
-            <button type="submit">filter</button>
-            <button type="reset">reset</button>
+            <input class="w-1/12 rounded-l-lg ms-5 text-center" type="text" placeholder="mi. from">
+            <input class="w-1/12 rounded-r-lg me-5 text-center" type="text" placeholder="mi. to">
+            <button type="submit" class="bg-orange-400 px-10 rounded-lg me-5">filter</button>
+            <button type="reset" class="bg-red-500 px-10 rounded-lg me-5">reset</button>
         </div>
     </form>
 </template>
