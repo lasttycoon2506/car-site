@@ -30,7 +30,7 @@
             <input v-model.number="filterOptions.miTo" class="w-1/12 rounded-r-lg me-3 text-center" type="text"
                 placeholder="mi. to">
             <button type="submit" class="bg-orange-400 px-10 rounded-lg me-3">filter</button>
-            <button type="reset" class="bg-red-500 px-10 rounded-lg me-3">reset</button>
+            <button type="reset" @click="resetFilter" class="bg-red-500 px-10 rounded-lg me-3">reset</button>
         </div>
     </form>
 </template>
@@ -40,7 +40,6 @@ import { InertiaForm, useForm } from "@inertiajs/vue3"
 import type { FilterOptions } from "@/resources/types/filterOptions"
 
 const props = defineProps<{ filters: FilterOptions }>()
-console.log(props)
 const filterOptions: InertiaForm<FilterOptions> = useForm<FilterOptions>({
     condition: props.filters.condition ?? "",
     priceFrom: props.filters.priceFrom ?? null,
@@ -51,7 +50,18 @@ const filterOptions: InertiaForm<FilterOptions> = useForm<FilterOptions>({
     miTo: props.filters.miTo ?? null
 })
 
-const applyFilter: () => void = () => filterOptions.get("/car", { preserveScroll: true, preserveState: true })
+const applyFilter: () => void =
+    () => filterOptions.get("/car", { preserveScroll: true, preserveState: true })
 
+const resetFilter = () => {
+    filterOptions.condition = ""
+    filterOptions.priceFrom = null
+    filterOptions.priceTo = null
+    filterOptions.transmission = ""
+    filterOptions.driveType = ""
+    filterOptions.miFrom = null
+    filterOptions.miTo = null
+    applyFilter()
+}
 
 </script>
