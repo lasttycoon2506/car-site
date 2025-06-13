@@ -49,9 +49,19 @@ class Car extends Model
         )->when(
             $filters["priceTo"] ?? false,
             fn($query, $value) => $query->where("price", "<=", $value)
-        );
-
-
-        // "priceFrom", "priceTo", "transmission", "driveType", "miFrom", "miTo"
+        )->when(
+            $filters["transmission"] ?? false,
+            fn($query, $value) => $query->where("transmission", $value)
+        )->when(
+            $filters["driveType"] ?? false,
+            fn($query, $value) => $query->where("drive_type", $value)
+        )->when(
+            $filters["miFrom"] ?? false,
+            fn($query, $value) => $query->where("miles", ">=", $value)
+        )->when(
+            $filters["miTo"] ?? false,
+            fn($query, $value) => $query->where("miles", "<=", $value)
+        )
+        ;
     }
 }
