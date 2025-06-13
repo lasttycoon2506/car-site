@@ -1,6 +1,6 @@
 <template>
     <form action="">
-        <div class="flex justify-center mt-3">
+        <div class="flex justify-center mt-3 mx-10">
             <select v-model="filterOptions.condition" class="dropdown">
                 <option disabled value="">Condition</option>
                 <option value="Ok" class="text-black">Ok</option>
@@ -9,11 +9,11 @@
                 <option value="Excellent" class="text-black">Excellent</option>
                 <option value="Like New" class="text-black">Like New</option>
             </select>
-            <input v-model.number="filterOptions.priceFrom" class="w-1/12 rounded-l-lg ms-5 text-center" type="text"
-                placeholder="price from">
-            <input v-model.number="filterOptions.priceTo" class="w-1/12 rounded-r-lg me-5 text-center" type="text"
+            <input v-model.number="filterOptions.priceFrom" class="w-1/12 rounded-l-lg ms-3 pe-2 text-center"
+                type="text" placeholder="price from">
+            <input v-model.number="filterOptions.priceTo" class="w-1/12 rounded-r-lg me-3 text-center" type="text"
                 placeholder="price to">
-            <select v-model="filterOptions.transmission" class="dropdown me-5">
+            <select v-model="filterOptions.transmission" class="dropdown me-3">
                 <option disabled value="">Transmission</option>
                 <option value="Automatic" class="text-black">Automatic</option>
                 <option value="Manual" class="text-black">Manual</option>
@@ -25,12 +25,12 @@
                 <option value="AWD" class="text-black">AWD</option>
                 <option value="4WD" class="text-black">4WD</option>
             </select>
-            <input v-model.number="filterOptions.miFrom" class="w-1/12 rounded-l-lg ms-5 text-center" type="text"
+            <input v-model.number="filterOptions.miFrom" class="w-1/12 rounded-l-lg ms-3 text-center" type="text"
                 placeholder="mi. from">
-            <input v-model.number="filterOptions.miTo" class="w-1/12 rounded-r-lg me-5 text-center" type="text"
+            <input v-model.number="filterOptions.miTo" class="w-1/12 rounded-r-lg me-3 text-center" type="text"
                 placeholder="mi. to">
-            <button type="submit" class="bg-orange-400 px-10 rounded-lg me-5">filter</button>
-            <button type="reset" class="bg-red-500 px-10 rounded-lg me-5">reset</button>
+            <button type="submit" class="bg-orange-400 px-10 rounded-lg me-3">filter</button>
+            <button type="reset" class="bg-red-500 px-10 rounded-lg me-3">reset</button>
         </div>
     </form>
 </template>
