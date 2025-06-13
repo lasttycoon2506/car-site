@@ -20,7 +20,7 @@ class CarController extends Controller
             "Car/Index",
             [
                 "filters" => $request->only(["condition", "priceFrom", "priceTo", "transmission", "driveType", "miFrom", "miTo"]),
-                "cars" => Car::orderByDesc("created_at")->paginate(8)->withQueryString()
+                "cars" => Car::mostRecent()->paginate(8)->withQueryString()
             ]
         );
     }
