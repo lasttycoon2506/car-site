@@ -15,7 +15,7 @@
             <div class="mx-12">
                 <label class="label">Condition</label>
                 <select v-model="carForm.condition" class="w-1/2">
-                    <option disabled selected>Select</option>
+                    <option value="" disabled selected>Select</option>
                     <option value="Ok">Ok</option>
                     <option value="Good">Good</option>
                     <option value="Great">Great</option>
@@ -27,7 +27,7 @@
             <div class="mx-12">
                 <label class="label">Transmission</label>
                 <select v-model="carForm.transmission" class="w-1/2">
-                    <option disabled selected> Select</option>
+                    <option value="" disabled selected> Select</option>
                     <option value="automatic">Automatic</option>
                     <option value="manual">Manual</option>
                 </select>
@@ -36,7 +36,7 @@
             <div class="mx-12">
                 <label class="label">Drive Type</label>
                 <select v-model="carForm.drive_type" class="w-1/2">
-                    <option disabled selected>Select</option>
+                    <option value="" disabled selected>Select</option>
                     <option value="FWD">FWD</option>
                     <option value="RWD">RWD</option>
                     <option value="AWD">AWD</option>
