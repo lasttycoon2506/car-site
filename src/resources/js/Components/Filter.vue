@@ -32,4 +32,28 @@
 </template>
 
 <script setup lang="ts">
+import { InertiaForm, useForm } from "@inertiajs/vue3"
+type FilterOptions = {
+    condition: string
+    priceFrom: number
+    priceTo: number
+    transmission: string
+    driveType: string
+    miFrom: number
+    miTo: number
+}
+
+
+const carForm: InertiaForm<FilterOptions> = useForm<FilterOptions>({
+    make: "",
+    model: "",
+    condition: "",
+    transmission: "",
+    drive_type: "",
+    year: 0,
+    mpg: 0,
+    miles: 0,
+    price: 0,
+    pictures: ["jkl"]
+})
 </script>
