@@ -40,8 +40,18 @@ class Car extends Model
 
     public function scopeFilter(Builder $query, array $filters): Builder
     {
-        return $query->when($filters["condition"] ?? false, fn($query, $value) => $query->where("condition", $value));
+        return $query->when(
+            $filters["condition"] ?? false,
+            fn($query, $value) => $query->where("condition", $value)
+        )->when(
+            $filters["priceFrom"] ?? false,
+            fn($query, $value) => $query->where("price", ">=", $value)
+        )->when(
+            $filters["priceTo"] ?? false,
+            fn($query, $value) => $query->where("price", "<=", $value)
+        );
 
-        // "condition", "priceFrom", "priceTo", "transmission", "driveType", "miFrom", "miTo"
+
+        // "priceFrom", "priceTo", "transmission", "driveType", "miFrom", "miTo"
     }
 }

@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
         Car::factory()->create([
             'make' => 'chevrolet',
             'model' => 'camaro',
-            'condition' => 'average',
+            'condition' => 'ok',
             'transmission' => 'manual',
             'drive_type' => 'awd',
             'year' => 1975,
@@ -145,7 +145,7 @@ class DatabaseSeeder extends Seeder
         Car::factory()->create([
             'make' => 'audi',
             'model' => 'a7',
-            'condition' => 'average',
+            'condition' => 'ok',
             'transmission' => 'automatic',
             'drive_type' => 'rwd',
             'year' => 2010,
