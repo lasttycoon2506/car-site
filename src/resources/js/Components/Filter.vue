@@ -40,6 +40,7 @@ import { InertiaForm, useForm } from "@inertiajs/vue3"
 import type { FilterOptions } from "@/resources/types/filterOptions"
 
 const props = defineProps<{ filters: FilterOptions }>()
+console.log(props)
 const filterOptions: InertiaForm<FilterOptions> = useForm<FilterOptions>({
     condition: props.filters.condition ?? "",
     priceFrom: props.filters.priceFrom ?? null,

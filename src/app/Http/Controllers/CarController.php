@@ -19,8 +19,8 @@ class CarController extends Controller
         return inertia(
             "Car/Index",
             [
-                "filters" => $request->only(["priceFrom", "priceTo", "transmission", "driveType", "miFrom", "miTo"]),
-                "cars" => Car::orderByDesc("created_at")->paginate(8)
+                "filters" => $request->only(["condition", "priceFrom", "priceTo", "transmission", "driveType", "miFrom", "miTo"]),
+                "cars" => Car::orderByDesc("created_at")->paginate(8)->withQueryString()
             ]
         );
     }
