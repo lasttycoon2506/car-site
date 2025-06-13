@@ -37,4 +37,11 @@ class Car extends Model
     {
         return $query->orderByDesc("created_at");
     }
+
+    public function scopeFilter(Builder $query, array $filters): Builder
+    {
+        return $query->when($filters["condition"] ?? false, fn($query, $value) => $query->where("condition", $value));
+
+        // "condition", "priceFrom", "priceTo", "transmission", "driveType", "miFrom", "miTo"
+    }
 }

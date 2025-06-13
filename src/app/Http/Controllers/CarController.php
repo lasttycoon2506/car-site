@@ -16,11 +16,14 @@ class CarController extends Controller
 
     public function index(Request $request)
     {
+
+        $filters = $request->only(["condition", "priceFrom", "priceTo", "transmission", "driveType", "miFrom", "miTo"]);
+
         return inertia(
             "Car/Index",
             [
-                "filters" => $request->only(["condition", "priceFrom", "priceTo", "transmission", "driveType", "miFrom", "miTo"]),
-                "cars" => Car::mostRecent()->paginate(8)->withQueryString()
+                "filters" => $filters,
+                "cars" => Car::mostRecent()->filter($filters)->paginate(8)->withQueryString()
             ]
         );
     }
