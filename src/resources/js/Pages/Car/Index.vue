@@ -51,8 +51,13 @@
             </CarCard>
         </div>
     </div>
-    <div v-if="cars.data.length" class="flex justify-center mt-5 mb-5">
-        <Pagination :links="cars.links" />
+    <div v-if="cars.data.length" class="flex flex-col items-center mt-5 mb-5">
+        <div class="mb-3">
+            <span class="font-semibold">{{ props.cars.total }}</span> cars
+        </div>
+        <div>
+            <Pagination :links="cars.links" />
+        </div>
     </div>
 </template>
 
