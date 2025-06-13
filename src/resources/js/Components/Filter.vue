@@ -39,15 +39,15 @@
 import { InertiaForm, useForm } from "@inertiajs/vue3"
 import type { FilterOptions } from "@/resources/types/filterOptions"
 
-defineProps<{ filters: FilterOptions }>()
+const props = defineProps<{ filters: FilterOptions }>()
 const filterOptions: InertiaForm<FilterOptions> = useForm<FilterOptions>({
-    condition: "",
-    priceFrom: null,
-    priceTo: null,
-    transmission: "",
-    driveType: "",
-    miFrom: null,
-    miTo: null
+    condition: props.filters.condition ?? "",
+    priceFrom: props.filters.priceFrom ?? null,
+    priceTo: props.filters.priceTo ?? null,
+    transmission: props.filters.transmission ?? "",
+    driveType: props.filters.driveType ?? "",
+    miFrom: props.filters.miFrom ?? null,
+    miTo: props.filters.miTo ?? null
 })
 
 const applyFilter: () => void = () => filterOptions.get("/car", { preserveScroll: true, preserveState: true })

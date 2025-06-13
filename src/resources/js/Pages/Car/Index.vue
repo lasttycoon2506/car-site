@@ -2,7 +2,7 @@
     <div v-if="alertMsg">
         <Alert :success="alertMsg" />
     </div>
-    <Filter></Filter>
+    <Filter :filters="props.filters"></Filter>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 px-10 py-3">
         <div v-for="car in cars.data" :key="car.id">
             <CarCard>
@@ -70,9 +70,11 @@ import { FilterOptions } from "@/resources/types/filterOptions"
 
 type PageProps = {
     flash: { success: string },
-    filters: FilterOptions
 }
-defineProps<{ cars: Cars }>()
+const props = defineProps<{
+    cars: Cars,
+    filters: FilterOptions
+}>()
 
 const page = usePage<PageProps>()
 const alertMsg: ComputedRef<string> = computed(() => page.props.flash?.success)
