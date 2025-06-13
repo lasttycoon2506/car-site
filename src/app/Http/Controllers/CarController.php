@@ -14,11 +14,14 @@ class CarController extends Controller
         $this->authorizeResource(Car::class, "car");
     }
 
-    public function index()
+    public function index(Request $request)
     {
         return inertia(
             "Car/Index",
-            ["cars" => Car::orderByDesc("created_at")->paginate(8)]
+            [
+                "filters" => $request->only(["priceFrom", "priceTo", "transmission", "driveType", "miFrom", "miTo"]),
+                "cars" => Car::orderByDesc("created_at")->paginate(8)
+            ]
         );
     }
 
