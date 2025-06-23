@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\UserCarsController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -21,4 +22,8 @@ Route::resource("user", UserController::class)->only(["create", "store"]);
 
 Route::resource("user/cars", UserCarsController::class)
     ->only("index")
+    ->middleware("auth");
+
+Route::resource("user/cars/img-upload", ImageUploadController::class)
+    ->only("store")
     ->middleware("auth");

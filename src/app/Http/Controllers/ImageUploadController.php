@@ -9,7 +9,7 @@ use Cloudinary\Api\Upload\UploadApi;
 
 class ImageUploadController extends Controller
 {
-    public function upload(Request $request)
+    public function store(Request $request)
     {
         // Configure an instance of your Cloudinary cloud
         Configuration::instance(env("CLOUDINARY_URL"));
