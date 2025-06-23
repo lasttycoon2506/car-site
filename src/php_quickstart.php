@@ -1,9 +1,5 @@
 <html lang="HTML5">
 
-<head>
-    <title>PHP Quick Start</title>
-</head>
-
 <body>
     <?php
 
@@ -11,23 +7,28 @@
 
     // Use the Configuration class 
     use Cloudinary\Configuration\Configuration;
-    // Use the Resize transformation group and the ImageTag class
-    use Cloudinary\Transformation\Resize;
-    use Cloudinary\Transformation\Background;
-    use Cloudinary\Tag\ImageTag;
 
     // Configure an instance of your Cloudinary cloud
-    Configuration::instance(env("CLOUDINARY_URL"));
+    Configuration::instance(env(("CLOUDINARY_URL")));
 
-    // Create the image tag with the transformed image
-    $imgtag = (new ImageTag('d97fg4aoolyolinjvbs0'))
-        ->resize(
-            Resize::pad()
-                ->width(100)
-                ->height(100)
-                ->background(Background::predominant())
-        );
+    // Use the UploadApi class for uploading assets
+    use Cloudinary\Api\Upload\UploadApi;
 
-    echo $imgtag;
-// The code above generates an HTML image tag similar to the following:
-//  <img src="https://res.cloudinary.com/demo/image/upload/b_auto:predominant,c_pad,h_400,w_400/flower_sample">
+    // Upload the image
+    $upload = new UploadApi();
+    echo '<pre>';
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
+        try {
+            echo json_encode(
+                $upload->upload($file, [
+                    'public_id' => 'flower_sample',
+                    'use_filename' => true,
+                    'overwrite' => true
+                ]),
+                JSON_PRETTY_PRINT
+            );
+            echo '</pre>';
+        } catch (Exception $e) {
+            echo 'Upload failed: ' . $e->getMessage();
+        }
+    }
