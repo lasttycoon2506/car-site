@@ -12,8 +12,7 @@ class UserCarsController extends Controller
     {
         return inertia(
             "UserCars/Index",
-            ["userCars" => Auth::user()->cars]
-
+            ["userCars" => Auth::user()->cars()->paginate(8)]
         );
     }
 }

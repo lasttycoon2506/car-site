@@ -11,7 +11,7 @@
             </Link>
         </div>
     </div>
-    <div v-if="cars.data.length" class="flex flex-col items-center mt-5 mb-5">
+    <div v-if="cars.data.length" class="flex flex-col items-center my-10">
         <div class="mb-3">
             <span class="font-semibold">{{ props.cars.total }}</span> cars
         </div>
