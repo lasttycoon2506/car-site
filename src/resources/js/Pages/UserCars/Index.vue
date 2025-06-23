@@ -1,4 +1,7 @@
 <template>
+    <div v-if="alertMsg">
+        <Alert :success="alertMsg" />
+    </div>
     <h1 class="text-shadow-lg font-bold text-center text-4xl mt-5 mb-8">Your Cars</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-10 my-3">
         <div v-for="car in userCars.data">
@@ -37,11 +40,18 @@
 </template>
 
 <script setup lang="ts">
-import { Link } from '@inertiajs/vue3';
+import { Link, usePage } from '@inertiajs/vue3';
 import PriceFormatter from '../../Components/PriceFormatter.vue';
 import { Cars } from '@/resources/types/cars';
 import Pagination from '../../Components/Pagination.vue';
+import { computed, ComputedRef } from 'vue';
+import Alert from '../../Components/Alert.vue';
+
+type PageProps = {
+    flash: { success: string },
+}
 
 defineProps<{ userCars: Cars }>()
-
+const page = usePage<PageProps>()
+const alertMsg: ComputedRef<string> = computed(() => page.props.flash?.success)
 </script>
