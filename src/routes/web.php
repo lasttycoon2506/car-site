@@ -19,6 +19,6 @@ Route::delete("logout", [AuthController::class, "destroy"])->name("logout");
 
 Route::resource("user", UserController::class)->only(["create", "store"]);
 
-Route::prefix("user")->name("user.")->middleware("auth")->group(function () {
-    Route::resource("cars", UserCarsController::class);
-});
+Route::resource("user/cars", UserCarsController::class)
+    ->only("index")
+    ->middleware("auth");
