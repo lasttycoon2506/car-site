@@ -1,4 +1,4 @@
-import type { Car } from "./car"; // Update the path as needed
+import type { Car } from "./car";
 import { Link } from "./link";
 
 export type Cars = {
