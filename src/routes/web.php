@@ -24,6 +24,5 @@ Route::resource("user/cars", UserCarsController::class)
     ->only("index")
     ->middleware("auth");
 
-Route::resource("user/cars/img-upload", ImageUploadController::class)
-    ->only("store")
+Route::post("user/cars/img-upload", [ImageUploadController::class, "store"])
     ->middleware("auth");
