@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\UserCarsController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,7 @@ Route::post("login", [AuthController::class, "store"])->name("login.store");
 Route::delete("logout", [AuthController::class, "destroy"])->name("logout");
 
 Route::resource("user", UserController::class)->only(["create", "store"]);
+
+Route::resource("user/cars", UserCarsController::class)
+    ->only("create", "store", "edit", "update", "destroy")
+    ->middleware("auth");
