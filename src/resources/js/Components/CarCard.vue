@@ -27,17 +27,6 @@
             <MonthlyPayment :car="car" />
             <span> &nbsp/ month</span>
         </div>
-        <!-- <div>
-                    <Link :href="`/car/${car.id}/edit`">
-                    Edit
-                    </Link>
-                </div>
-                <div>
-                    <Link :href="`/car/${car.id}`" method="delete">
-                    Delete
-                    </Link>
-                </div> -->
-        <slot />
     </div>
 </template>
 

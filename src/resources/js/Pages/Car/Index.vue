@@ -3,7 +3,7 @@
         <Alert :success="alertMsg" />
     </div>
     <Filter :filters="props.filters"></Filter>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 px-10 py-3">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mx-10 my-3">
         <div v-for="car in cars.data" :key="car.id">
             <Link :href="`/car/${car.id}`">
             <CarCard :car=car>
