@@ -1,5 +1,5 @@
 <template>
-    <h1 class="flex text-shadow-lg font-bold justify-center text-4xl mt-5">Sell Your Car!</h1>
+    <h1 class="text-shadow-lg font-bold text-center text-4xl mt-5">Sell Your Car!</h1>
     <form @submit.prevent="createCar">
         <div class="grid grid-cols-2 mx-12 my-5 bg-slate-400 rounded-lg py-5 px-12">
             <div class="mx-12">

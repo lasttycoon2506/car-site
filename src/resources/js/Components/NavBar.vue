@@ -6,7 +6,7 @@
                 <div class="h-16 w-16 bg-cover bg-center rounded-[2vw] bg-[url('/mustang.jpg')] px-10 me-3 my-1 ms-1">
                 </div>
                 </Link>
-                <div class="font-bold shadow-white text-3xl text-red-600 me-12">
+                <div class="font-bold shadow-white text-3xl text-red-600 ms-2 me-12">
                     <Link href="/car"> Carzies
                     </Link>
                 </div>
