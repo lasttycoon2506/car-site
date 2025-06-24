@@ -21,7 +21,6 @@ return new class extends Migration
             $table->unsignedTinyInteger("mpg");
             $table->unsignedInteger("miles");
             $table->unsignedInteger("price");
-            $table->json('pictures');
         });
     }
 

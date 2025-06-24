@@ -26,7 +26,7 @@ class CarFactory extends Factory
             "mpg" => fake()->numberBetween(5, 75),
             "miles" => fake()->numberBetween(1, 200_000),
             "price" => fake()->numberBetween(5_000, 300_000),
-            "pictures" => "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1737481409/zk5yvhuwwlpqruoiqayw.jpg"
+            // "pictures" => "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1737481409/zk5yvhuwwlpqruoiqayw.jpg"
         ];
     }
 }

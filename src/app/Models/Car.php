@@ -21,11 +21,6 @@ class Car extends Model
         'mpg',
         'miles',
         'price',
-        'pictures'
-    ];
-
-    protected $casts = [
-        'pictures' => 'array',
     ];
 
     public function owner(): BelongsTo

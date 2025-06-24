@@ -66,7 +66,7 @@
             </div>
             <div class="mx-12">
                 <label class="label">Pictures</label>
-                <input type="file" multiple @change="handleFileChange">
+                <input type="file" @change="handleFileChange" accept="image/*" />
                 <div v-if="carForm.errors.pictures">{{ carForm.errors.pictures }}</div>
             </div>
             <div class="col-span-2 justify-self-center">
@@ -97,10 +97,7 @@ const carForm: InertiaForm<Car> = useForm<Car>({
 const createCar: () => void = () => carForm.post("/car")
 
 function handleFileChange(event: Event) {
-    const target = event.target as HTMLInputElement;
-    if (target.files) {
-        // Convert FileList to Array and store in carForm.pictures
-        carForm.pictures = Array.from(target.files);
-    }
+
 }
+
 </script>
