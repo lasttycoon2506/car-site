@@ -24,7 +24,7 @@ class AuthController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended("/car");
+        return redirect()->intended("/cars");
     }
 
     public function destroy(Request $request)
@@ -33,6 +33,6 @@ class AuthController extends Controller
         $request->session()->regenerate();
         $request->session()->regenerateToken();
 
-        return redirect()->route("car.index");
+        return redirect()->route("cars.index");
     }
 }
