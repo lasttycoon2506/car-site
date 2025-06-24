@@ -84,7 +84,7 @@ class UserCarsController extends Controller
             "price" => "required|integer|min:10000|max:100000",
         ]));
 
-        return redirect()->route("user.cars.index")->with("success", "car edited!");
+        return redirect()->route("seller.cars.index")->with("success", "car edited!");
     }
 
 
@@ -92,6 +92,6 @@ class UserCarsController extends Controller
     {
         $car->delete();
 
-        return redirect()->route("user.cars.index")->with("success", "car deleted!");
+        return redirect()->route("seller.cars.index")->with("success", "car deleted!");
     }
 }
