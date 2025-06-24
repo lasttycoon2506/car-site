@@ -47,10 +47,9 @@
                 <input v-model="carForm.price" type="text">
                 <div v-if="carForm.errors.price" class="input-error">{{ carForm.errors.price }}</div>
             </div>
-            <div class="mx-12">
-                <label class="label">Pictures</label>
-                <input type="file" multiple @change="handleFileChange">
-                <div v-if="carForm.errors.pictures">{{ carForm.errors.pictures }}</div>
+            <div class="w-1/4 mx-12 bg-slate-50 rounded-md mt-5 text-center self-center font-medium py-2">
+                <Link href="">Pictures
+                </Link>
             </div>
             <div class="col-span-2 justify-self-center">
                 <button type="submit" class="rounded-full bg-amber-600 py-3 px-12 mt-10 mb-2 font-semibold">Update!
@@ -62,7 +61,7 @@
 
 <script setup lang="ts">
 import { Car } from "@/resources/types/car";
-import { InertiaForm, useForm } from "@inertiajs/vue3"
+import { InertiaForm, Link, useForm } from "@inertiajs/vue3"
 
 const props = defineProps<{ car: Car }>()
 const carForm: InertiaForm<Car> = useForm<Car>({
