@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::resource("cars", CarController::class)
-    ->only("index");
+    ->only("index", "show");
 //     ->middleware("auth");
 // Route::resource("car", CarController::class)
 //     ->except("create", "store", "edit", "update", "destroy");
