@@ -12,7 +12,7 @@ class ImageUploadController extends Controller
     public function create(Car $car)
     {
         return inertia(
-            "Car/Create",
+            "Seller/CarImage/Create",
             ["car" => $car]
         );
     }
@@ -41,14 +41,15 @@ class ImageUploadController extends Controller
         //         echo 'Upload failed: ' . $e->getMessage();
         //     }
         // }
-        $request->validate([
-            'image' => 'required|image|max:5120', // 5MB max
-        ]);
-        // Upload to Cloudinary
-        $cloudinary = new Cloudinary(env("CLOUDINARY_URL"));
-        $uploadResult = $cloudinary->uploadApi()->upload($request->file('image')->getRealPath());
-        $uploadedFileUrl = $uploadResult['secure_url'] ?? null;
+        // $request->validate([
+        //     'image' => 'required|image|max:5120', // 5MB max
+        // ]);
+        // // Upload to Cloudinary
+        // $cloudinary = new Cloudinary(env("CLOUDINARY_URL"));
+        // $uploadResult = $cloudinary->uploadApi()->upload($request->file('image')->getRealPath());
+        // $uploadedFileUrl = $uploadResult['secure_url'] ?? null;
 
-        return response()->json(['url' => $uploadedFileUrl]);
+        // return response()->json(['url' => $uploadedFileUrl]);
+        dd("chacha");
     }
 }
