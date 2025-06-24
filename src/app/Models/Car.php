@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Car extends Model
 {
@@ -31,6 +32,11 @@ class Car extends Model
     public function scopeMostRecent(Builder $query): Builder
     {
         return $query->orderByDesc("created_at");
+    }
+
+    public function images(): HasMany
+    {
+        return $this->hasMany(CarImage::class);
     }
 
     public function scopeFilter(Builder $query, array $filters): Builder
