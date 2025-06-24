@@ -21,11 +21,4 @@ class CarController extends Controller
             ]
         );
     }
-
-    public function create()
-    {
-        return inertia(
-            "Car/Create"
-        );
-    }
 }
