@@ -20,9 +20,7 @@ Route::delete("logout", [AuthController::class, "destroy"])->name("logout");
 
 Route::resource("user", UserController::class)->only(["create", "store"]);
 
-Route::resource("user/cars", UserCarsController::class)
-    ->only("index")
-    ->middleware("auth");
-
-Route::post("user/cars/img-upload", [ImageUploadController::class, "store"])
-    ->middleware("auth");
+Route::prefix("seller")->name("seller.")->middleware("auth")->group(function () {
+    Route::resource("/cars", UserCarsController::class)->only("index");
+    Route::resource("car.image", ImageUploadController::class)->only("create", "store");
+});
