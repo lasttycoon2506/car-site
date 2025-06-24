@@ -17,7 +17,7 @@ class UserCarsController extends Controller
     public function index()
     {
         return inertia(
-            "UserCars/Index",
+            "SellerCars/Index",
             ["userCars" => Auth::user()->cars()->paginate(8)]
         );
     }

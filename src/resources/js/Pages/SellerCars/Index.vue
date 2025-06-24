@@ -19,10 +19,10 @@
                     </div>
                 </div>
                 <div class="flex justify-center gap-4">
-                    <Link :href="`/car/${car.id}/edit`">
+                    <Link :href="`/seller/cars/${car.id}/edit`">
                     <button class="rounded-lg bg-lime-500 py-2 px-6 font-bold hover:bg-lime-900">Edit</button>
                     </Link>
-                    <Link :href="`/car/${car.id}`" method="delete">
+                    <Link :href="`/seller/cars/${car.id}`" method="delete">
                     <button class="rounded-lg bg-red-600 py-2 px-6 font-bold hover:bg-red-900">Delete</button>
                     </Link>
                 </div>
