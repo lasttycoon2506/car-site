@@ -50,6 +50,13 @@ class ImageUploadController extends Controller
         // $uploadedFileUrl = $uploadResult['secure_url'] ?? null;
 
         // return response()->json(['url' => $uploadedFileUrl]);
-        dd("chacha");
+        if ($request->hasFile("images")) {
+            $cloudinary = new Cloudinary(env("CLOUDINARY_URL"));
+            foreach ($request->file("images") as $file) {
+                $uploadResult = $cloudinary->uploadApi()->upload($file->getRealPath());
+                $uploadedFileUrl = $uploadResult['secure_url'] ?? null;
+            }
+        }
+        dd($request);
     }
 }
