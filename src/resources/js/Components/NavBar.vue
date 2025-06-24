@@ -10,8 +10,8 @@
                     <Link href="/car"> Carzies
                     </Link>
                 </div>
-                <div class="text-white font-semibold ms-12">
-                    <Link href="/user/cars">Your Cars
+                <div v-if="user" class="text-white font-semibold ms-12">
+                    <Link href="/seller/cars">Your Cars
                     </Link>
                 </div>
             </div>
