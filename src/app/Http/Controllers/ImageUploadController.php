@@ -25,8 +25,10 @@ class ImageUploadController extends Controller
                 $uploadResult = $cloudinary->uploadApi()->upload($file->getRealPath());
                 $uploadedFileUrl = $uploadResult['secure_url'] ?? null;
 
-                $car->images()->save(new CarImage(["file" => $uploadedFileUrl]));
+                $car->images()->save(new CarImage(["file_url" => $uploadedFileUrl]));
             }
+
+            return redirect()->back()->with("success", "image(s) uploaded!");
         }
     }
 }

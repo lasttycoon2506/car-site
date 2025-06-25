@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->string("file");
+            $table->string("file_url");
 
             $table->foreignIdFor(Car::class)->constrained("cars");
         });

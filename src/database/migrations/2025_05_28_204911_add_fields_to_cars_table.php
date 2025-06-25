@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropColumns("cars", ["make", "model", "condition", "transmission", "drive_type", "year", "mpg", "miles", "price", "pictures"]);
+        Schema::dropColumns("cars", ["make", "model", "condition", "transmission", "drive_type", "year", "mpg", "miles", "price"]);
     }
 };
