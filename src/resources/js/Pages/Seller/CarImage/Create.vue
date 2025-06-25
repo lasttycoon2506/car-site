@@ -35,12 +35,13 @@ const uploadImages: () => void =
 const reset: () => void =
     () => imageForm.reset()
 
-function addFiles(event: Event): void {
-    const target = event.target as HTMLInputElement;
-    if (target.files) {
-        for (const file of target.files) {
-            imageForm.images.push(file)
+const addFiles: (event: Event) => void =
+    (event: Event) => {
+        const target = event.target as HTMLInputElement;
+        if (target.files) {
+            for (const file of target.files) {
+                imageForm.images.push(file)
+            }
         }
     }
-}
 </script>
