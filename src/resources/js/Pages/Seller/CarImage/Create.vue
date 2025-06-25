@@ -6,14 +6,21 @@
         <span>Uploading image(s), please wait...</span>
     </div>
     <div class="border border-black w-3/4 mt-10 ms-10 rounded-md py-5 px-5">
-        <header class=" text-gray-600 mb-2">Upload Pics.</header>
+        <header class=" text-gray-600 mb-2">Upload Pictures</header>
         <form @submit.prevent="uploadImages">
             <input type="hidden" name="_token" :value="csrf" />
-            <input type="file" ref="fileInput" multiple @input="addFiles"
-                class="file:border-0 file:py-2 file:px-3 file:me-3 rounded-md border border-gray-300 me-12 w-3/5">
-            <button type="submit" :disabled="!fileExists"
-                class=" bg-lime-500 disabled:opacity-30 rounded-lg py-3 px-7 me-10 font-semibold">submit</button>
-            <button type="reset" @click="reset" class="bg-red-600 rounded-lg py-3 px-8 font-semibold">reset</button>
+            <div class="flex justify-between">
+                <div class="w-3/5">
+                    <input type="file" ref="fileInput" multiple @input="addFiles"
+                        class="file:border-0 file:py-2 file:px-3 file:me-3 rounded-md border border-gray-300 w-full">
+                </div>
+                <div>
+                    <button type="submit" :disabled="!fileExists"
+                        class=" bg-lime-500 disabled:opacity-30 rounded-lg py-3 px-10 me-10 font-semibold">submit</button>
+                    <button type="reset" @click="reset"
+                        class="bg-red-600 rounded-lg py-3 px-11 font-semibold">reset</button>
+                </div>
+            </div>
         </form>
     </div>
 </template>
