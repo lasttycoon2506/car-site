@@ -11,7 +11,7 @@ class CarImage extends Model
     use HasFactory;
 
     protected $fillable = [
-        "file"
+        "file_url"
     ];
 
     public function car(): BelongsTo
