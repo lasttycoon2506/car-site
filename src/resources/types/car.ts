@@ -1,3 +1,5 @@
+import type { Image } from "./image";
+
 export type Car = {
     id?: number;
     make: string;
@@ -9,5 +11,5 @@ export type Car = {
     mpg: number;
     miles: number;
     price: number;
-    // pictures: string[];
+    images: Image[];
 };
