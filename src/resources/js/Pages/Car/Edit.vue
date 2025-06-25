@@ -52,7 +52,7 @@
                 </Link>
             </div>
             <div class="col-span-2 justify-self-center">
-                <button type="submit" class="rounded-full bg-amber-600 py-3 px-12 mt-10 mb-2 font-semibold">Update!
+                <button type="submit" class="rounded-full bg-lime-500 py-3 px-12 mt-10 mb-2 font-semibold">Update!
                 </button>
             </div>
         </div>

@@ -5,8 +5,9 @@
     <form @submit.prevent="uploadImages">
         <input type="hidden" name="_token" :value="csrf" />
         <input type="file" multiple @input="addFiles">
-        <button type="submit" :disabled="!fileExists">submit</button>
-        <button type="reset" @click="reset">reset</button>
+        <button type="submit" :disabled="!fileExists"
+            class=" bg-lime-500 disabled:opacity-20 rounded-lg py-3 px-7">submit</button>
+        <button type="reset" @click="reset" class="bg-red-600 rounded-lg py-3 px-7">reset</button>
     </form>
 </template>
 
