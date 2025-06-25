@@ -21,4 +21,13 @@ class CarController extends Controller
             ]
         );
     }
+
+    public function show(Car $car)
+    {
+        $car->load(["images"]);
+        return inertia(
+            "Car/Show",
+            ["car" => $car]
+        );
+    }
 }

@@ -52,15 +52,6 @@ class UserCarsController extends Controller
     }
 
 
-    public function show(Car $car)
-    {
-        return inertia(
-            "Car/Show",
-            ["car" => $car]
-        );
-    }
-
-
     public function edit(Car $car)
     {
         return inertia(

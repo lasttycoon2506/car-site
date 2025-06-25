@@ -31,9 +31,9 @@
             </div>
         </div>
         <div class="col-span-2">
-            <img :src="mainImage" class="rounded-xl border border-black max-h-80 mb-4" />
+            <img :src="mainImage.file_url" class="rounded-xl border border-black max-h-80 mb-4" />
             <div class="flex gap-2">
-                <img v-for="(pic, idx) in car.pictures" :key="idx" :src="pic"
+                <img v-for="(pic, idx) in car.images" :key="idx" :src="pic.file_url"
                     class="rounded cursor-pointer w-20 h-20 object-cover border-2"
                     :class="{ 'border-black': mainImage === pic }" @click="mainImage = pic" />
             </div>
@@ -62,7 +62,7 @@ import PriceFormatter from '../../Components/PriceFormatter.vue';
 import { useMonthlyPayment } from '../../Composables/useMonthlyPayment';
 
 const props = defineProps<{ car: Car }>()
-const mainImage: Ref<string> = ref(props.car.pictures[0])
+const mainImage = ref(props.car.images[0])
 const interestRate: Ref<number> = ref(3)
 const duration: Ref<number> = ref(5)
 const monthlyPayment: ComputedRef<number> = useMonthlyPayment(props.car.price, interestRate, duration)
