@@ -13,6 +13,7 @@ declare global {
 }
 
 createInertiaApp({
+    progress: false,
     resolve: (name: string) => {
         const pages: Record<string, DefineComponent> = import.meta.glob(
             "./Pages/**/*.vue",

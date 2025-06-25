@@ -20,6 +20,7 @@ import Alert from '../../../Components/Alert.vue';
 import { Car } from '@/resources/types/car';
 import { InertiaForm, useForm, usePage } from '@inertiajs/vue3';
 import { computed, ComputedRef } from 'vue';
+import Inertia
 
 type PageProps = {
     flash: { success: string },
@@ -33,6 +34,12 @@ const page = usePage<PageProps>()
 
 const alertMsg: ComputedRef<string> = computed(() => page.props.flash?.success)
 const fileExists: ComputedRef<boolean> = computed(() => imageForm.images.length > 0)
+
+Inertia.on(type: "progress", (event) => {
+    if (event.detail.progress.percentage) {
+        NProgress.set((event.detail.progress.percentage / 100) * .9)
+    }
+})
 
 const uploadImages: () => void =
     () => imageForm.post(
