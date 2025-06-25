@@ -23,14 +23,13 @@
             </div>
         </form>
     </div>
-    <div>
-        <header class=" text-gray-600 mb-2">Uploaded Pictures</header>
-        <div class="grid grid-cols-5">
+    <div class="border border-gray-300 rounded-lg mt-4 mx-10 my-10 py-5 px-5">
+        <header class=" text-gray-600 mb-4">Uploaded Pictures</header>
+        <div class="grid grid-cols-5 gap-5">
             <div v-for="image in car.images" :key="car.id">
-                <img :src="image.file_url">
+                <img :src="image.file_url" class="rounded-lg">
             </div>
         </div>
-
     </div>
 </template>
 
