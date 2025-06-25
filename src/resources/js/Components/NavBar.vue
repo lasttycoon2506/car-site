@@ -43,6 +43,7 @@ import { computed, ComputedRef } from 'vue';
 type PageProps = {
     user: User
 }
+
 const page = usePage<PageProps>()
 
 const user: ComputedRef<User> = computed(() => page.props.user)

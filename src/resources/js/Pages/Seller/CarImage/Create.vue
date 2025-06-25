@@ -30,6 +30,7 @@ const props = defineProps<{ car: Car }>()
 const imageForm: InertiaForm<{ images: File[]; }> =
     useForm<{ images: File[] }>({ images: [] })
 const page = usePage<PageProps>()
+
 const alertMsg: ComputedRef<string> = computed(() => page.props.flash?.success)
 const fileExists: ComputedRef<boolean> = computed(() => imageForm.images.length > 0)
 

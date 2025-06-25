@@ -64,6 +64,7 @@ import { Car } from "@/resources/types/car";
 import { InertiaForm, Link, useForm } from "@inertiajs/vue3"
 
 const props = defineProps<{ car: Car }>()
+
 const carForm: InertiaForm<Car> = useForm<Car>({
     make: props.car.make,
     model: props.car.model,

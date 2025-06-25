@@ -13,5 +13,4 @@ const formattedPrice: ComputedRef<string> = computed(() => props.price.toLocaleS
         currency: "USD",
         maximumFractionDigits: 0
     }))
-
 </script>

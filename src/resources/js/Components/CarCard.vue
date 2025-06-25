@@ -36,5 +36,4 @@ import PriceFormatter from './PriceFormatter.vue';
 import MonthlyPayment from './MonthlyPayment.vue';
 
 defineProps<{ car: Car }>()
-
 </script>

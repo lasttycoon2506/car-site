@@ -53,5 +53,6 @@ type PageProps = {
 
 defineProps<{ userCars: Cars }>()
 const page = usePage<PageProps>()
+
 const alertMsg: ComputedRef<string> = computed(() => page.props.flash?.success)
 </script>

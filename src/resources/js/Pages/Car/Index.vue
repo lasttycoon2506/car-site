@@ -26,7 +26,6 @@ import Pagination from "../../Components/Pagination.vue"
 import Filter from "../../Components/Filter.vue"
 import { FilterOptions } from "@/resources/types/filterOptions"
 
-
 const props = defineProps<{
     cars: Cars,
     filters: FilterOptions

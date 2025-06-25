@@ -8,6 +8,6 @@
 import type { Link as LinkType } from '@/resources/types/link';
 import { Link } from "@inertiajs/vue3"
 
-const props = defineProps<{ links: LinkType[] }>()
+defineProps<{ links: LinkType[] }>()
 
 </script>
