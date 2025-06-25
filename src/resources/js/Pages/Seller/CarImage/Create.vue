@@ -2,13 +2,17 @@
     <div v-if="alertMsg">
         <Alert :success="alertMsg" />
     </div>
-    <form @submit.prevent="uploadImages">
-        <input type="hidden" name="_token" :value="csrf" />
-        <input type="file" multiple @input="addFiles">
-        <button type="submit" :disabled="!fileExists"
-            class=" bg-lime-500 disabled:opacity-20 rounded-lg py-3 px-7">submit</button>
-        <button type="reset" @click="reset" class="bg-red-600 rounded-lg py-3 px-7">reset</button>
-    </form>
+    <div class="border border-black w-1/2 mt-10 ms-10 rounded-md py-5 px-5">
+        <header class=" text-gray-600 mb-2">Upload Pics.</header>
+        <form @submit.prevent="uploadImages">
+            <input type="hidden" name="_token" :value="csrf" />
+            <input type="file" multiple @input="addFiles"
+                class="file:border-0 file:py-2 file:px-3 file:me-3 rounded-md border border-gray-300 me-12">
+            <button type="submit" :disabled="!fileExists"
+                class=" bg-lime-500 disabled:opacity-20 rounded-lg py-3 px-7 me-3">submit</button>
+            <button type="reset" @click="reset" class="bg-red-600 rounded-lg py-3 px-8">reset</button>
+        </form>
+    </div>
 </template>
 
 <script setup lang="ts">
