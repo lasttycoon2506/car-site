@@ -5,13 +5,13 @@
     <form @submit.prevent="uploadImages">
         <input type="hidden" name="_token" :value="csrf" />
         <input type="file" multiple @input="addFiles">
-        <button type="submit">submit</button>
+        <button type="submit" :disabled="!fileExists">submit</button>
         <button type="reset" @click="reset">reset</button>
     </form>
 </template>
 
 <script setup lang="ts">
-import Alert from '@/resources/js/Components/Alert.vue';
+import Alert from '../../../Components/Alert.vue';
 import { Car } from '@/resources/types/car';
 import { InertiaForm, useForm, usePage } from '@inertiajs/vue3';
 import { computed, ComputedRef } from 'vue';
@@ -26,6 +26,7 @@ const imageForm: InertiaForm<{ images: File[]; }> =
     useForm<{ images: File[] }>({ images: [] })
 const page = usePage<PageProps>()
 const alertMsg: ComputedRef<string> = computed(() => page.props.flash?.success)
+const fileExists: ComputedRef<boolean> = computed(() => imageForm.images.length > 0)
 
 const uploadImages: () => void =
     () => imageForm.post(
