@@ -1,6 +1,6 @@
 <template>
     <div class="border border-grey-500 shadow-2xl rounded-lg px-3 py-3">
-        <!-- <img :src="`${car.pictures[0]}`" class="rounded-lg border border-black"> -->
+        <img :src="`${car.images[0].file_url}`" class="rounded-lg border border-black">
         <div class="flex justify-evenly">
             <span class="font-bold">{{ car.make }}</span> <span class="text-gray-500">| </span>
             <span class="font-bold">{{ car.model }}</span> <span class="text-gray-500">| </span>
