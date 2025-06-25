@@ -11,6 +11,8 @@ class ImageUploadController extends Controller
 {
     public function create(Car $car)
     {
+        $car->load(["images"]);
+
         return inertia(
             "Seller/CarImage/Create",
             ["car" => $car]
