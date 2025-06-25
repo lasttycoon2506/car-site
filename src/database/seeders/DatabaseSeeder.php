@@ -57,7 +57,7 @@ class DatabaseSeeder extends Seeder
             'file_url' => "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1749487943/rGNdQkgK-EAA62-ga9w-_edit_jz2kla.jpg",
         ]);
 
-        Car::factory()->create([
+        $car = Car::factory()->create([
             'make' => 'chevrolet',
             'model' => 'camaro',
             'condition' => 'ok',
@@ -73,7 +73,7 @@ class DatabaseSeeder extends Seeder
             'file_url' => "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1749487997/1975-chevrolet-camaro-lt_sdvk1c.webp",
         ]);
 
-        Car::factory()->create([
+        $car = Car::factory()->create([
             'make' => 'toyota',
             'model' => 'tacoma',
             'condition' => 'excellent',
@@ -89,7 +89,7 @@ class DatabaseSeeder extends Seeder
             'file_url' => "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1749488141/2005-tacoma-double-cab10-1616785708.jpg_luvcmq.jpg",
         ]);
 
-        Car::factory()->create([
+        $car = Car::factory()->create([
             'make' => 'volvo',
             'model' => 's5',
             'condition' => 'good',
@@ -105,7 +105,7 @@ class DatabaseSeeder extends Seeder
             'file_url' => "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1749488196/3oRQGxmE-XcuGaiTJUO-_edit_zv1rzq.jpg",
         ]);
 
-        Car::factory()->create([
+        $car = Car::factory()->create([
             'make' => 'bmw',
             'model' => 'm3',
             'condition' => 'average',
@@ -121,7 +121,7 @@ class DatabaseSeeder extends Seeder
             'file_url' => "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1749488244/2010-bmw-m3-gts-photo-307829-s-original_ltpf4h.jpg",
         ]);
 
-        Car::factory()->create([
+        $car = Car::factory()->create([
             'make' => 'pontiac',
             'model' => 'firebird',
             'condition' => 'excellent',
@@ -137,7 +137,7 @@ class DatabaseSeeder extends Seeder
             'file_url' => "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1749488314/481673577_606455312236342_5365813689313123102_n.jpg_unum6a.jpg",
         ]);
 
-        Car::factory()->create([
+        $car = Car::factory()->create([
             'make' => 'ford',
             'model' => 'bronco',
             'condition' => 'great',
@@ -153,7 +153,7 @@ class DatabaseSeeder extends Seeder
             'file_url' => "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1749488359/960px-Ford_Bronco__286th_generation_29_Outer_Banks_1X7A0384_t5wlxg.jpg",
         ]);
 
-        Car::factory()->create([
+        $car = Car::factory()->create([
             'make' => 'infiniti',
             'model' => 'g3',
             'condition' => 'average',
@@ -169,7 +169,7 @@ class DatabaseSeeder extends Seeder
             'file_url' => "https://res.cloudinary.com/dojufv7og/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1749488424/2013-infiniti-g-sedan-02-1557854532.jpg_cspddu.jpg",
         ]);
 
-        Car::factory()->create([
+        $car = Car::factory()->create([
             'make' => 'audi',
             'model' => 'a7',
             'condition' => 'ok',
