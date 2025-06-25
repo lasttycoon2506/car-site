@@ -6,7 +6,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-10 my-3">
         <div v-for="car in userCars.data">
             <div class="border border-grey-500 shadow-2xl rounded-lg px-3 py-3">
-                <!-- <img :src="`${car.pictures[0]}`" class="rounded-lg border border-black"> -->
+                <img :src="`${car.images[0].file_url}`" class="rounded-lg border border-black">
                 <div class="flex justify-between font-semibold mx-5 mt-3">
                     <div>{{ car.make }}</div>
                     <div>{{ car.model }}</div>
