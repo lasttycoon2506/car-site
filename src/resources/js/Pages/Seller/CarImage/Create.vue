@@ -23,6 +23,15 @@
             </div>
         </form>
     </div>
+    <div>
+        <header class=" text-gray-600 mb-2">Uploaded Pictures</header>
+        <div class="grid grid-cols-5">
+            <div v-for="image in car.images" :key="car.id">
+                <img :src="image.file_url">
+            </div>
+        </div>
+
+    </div>
 </template>
 
 <script setup lang="ts">
