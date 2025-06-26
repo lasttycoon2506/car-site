@@ -18,16 +18,16 @@
             <div v-if="user" class="flex justify-end items-center gap-6">
                 <div class="text-md text-rose-600">{{ user.email }}</div>
                 <Link href="/seller/cars/create"> <button
-                    class="rounded-lg bg-lime-500 py-2 px-6 font-bold">Sell</button>
+                    class="rounded-lg bg-lime-500 py-2 px-6 font-semibold">Sell</button>
                 </Link>
                 <Link href="/logout" method="delete"> <button
-                    class="rounded-lg bg-red-700 py-2 px-6 font-bold me-6">Logout</button>
+                    class="rounded-lg bg-red-700 py-2 px-6 font-semibold me-6">Logout</button>
                 </Link>
             </div>
             <div v-else class="flex items-center me-10 gap-7">
-                <Link href="/login"> <button class="rounded-lg bg-lime-500 py-2 px-10 font-bold">Login</button>
+                <Link href="/login"> <button class="rounded-lg bg-lime-500 py-2 px-10 font-semibold">Login</button>
                 </Link>
-                <Link href="/user/create"> <button class="rounded-lg bg-orange-700 py-2 px-5 font-bold">
+                <Link href="/user/create"> <button class="rounded-lg bg-orange-700 py-2 px-5 font-semibold">
                     Join Us!</button>
                 </Link>
             </div>
