@@ -76,17 +76,18 @@ const uploadImages: () => void =
                     NProgress.done()
                 },
                 onProgress: (event: AxiosProgressEvent | undefined) => {
-                    if (event && event.lengthComputable && event.total) {
-                        const percent = (event.loaded / event.total) * 100
-                        NProgress.set((percent / 100) * .9)
-                    }
+                    // if (event && event.lengthComputable && event.total) {
+                    // const percent = (event.loaded / event.total) * 100
+                    // NProgress.set((percent / 100) * .9)
+                    // }
+                    NProgress.set(.9)
                 },
-                onSuccess: () => {
-                    uploading.value = false
-                    imageForm.reset()
-                    if (fileInput.value) fileInput.value.value = ''
-                    NProgress.done()
-                }
+                // onSuccess: () => {
+                //     uploading.value = false
+                //     imageForm.reset()
+                //     if (fileInput.value) fileInput.value.value = ''
+                //     NProgress.done()
+                // }
             })
     }
 
