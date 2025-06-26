@@ -9,6 +9,7 @@
                 <div class="flex justify-center">
                     <img v-if="car.images.length > 0" :src="`${car.images[0].file_url}`"
                         class="rounded-lg border border-black w-[300px] h-[150px]">
+                    <div v-else class="my-3 font-semibold">Upload Image(s)!</div>
                 </div>
                 <div class="flex justify-between font-semibold mx-5 mt-3">
                     <div>{{ car.make }}</div>
