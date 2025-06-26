@@ -41,8 +41,22 @@ class ImageUploadController extends Controller
 
                 $car->images()->save(new CarImage(["file_url" => $uploadedFileUrl]));
             }
-
-            return redirect()->back()->with("success", "image(s) uploaded!");
         }
+    }
+
+    public function destroy(CarImage $image)
+    {
+        $url = $image->file_url;
+        $parts = explode('/', parse_url($url, PHP_URL_PATH));
+        $versionIndex = array_search('upload', $parts) + 1;
+        $publicIdParts = array_slice($parts, $versionIndex + 1);
+        $publicIdWithExt = implode('/', $publicIdParts);
+        $publicId = preg_replace('/\.[^.]+$/', '', $publicIdWithExt);
+
+        $cloudinary = new Cloudinary(env("CLOUDINARY_URL"));
+        $cloudinary->uploadApi()->destroy($publicId);
+        $image->delete();
+
+        return redirect()->back()->with("success", "image deleted!");
     }
 }
