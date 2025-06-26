@@ -1,6 +1,9 @@
 <template>
     <div class="border border-grey-500 shadow-2xl rounded-lg px-3 py-3">
-        <img :src="`${car.images[0].file_url}`" class="rounded-lg border border-black w-[300px] h-[150px]">
+        <img v-if="car.images.length > 0" :src="`${car.images[0].file_url}`"
+            class="rounded-lg border border-black w-[300px] h-[150px] mb-2">
+        <div v-else class="flex items-center justify-center rounded-lg border border-black w-[250px] h-[150px] mb-2">
+            No Image Provided</div>
         <div class="flex justify-evenly">
             <span class="font-bold">{{ car.make }}</span> <span class="text-gray-500">| </span>
             <span class="font-bold">{{ car.model }}</span> <span class="text-gray-500">| </span>
