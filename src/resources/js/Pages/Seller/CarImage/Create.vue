@@ -28,6 +28,7 @@
         <div class="grid grid-cols-5 gap-5">
             <div v-for="image in car.images" :key="car.id">
                 <img :src="image.file_url" class="rounded-lg">
+                <Link href="/seller/cars/${car}">Delete</Link>
             </div>
         </div>
     </div>
@@ -36,7 +37,7 @@
 <script setup lang="ts">
 import Alert from '../../../Components/Alert.vue';
 import { Car } from '@/resources/types/car';
-import { InertiaForm, useForm, usePage } from '@inertiajs/vue3';
+import { InertiaForm, Link, useForm, usePage } from '@inertiajs/vue3';
 import { computed, ComputedRef, Ref, ref } from 'vue';
 import NProgress from 'nprogress'
 import { AxiosProgressEvent } from 'axios';
@@ -74,7 +75,6 @@ const uploadImages: () => void =
                     imageForm.reset()
                     if (fileInput.value) fileInput.value.value = ''
                     NProgress.done()
-                    console.log(alertMsg)
                 }
             })
     }
