@@ -6,6 +6,7 @@
         <span>Uploading image(s), please wait...</span>
     </div>
     <div class="border border-gray-400 w-3/4 mt-10 ms-10 rounded-md py-5 px-5">
+        <div v-if="errorMsg.length" class="text-red-500 mb-4 text-lg font-semibold">{{ errorMsg[0] }}</div>
         <header class=" text-gray-600 mb-2">Upload Pictures</header>
         <form @submit.prevent="uploadImages">
             <input type="hidden" name="_token" :value="csrf" />
@@ -16,7 +17,7 @@
                 </div>
                 <div>
                     <button type="submit" :disabled="!fileExists"
-                        class=" bg-lime-500 disabled:opacity-30 rounded-lg py-3 px-10 me-10 font-semibold">submit</button>
+                        class=" bg-lime-500 disabled:opacity-30 rounded-lg py-3 px-10 me-10 font-semibold">upload</button>
                     <button type="reset" @click="reset"
                         class="bg-red-600 rounded-lg py-3 px-11 font-semibold">reset</button>
                 </div>
@@ -29,7 +30,7 @@
             <div v-for="image in car.images" :key="car.id" class="flex flex-col">
                 <img :src="image.file_url" class="rounded-lg">
                 <Link :href="`/seller/car/${car.id}/image/${image.id}`" method="delete"
-                    class="outline rounded-md mt-2 text-center py-1 bg-red-500 font-semibold text-sm">
+                    class="outline rounded-md mt-2 text-center py-1 bg-red-500 font-semibold text-sm hover:bg-red-800">
                 Delete
                 </Link>
             </div>
@@ -52,11 +53,12 @@ type PageProps = {
 const uploading: Ref<boolean> = ref(false)
 const fileInput: Ref<HTMLInputElement | null> = ref<HTMLInputElement | null>(null)
 const csrf: string = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') ?? '';
-const props = defineProps<{ car: Car }>()
+const props = defineProps<{ car: Car, errors: any }>()
 const imageForm: InertiaForm<{ images: File[]; }> =
     useForm<{ images: File[] }>({ images: [] })
 const page = usePage<PageProps>()
 
+const errorMsg: ComputedRef<string[]> = computed(() => Object.values(imageForm.errors))
 const alertMsg: ComputedRef<string> = computed(() => page.props.flash?.success)
 const fileExists: ComputedRef<boolean> = computed(() => imageForm.images.length > 0)
 
