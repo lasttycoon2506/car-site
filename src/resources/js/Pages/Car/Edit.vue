@@ -74,8 +74,11 @@ const carForm: InertiaForm<Car> = useForm<Car>({
     year: props.car.year,
     mpg: props.car.mpg,
     miles: props.car.miles,
-    price: props.car.price
+    price: props.car.price,
+    images: props.car.images
 })
+
+console.log(props.car)
 
 const editCar: () => void = () => carForm.put(`/seller/cars/${props.car.id}`)
 </script>

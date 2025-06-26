@@ -29,8 +29,9 @@
                 type="text" placeholder="mi. from">
             <input v-model.number="filterOptions.miTo" class="w-1/12 rounded-r-lg me-3 text-center border-black"
                 type="text" placeholder="mi. to">
-            <button type="submit" class="bg-orange-400 px-10 rounded-lg me-3">filter</button>
-            <button type="reset" @click="resetFilter" class="bg-red-500 px-10 rounded-lg me-3">reset</button>
+            <button type="submit" class="bg-orange-400 px-10 rounded-lg me-3 font-semibold">filter</button>
+            <button type="reset" @click="resetFilter"
+                class="bg-red-500 px-10 rounded-lg me-3 font-semibold">reset</button>
         </div>
     </form>
 </template>
@@ -52,7 +53,7 @@ const filterOptions: InertiaForm<FilterOptions> = useForm<FilterOptions>({
 })
 
 const applyFilter: () => void =
-    () => filterOptions.get("/car", { preserveScroll: true, preserveState: true })
+    () => filterOptions.get("/cars", { preserveScroll: true, preserveState: true })
 
 const resetFilter = () => {
     filterOptions.condition = ""
