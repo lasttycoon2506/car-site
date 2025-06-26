@@ -44,7 +44,7 @@ class ImageUploadController extends Controller
         }
     }
 
-    public function destroy(CarImage $image)
+    public function destroy(Car $car, CarImage $image)
     {
         $url = $image->file_url;
         $parts = explode('/', parse_url($url, PHP_URL_PATH));

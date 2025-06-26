@@ -28,8 +28,8 @@
         <div class="grid grid-cols-5 gap-5">
             <div v-for="image in car.images" :key="car.id" class="flex flex-col">
                 <img :src="image.file_url" class="rounded-lg">
-                <Link :href="`/seller/car/${car}/image/${image.id}`"
-                    class="outline rounded-md mt-2 text-center py-1 bg-red-600 font-semibold">
+                <Link :href="`/seller/car/${car.id}/image/${image.id}`" method="delete"
+                    class="outline rounded-md mt-2 text-center py-1 bg-red-500 font-semibold text-sm">
                 Delete
                 </Link>
             </div>
