@@ -44,7 +44,6 @@ class SellerController extends Controller
                 "mpg" => "required|integer|min:1|max:100",
                 "miles" => "required|integer|min:1|max:200000",
                 "price" => "required|integer|min:10000|max:100000",
-                "pictures" => "required"
             ])
         );
 
