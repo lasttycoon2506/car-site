@@ -28,6 +28,13 @@
     position: fixed !important;
     top: 50% !important;
     left: 50% !important;
+    right: 50%;
     transform: translate(-50%, -50%) !important;
     z-index: 1031;
+}
+
+#nprogress .spinner-icon {
+    width: 60px !important; /* Increase as needed */
+    height: 60px !important; /* Increase as needed */
+    border-width: 8px !important; /* Optional: make the ring thicker */
 }
