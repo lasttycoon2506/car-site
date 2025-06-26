@@ -22,6 +22,11 @@ class ImageUploadController extends Controller
     public function store(Request $request, Car $car)
     {
         if ($request->hasFile("images")) {
+            $request->validate(
+                ["images.*" => "mimes:jpg, png, jpeg | max:6000"],
+                ["images.*.mimes" => ".jpg, .png & .jpeg only"]
+            );
+
             $cloudinary = new Cloudinary(env("CLOUDINARY_URL"));
             foreach ($request->file("images") as $file) {
                 $uploadResult = $cloudinary->uploadApi()->upload(
