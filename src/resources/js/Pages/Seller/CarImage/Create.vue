@@ -69,6 +69,12 @@ const uploadImages: () => void =
             `/seller/car/${props.car.id}/image`,
             {
                 onStart: () => NProgress.start(),
+                onError: () => {
+                    uploading.value = false
+                    imageForm.reset()
+                    if (fileInput.value) fileInput.value.value = ''
+                    NProgress.done()
+                },
                 onProgress: (event: AxiosProgressEvent | undefined) => {
                     if (event && event.lengthComputable && event.total) {
                         const percent = (event.loaded / event.total) * 100
@@ -95,5 +101,6 @@ const addFiles: (event: Event) => void =
                 imageForm.images.push(file)
             }
         }
+        imageForm.clearErrors()
     }
 </script>
