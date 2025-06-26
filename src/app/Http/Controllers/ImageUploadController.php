@@ -46,6 +46,7 @@ class ImageUploadController extends Controller
 
                 $car->images()->save(new CarImage(["file_url" => $uploadedFileUrl]));
             }
+            return redirect()->back()->with("success", "image uploaded!");
         }
     }
 
