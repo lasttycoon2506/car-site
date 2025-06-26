@@ -28,8 +28,8 @@
                 <label class="label">Transmission</label>
                 <select v-model="carForm.transmission" class="w-1/2">
                     <option value="" disabled selected> Select</option>
-                    <option value="automatic">Automatic</option>
-                    <option value="manual">Manual</option>
+                    <option value="Automatic">Automatic</option>
+                    <option value="Manual">Manual</option>
                 </select>
                 <div v-if="carForm.errors.transmission" class="input-error">{{ carForm.errors.transmission }}</div>
             </div>

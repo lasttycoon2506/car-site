@@ -12,11 +12,6 @@
                 <input v-model="carForm.model" type="text" class="input">
                 <div v-if="carForm.errors.model" class="input-error">{{ carForm.errors.model }}</div>
             </div>
-            <!-- <div class="mx-12">
-                <label class="label">Condition</label>
-                <input v-model="carForm.condition" type="text" class="input">
-                <div v-if="carForm.errors.condition" class="input-error">{{ carForm.errors.condition }}</div>
-            </div> -->
             <div class="mx-12">
                 <label class="label">Condition</label>
                 <select v-model="carForm.condition" class="w-1/2">
@@ -31,12 +26,22 @@
             </div>
             <div class="mx-12">
                 <label class="label">Transmission</label>
-                <input v-model="carForm.transmission" type="text" class="input">
+                <select v-model="carForm.transmission" class="w-1/2">
+                    <option value="" disabled selected> Select</option>
+                    <option value="Automatic">Automatic</option>
+                    <option value="Manual">Manual</option>
+                </select>
                 <div v-if="carForm.errors.transmission" class="input-error">{{ carForm.errors.transmission }}</div>
             </div>
             <div class="mx-12">
                 <label class="label">Drive Type</label>
-                <input v-model="carForm.drive_type" type="text" class="input">
+                <select v-model="carForm.drive_type" class="w-1/2">
+                    <option value="" disabled selected>Select</option>
+                    <option value="FWD">FWD</option>
+                    <option value="RWD">RWD</option>
+                    <option value="AWD">AWD</option>
+                    <option value="4WD">4WD</option>
+                </select>
                 <div v-if="carForm.errors.drive_type" class="input-error">{{ carForm.errors.drive_type }}</div>
             </div>
             <div class="mx-12">
