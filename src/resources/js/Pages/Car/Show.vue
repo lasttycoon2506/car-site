@@ -31,7 +31,12 @@
             </div>
         </div>
         <div class="col-span-2">
-            <img :src="mainImage.file_url" class="rounded-xl border border-black max-h-80 mb-4 w-[800px] h-[500px]" />
+            <img v-if="car.images.length > 0" :src="mainImage.file_url"
+                class="rounded-xl border border-black max-h-80 mb-4 w-[800px] h-[500px]" />
+            <div v-else
+                class="flex items-center justify-center rounded-xl border border-black max-h-80 mb-4 w-[500px] h-[500px]">
+                No Image Provided
+            </div>
             <div class="flex gap-2">
                 <img v-for="(pic, idx) in car.images" :key="idx" :src="pic.file_url"
                     class="rounded cursor-pointer w-50 h-20 object-cover border-2"
