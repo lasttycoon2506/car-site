@@ -89,7 +89,7 @@ const carForm: InertiaForm<Car> = useForm<Car>({
     images: []
 })
 
-const createCar: () => void = () => carForm.post("/car")
+const createCar: () => void = () => carForm.post("/seller/cars")
 
 
 </script>

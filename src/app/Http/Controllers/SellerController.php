@@ -48,7 +48,7 @@ class SellerController extends Controller
             ])
         );
 
-        return redirect()->route("car.index")->with("success", "car created!");
+        return redirect()->route("seller.cars.index")->with("success", "car created!");
     }
 
 
