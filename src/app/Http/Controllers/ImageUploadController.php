@@ -24,7 +24,19 @@ class ImageUploadController extends Controller
         if ($request->hasFile("images")) {
             $cloudinary = new Cloudinary(env("CLOUDINARY_URL"));
             foreach ($request->file("images") as $file) {
-                $uploadResult = $cloudinary->uploadApi()->upload($file->getRealPath());
+                $uploadResult = $cloudinary->uploadApi()->upload(
+                    $file->getRealPath(),
+                    [
+                        'transformation' => [
+                            [
+                                'width' => 800,
+                                'height' => 600,
+                                'crop' => 'fill',
+                                'gravity' => 'auto'
+                            ]
+                        ]
+                    ]
+                );
                 $uploadedFileUrl = $uploadResult['secure_url'] ?? null;
 
                 $car->images()->save(new CarImage(["file_url" => $uploadedFileUrl]));

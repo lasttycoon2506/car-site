@@ -5,7 +5,7 @@
     <div v-if="uploading" class="text-center mt-4 font-semibold">
         <span>Uploading image(s), please wait...</span>
     </div>
-    <div class="border border-black w-3/4 mt-10 ms-10 rounded-md py-5 px-5">
+    <div class="border border-gray-400 w-3/4 mt-10 ms-10 rounded-md py-5 px-5">
         <header class=" text-gray-600 mb-2">Upload Pictures</header>
         <form @submit.prevent="uploadImages">
             <input type="hidden" name="_token" :value="csrf" />
@@ -23,7 +23,7 @@
             </div>
         </form>
     </div>
-    <div class="border border-gray-300 rounded-lg mt-4 mx-10 my-10 py-5 px-5">
+    <div class="border border-gray-400 rounded-lg mt-4 mx-10 my-10 py-5 px-5">
         <header class=" text-gray-600 mb-4">Uploaded Pictures</header>
         <div class="grid grid-cols-5 gap-5">
             <div v-for="image in car.images" :key="car.id">
