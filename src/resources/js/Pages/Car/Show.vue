@@ -31,10 +31,10 @@
             </div>
         </div>
         <div class="col-span-2">
-            <img :src="mainImage.file_url" class="rounded-xl border border-black max-h-80 mb-4" />
+            <img :src="mainImage.file_url" class="rounded-xl border border-black max-h-80 mb-4 w-[800px] h-[500px]" />
             <div class="flex gap-2">
                 <img v-for="(pic, idx) in car.images" :key="idx" :src="pic.file_url"
-                    class="rounded cursor-pointer w-20 h-20 object-cover border-2"
+                    class="rounded cursor-pointer w-50 h-20 object-cover border-2"
                     :class="{ 'border-black': mainImage === pic }" @click="mainImage = pic" />
             </div>
         </div>
