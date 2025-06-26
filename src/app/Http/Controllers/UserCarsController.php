@@ -54,6 +54,8 @@ class UserCarsController extends Controller
 
     public function edit(Car $car)
     {
+        $car->load(["images"]);
+
         return inertia(
             "Car/Edit",
             ["car" => $car]
