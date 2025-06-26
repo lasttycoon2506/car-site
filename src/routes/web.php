@@ -10,9 +10,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource("cars", CarController::class)
     ->only("index", "show");
-//     ->middleware("auth");
-// Route::resource("car", CarController::class)
-//     ->except("create", "store", "edit", "update", "destroy");
 
 Route::get("login", [AuthController::class, "create"])->name("login");
 Route::post("login", [AuthController::class, "store"])->name("login.store");
@@ -21,6 +18,6 @@ Route::delete("logout", [AuthController::class, "destroy"])->name("logout");
 Route::resource("user", UserController::class)->only(["create", "store"]);
 
 Route::prefix("seller")->name("seller.")->middleware("auth")->group(function () {
-    Route::resource("/cars", UserCarsController::class)->only("index", "store", "edit", "update", "destroy");
+    Route::resource("/cars", UserCarsController::class)->only("index", "create", "store", "edit", "update", "destroy");
     Route::resource("car.image", ImageUploadController::class)->only("create", "store");
 });
