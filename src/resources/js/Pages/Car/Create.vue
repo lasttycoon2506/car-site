@@ -64,10 +64,6 @@
                 <input v-model="carForm.price" type="text">
                 <div v-if="carForm.errors.price" class="input-error">{{ carForm.errors.price }}</div>
             </div>
-            <!-- <div class="w-1/4 mx-12 bg-slate-50 rounded-md mt-5 text-center self-center font-medium py-2">
-                <Link :href="`/seller/car/${car.id}/image/create`">Pictures ({{ car.images.length }})
-                </Link>
-            </div> -->
             <div class="col-span-2 justify-self-center">
                 <button type="submit" class="rounded-full bg-amber-600 py-3 px-12 mt-10 mb-2 font-semibold">Sell!
                 </button>

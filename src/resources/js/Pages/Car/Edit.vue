@@ -12,9 +12,21 @@
                 <input v-model="carForm.model" type="text" class="input">
                 <div v-if="carForm.errors.model" class="input-error">{{ carForm.errors.model }}</div>
             </div>
-            <div class="mx-12">
+            <!-- <div class="mx-12">
                 <label class="label">Condition</label>
                 <input v-model="carForm.condition" type="text" class="input">
+                <div v-if="carForm.errors.condition" class="input-error">{{ carForm.errors.condition }}</div>
+            </div> -->
+            <div class="mx-12">
+                <label class="label">Condition</label>
+                <select v-model="carForm.condition" class="w-1/2">
+                    <option value="" disabled selected>Select</option>
+                    <option value="Ok">Ok</option>
+                    <option value="Good">Good</option>
+                    <option value="Great">Great</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Like New">Like New</option>
+                </select>
                 <div v-if="carForm.errors.condition" class="input-error">{{ carForm.errors.condition }}</div>
             </div>
             <div class="mx-12">
