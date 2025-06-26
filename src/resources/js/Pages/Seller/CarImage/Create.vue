@@ -26,9 +26,12 @@
     <div class="border border-gray-400 rounded-lg mt-4 mx-10 my-10 py-5 px-5">
         <header class=" text-gray-600 mb-4">Uploaded Pictures</header>
         <div class="grid grid-cols-5 gap-5">
-            <div v-for="image in car.images" :key="car.id">
+            <div v-for="image in car.images" :key="car.id" class="flex flex-col">
                 <img :src="image.file_url" class="rounded-lg">
-                <Link href="/seller/cars/${car}">Delete</Link>
+                <Link :href="`/seller/car/${car}/image/${image.id}`"
+                    class="outline rounded-md mt-2 text-center py-1 bg-red-600 font-semibold">
+                Delete
+                </Link>
             </div>
         </div>
     </div>
