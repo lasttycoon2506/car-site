@@ -18,7 +18,7 @@
             <div v-if="user" class="flex justify-end items-center gap-6">
                 <div class="text-md text-rose-600">{{ user.email }}</div>
                 <Link href="/seller/cars/create"> <button
-                    class="rounded-lg bg-lime-500 py-2 px-6 font-semibold">Sell</button>
+                    class="rounded-lg bg-lime-500 py-2 px-10 font-semibold">Sell</button>
                 </Link>
                 <Link href="/logout" method="delete"> <button
                     class="rounded-lg bg-red-700 py-2 px-6 font-semibold me-6">Logout</button>

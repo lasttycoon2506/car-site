@@ -65,11 +65,11 @@
                 <div v-if="carForm.errors.price" class="input-error">{{ carForm.errors.price }}</div>
             </div>
             <Link :href="`/seller/car/${car.id}/image/create`"
-                class="w-1/4 mx-12 bg-slate-50 rounded-md mt-5 text-center self-center font-medium py-2 hover:cursor-pointer hover:bg-slate-600">
+                class="w-2/5 mx-12 bg-slate-50 rounded-md mt-5 text-center self-center font-medium py-2 hover:cursor-pointer hover:bg-slate-600">
             Pictures ({{ car.images.length }})
             </Link>
             <div class="col-span-2 justify-self-center">
-                <button type="submit" class="rounded-full bg-lime-500 py-3 px-12 mt-10 mb-2 font-semibold">Update!
+                <button type="submit" class="rounded-full bg-lime-500 py-3 px-12 w-64 mt-10 mb-2 font-semibold">Update!
                 </button>
             </div>
         </div>
