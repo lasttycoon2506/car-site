@@ -47,11 +47,10 @@
                 <input v-model="carForm.price" type="text">
                 <div v-if="carForm.errors.price" class="input-error">{{ carForm.errors.price }}</div>
             </div>
-            <btn
+            <Link :href="`/seller/car/${car.id}/image/create`"
                 class="w-1/4 mx-12 bg-slate-50 rounded-md mt-5 text-center self-center font-medium py-2 hover:cursor-pointer hover:bg-slate-600">
-                <Link :href="`/seller/car/${car.id}/image/create`">Pictures ({{ car.images.length }})
-                </Link>
-            </btn>
+            Pictures ({{ car.images.length }})
+            </Link>
             <div class="col-span-2 justify-self-center">
                 <button type="submit" class="rounded-full bg-lime-500 py-3 px-12 mt-10 mb-2 font-semibold">Update!
                 </button>
