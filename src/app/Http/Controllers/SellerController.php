@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Car;
 
-class UserCarsController extends Controller
+class SellerController extends Controller
 {
     public function __construct()
     {
