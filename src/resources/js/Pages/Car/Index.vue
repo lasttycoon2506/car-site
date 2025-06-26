@@ -1,6 +1,6 @@
 <template>
     <Filter :filters="props.filters"></Filter>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mx-10 my-3">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mx-10 my-5">
         <div v-for="car in cars.data" :key="car.id">
             <Link :href="`/cars/${car.id}`">
             <CarCard :car=car>

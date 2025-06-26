@@ -1,6 +1,6 @@
 <template>
     <form @submit.prevent="applyFilter">
-        <div class="flex justify-center mt-3 mx-10">
+        <div class="flex justify-center mt-5 mx-10">
             <select v-model="filterOptions.condition" class="dropdown border-black">
                 <option disabled value="">Condition</option>
                 <option value="Ok" class="text-black">Ok</option>
