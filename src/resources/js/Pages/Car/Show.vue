@@ -58,7 +58,7 @@
                     <span> &nbsp; / month</span>
                 </div>
             </div>
-            <div class="outline py-2 px-2 rounded-md mt-5">
+            <div v-if="user" class="outline py-2 px-2 rounded-md mt-5">
                 <header class="mb-1 font-bold">Offer: </header>
                 <MakeOffer :car-id="props.car.id ?? 0" :price="props.car.price"></MakeOffer>
             </div>
@@ -68,11 +68,19 @@
 
 <script setup lang="ts">
 import type { Car } from '@/resources/types/car';
-import { ComputedRef, Ref, ref } from 'vue'
+import { computed, ComputedRef, Ref, ref } from 'vue'
 import PriceFormatter from '../../Components/PriceFormatter.vue';
 import { useMonthlyPayment } from '../../Composables/useMonthlyPayment';
 import MakeOffer from '../../Components/MakeOffer.vue';
+import { User } from '@/resources/types/user';
+import { usePage } from '@inertiajs/vue3';
 
+type PageProps = {
+    user: User
+}
+
+const page = usePage<PageProps>()
+const user: ComputedRef<User> = computed(() => page.props.user)
 const props = defineProps<{ car: Car }>()
 const mainImage = ref(props.car.images[0])
 const interestRate: Ref<number> = ref(3)
