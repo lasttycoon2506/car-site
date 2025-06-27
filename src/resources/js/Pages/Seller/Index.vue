@@ -51,13 +51,11 @@ import { Cars } from '@/resources/types/cars';
 import Pagination from '../../Components/Pagination.vue';
 import { computed, ComputedRef } from 'vue';
 import Alert from '../../Components/Alert.vue';
+import type { PageProps } from "@/resources/types/pageProps"
 
-type PageProps = {
-    flash: { success: string },
-}
 
 defineProps<{ sellerCars: Cars }>()
 const page = usePage<PageProps>()
 
-const alertMsg: ComputedRef<string> = computed(() => page.props.flash?.success)
+const alertMsg: ComputedRef<string | undefined> = computed(() => page.props.flash?.success)
 </script>

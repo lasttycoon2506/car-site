@@ -78,19 +78,16 @@ import MakeOffer from '../../Components/MakeOffer.vue';
 import { User } from '@/resources/types/user';
 import { usePage } from '@inertiajs/vue3';
 import Alert from '../../Components/Alert.vue';
+import type { PageProps } from "@/resources/types/pageProps"
 
-type PageProps = {
-    user: User,
-    flash: { success: string },
-}
 
 const page = usePage<PageProps>()
-const user: ComputedRef<User> = computed(() => page.props.user)
+const user: ComputedRef<User | undefined> = computed(() => page.props.user)
 const props = defineProps<{ car: Car }>()
 const mainImage = ref(props.car.images[0])
 const interestRate: Ref<number> = ref(3)
 const duration: Ref<number> = ref(5)
 
-const alertMsg: ComputedRef<string> = computed(() => page.props.flash?.success)
+const alertMsg: ComputedRef<string | undefined> = computed(() => page.props.flash?.success)
 const monthlyPayment: ComputedRef<number> = useMonthlyPayment(props.car.price, interestRate, duration)
 </script>

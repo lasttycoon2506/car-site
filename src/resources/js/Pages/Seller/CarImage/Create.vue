@@ -45,10 +45,8 @@ import { InertiaForm, Link, useForm, usePage } from '@inertiajs/vue3';
 import { computed, ComputedRef, Ref, ref } from 'vue';
 import NProgress from 'nprogress'
 import { AxiosProgressEvent } from 'axios';
+import type { PageProps } from "@/resources/types/pageProps"
 
-type PageProps = {
-    flash: { success: string },
-}
 
 const uploading: Ref<boolean> = ref(false)
 const fileInput: Ref<HTMLInputElement | null> = ref<HTMLInputElement | null>(null)
@@ -59,7 +57,7 @@ const imageForm: InertiaForm<{ images: File[]; }> =
 const page = usePage<PageProps>()
 
 const errorMsg: ComputedRef<string[]> = computed(() => Object.values(imageForm.errors))
-const alertMsg: ComputedRef<string> = computed(() => page.props.flash?.success)
+const alertMsg: ComputedRef<string | undefined> = computed(() => page.props.flash?.success)
 const fileExists: ComputedRef<boolean> = computed(() => imageForm.images.length > 0)
 
 const uploadImages: () => void =
