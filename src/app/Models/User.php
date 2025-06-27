@@ -51,4 +51,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Car::class, "user_id");
     }
+
+    public function bids(): HasMany
+    {
+        return $this->hasMany(Offer::class, "bidder_id");
+    }
 }
