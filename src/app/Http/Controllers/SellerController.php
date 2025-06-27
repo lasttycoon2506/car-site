@@ -26,7 +26,7 @@ class SellerController extends Controller
     public function create()
     {
         return inertia(
-            "Car/Create"
+            "Seller/Create"
         );
     }
 
@@ -56,7 +56,7 @@ class SellerController extends Controller
         $car->load(["images"]);
 
         return inertia(
-            "Car/Edit",
+            "Seller/Edit",
             ["car" => $car]
         );
     }
