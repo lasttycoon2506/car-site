@@ -8,7 +8,7 @@
                 class="cursor-pointer my-2 w-full">
         </div>
         <div>
-            <button type="submit" class="bg-lime-500 rounded-md py-2 px-5 w-full my-1 mb-2">Make Offer</button>
+            <button type="submit" class="bg-lime-500 rounded-md py-2 w-full my-1 mb-2">Make Offer</button>
         </div>
         <div class="flex justify-between">
             <div class="font-semibold">Difference</div>

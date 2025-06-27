@@ -20,7 +20,7 @@
                 <div class="flex justify-between font-semibold mx-5 mb-3">
                     <div>{{ car.year }}</div>
                     <div>
-                        <PriceFormatter :price="car.price"></PriceFormatter>
+                        <PriceFormatter :price="car.price" :allow-negative="false"></PriceFormatter>
                     </div>
                 </div>
                 <div class="flex justify-center gap-4">

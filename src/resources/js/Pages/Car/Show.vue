@@ -24,7 +24,7 @@
                 <span class="font-normal text-xl">MPG: </span><span> {{ car.mpg }}</span>
             </div>
             <span>
-                <PriceFormatter :price="car.price"></PriceFormatter>
+                <PriceFormatter :price="car.price" :allow-negative="false"></PriceFormatter>
             </span>
             <div>
                 <span class="font-normal text-xl">Transmission: </span><span> {{ car.transmission }}</span>
@@ -53,14 +53,14 @@
                 <label class="block font-medium mt-2">You Pay: </label>
                 <div class="flex justify-start items-center">
                     <div class="text-2xl font-bold">
-                        <PriceFormatter :price="monthlyPayment"></PriceFormatter>
+                        <PriceFormatter :price="monthlyPayment" :allow-negative="false"></PriceFormatter>
                     </div>
                     <span> &nbsp; / month</span>
                 </div>
             </div>
             <div class="outline py-2 px-2 rounded-md mt-5">
                 <header class="mb-1 font-bold">Offer: </header>
-                <MakeOffer :car-id="props.car.id" :price="props.car.price"></MakeOffer>
+                <MakeOffer :car-id="props.car.id ?? 0" :price="props.car.price"></MakeOffer>
             </div>
         </div>
     </div>
