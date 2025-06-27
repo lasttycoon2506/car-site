@@ -56,6 +56,7 @@
                 </div>
                 <span> &nbsp; / month</span>
             </div>
+            <MakeOffer :car-id="props.car.id" :price="props.car.price"></MakeOffer>
         </div>
     </div>
 </template>
@@ -65,6 +66,7 @@ import type { Car } from '@/resources/types/car';
 import { ComputedRef, Ref, ref } from 'vue'
 import PriceFormatter from '../../Components/PriceFormatter.vue';
 import { useMonthlyPayment } from '../../Composables/useMonthlyPayment';
+import MakeOffer from '../../Components/MakeOffer.vue';
 
 const props = defineProps<{ car: Car }>()
 const mainImage = ref(props.car.images[0])

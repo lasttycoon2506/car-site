@@ -3,7 +3,7 @@
         <input v-model.number="offerForm.amount" type="text">
         <input v-model.number="offerForm.amount" type="range" :min="minOffer" :max="maxOffer" step="1000"
             class="cursor-pointer">
-        <button type="submit"></button>
+        <button type="submit">Make Offer</button>
     </form>
 </template>
 

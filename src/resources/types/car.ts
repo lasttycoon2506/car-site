@@ -1,7 +1,7 @@
 import type { Image } from "./image";
 
 export type Car = {
-    id?: number;
+    id: number;
     make: string;
     model: string;
     condition: string;
