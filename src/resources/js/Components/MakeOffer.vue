@@ -30,8 +30,8 @@ const props = defineProps<{
 const offerForm: InertiaForm<{ amount: number; }> =
     useForm<{ amount: number }>({ amount: props.price })
 
-const minOffer: ComputedRef<number> = computed(() => props.price / 2)
-const maxOffer: ComputedRef<number> = computed(() => props.price * 2)
+const minOffer: ComputedRef<number> = computed(() => Math.round(props.price / 2))
+const maxOffer: ComputedRef<number> = computed(() => Math.round(props.price * 2))
 const offerDifference: ComputedRef<number> = computed(() => offerForm.amount - props.price)
 
 const makeOffer: () => void
