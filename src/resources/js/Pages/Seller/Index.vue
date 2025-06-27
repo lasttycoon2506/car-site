@@ -25,10 +25,10 @@
                 </div>
                 <div class="flex justify-center gap-4">
                     <Link :href="`/seller/cars/${car.id}/edit`">
-                    <button class="rounded-lg bg-lime-500 py-2 px-6 font-semibold hover:bg-lime-900">Edit</button>
+                    <button class="rounded-lg bg-lime-500 py-2 px-10 font-semibold hover:bg-lime-900">Edit</button>
                     </Link>
                     <Link :href="`/seller/cars/${car.id}`" method="delete">
-                    <button class="rounded-lg bg-red-600 py-2 px-6 font-semibold hover:bg-red-900">Delete</button>
+                    <button class="rounded-lg bg-red-600 py-2 px-7 font-semibold hover:bg-red-900">Delete</button>
                     </Link>
                 </div>
             </div>
