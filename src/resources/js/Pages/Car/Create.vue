@@ -61,7 +61,7 @@
             </div>
             <div class="mx-12">
                 <label class="label">Price</label>
-                <input v-model="carForm.price" type="text">
+                <input v-model="carForm.price" type="text" placeholder="$">
                 <div v-if="carForm.errors.price" class="input-error">{{ carForm.errors.price }}</div>
             </div>
             <div class="col-span-2 justify-self-center">
