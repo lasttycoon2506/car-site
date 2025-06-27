@@ -34,8 +34,9 @@ const minOffer: ComputedRef<number> = computed(() => props.price / 2)
 const maxOffer: ComputedRef<number> = computed(() => props.price * 2)
 const offerDifference: ComputedRef<number> = computed(() => offerForm.amount - props.price)
 
-const makeOffer = () => {
-}
+const makeOffer: () => void
+    = () =>
+        offerForm.post(`/car/${props.carId}/offer`)
 
 
 </script>
