@@ -1,6 +1,7 @@
 <template>
     <form @submit.prevent="makeOffer()">
-        <div>
+        <div class="flex justify-start items-center">
+            <span class="mr-1 font-bold text-lg">$</span>
             <input v-model.number="offerForm.amount" type="text" class="rounded-md my-1">
         </div>
         <div> <input v-model.number="offerForm.amount" type="range" :min="minOffer" :max="maxOffer" step="100"
@@ -11,7 +12,7 @@
         </div>
         <div class="flex justify-between">
             <div class="font-semibold">Difference</div>
-            <PriceFormatter :price="offerDifference" :allow-negative="true" />
+            <PriceFormatter :price="offerDifference" :allow-negative="true" class="font-bold" />
         </div>
     </form>
 </template>
