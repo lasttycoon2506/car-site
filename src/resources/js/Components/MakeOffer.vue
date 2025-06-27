@@ -37,6 +37,4 @@ const offerDifference: ComputedRef<number> = computed(() => offerForm.amount - p
 const makeOffer: () => void
     = () =>
         offerForm.post(`/car/${props.carId}/offer`)
-
-
 </script>

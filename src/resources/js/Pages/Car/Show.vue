@@ -1,4 +1,7 @@
 <template>
+    <div v-if="alertMsg">
+        <Alert :success="alertMsg" />
+    </div>
     <div class="grid grid-cols-4 gap-5 mx-12 my-10">
         <div
             class="grid col bg-sky-300/50 rounded-lg px-5 py-3 me-12 border border-black bg-clip-padding shadow-xl font-serif text-2xl font-bold">
@@ -74,9 +77,11 @@ import { useMonthlyPayment } from '../../Composables/useMonthlyPayment';
 import MakeOffer from '../../Components/MakeOffer.vue';
 import { User } from '@/resources/types/user';
 import { usePage } from '@inertiajs/vue3';
+import Alert from '../../Components/Alert.vue';
 
 type PageProps = {
-    user: User
+    user: User,
+    flash: { success: string },
 }
 
 const page = usePage<PageProps>()
@@ -85,5 +90,7 @@ const props = defineProps<{ car: Car }>()
 const mainImage = ref(props.car.images[0])
 const interestRate: Ref<number> = ref(3)
 const duration: Ref<number> = ref(5)
+
+const alertMsg: ComputedRef<string> = computed(() => page.props.flash?.success)
 const monthlyPayment: ComputedRef<number> = useMonthlyPayment(props.car.price, interestRate, duration)
 </script>
