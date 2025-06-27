@@ -19,8 +19,9 @@
 
 <script setup lang="ts">
 import { InertiaForm, useForm } from '@inertiajs/vue3';
-import { computed, ComputedRef } from 'vue';
+import { computed, ComputedRef, watch } from 'vue';
 import PriceFormatter from './PriceFormatter.vue';
+import debounce from 'lodash/debounce';
 
 
 const props = defineProps<{
@@ -29,6 +30,9 @@ const props = defineProps<{
 }>()
 const offerForm: InertiaForm<{ amount: number; }> =
     useForm<{ amount: number }>({ amount: props.price })
+const emit: __VLS_Emit = defineEmits<{
+    (event: 'updatedOffer', value: number): void
+}>()
 
 const minOffer: ComputedRef<number> = computed(() => Math.round(props.price / 2))
 const maxOffer: ComputedRef<number> = computed(() => Math.round(props.price * 2))
@@ -37,4 +41,9 @@ const offerDifference: ComputedRef<number> = computed(() => offerForm.amount - p
 const makeOffer: () => void
     = () =>
         offerForm.post(`/car/${props.carId}/offer`)
+
+watch(
+    () => offerForm.amount,
+    debounce((value: number) => emit('updatedOffer', value), 300)
+)
 </script>
