@@ -6,11 +6,11 @@
         <span>Uploading image(s), please wait...</span>
     </div>
     <div class="border border-gray-400 w-3/4 mt-10 ms-10 rounded-md py-5 px-5">
-        <div v-if="errorMsg.length" class="text-red-500 mb-4 text-lg font-semibold">{{ errorMsg[0] }}</div>
-        <header class=" text-gray-600 mb-2">Upload Pictures</header>
         <form @submit.prevent="uploadImages">
+            <div v-if="errorMsg.length" class="text-red-500 mb-4 text-lg font-semibold">{{ errorMsg[0] }}</div>
+            <header class=" text-gray-600 mb-2">Upload Pictures</header>
             <input type="hidden" name="_token" :value="csrf" />
-            <div class="flex justify-between">
+            <div class="flex justify-between items-center">
                 <div class="w-3/5">
                     <input type="file" ref="fileInput" multiple @input="addFiles"
                         class="file:border-0 file:py-2 file:px-3 file:me-3 rounded-md border border-gray-300 w-full">
