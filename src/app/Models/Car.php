@@ -39,6 +39,11 @@ class Car extends Model
         return $this->hasMany(CarImage::class);
     }
 
+    public function offers(): HasMany
+    {
+        return $this->hasMany(Offer::class, "car_id");
+    }
+
     public function scopeFilter(Builder $query, array $filters): Builder
     {
         return $query->when(
