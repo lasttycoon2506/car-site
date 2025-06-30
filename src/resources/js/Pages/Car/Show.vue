@@ -63,8 +63,7 @@
             </div>
             <div v-if="user" class="outline py-2 px-2 rounded-md mt-5">
                 <header class="mb-1 font-bold">Offer: </header>
-                <MakeOffer :car-id="props.car.id ?? 0" :price="props.car.price"
-                    @updated-offer="updatedOffer.value = $event">
+                <MakeOffer :car-id="props.car.id ?? 0" :price="props.car.price" @updated-offer="updatedOffer = $event">
                 </MakeOffer>
             </div>
         </div>
