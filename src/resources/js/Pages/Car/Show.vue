@@ -82,10 +82,14 @@ import { usePage } from '@inertiajs/vue3';
 import Alert from '../../Components/Alert.vue';
 import type { PageProps } from "@/resources/types/pageProps"
 import OfferMade from '../../Components/OfferMade.vue';
+import type { OfferMade as OfferMadeType } from '@/resources/types/offerMade';
 
 
 const page = usePage<PageProps>()
-const props = defineProps<{ car: Car, offerMade: any }>()
+const props = defineProps<{
+    car: Car,
+    offerMade: OfferMadeType
+}>()
 const mainImage = ref(props.car.images[0])
 const interestRate: Ref<number> = ref(3)
 const duration: Ref<number> = ref(5)
