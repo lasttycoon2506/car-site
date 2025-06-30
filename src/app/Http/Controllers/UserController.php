@@ -27,6 +27,6 @@ class UserController extends Controller
 
         Auth::login($newUser);
 
-        return redirect()->route("car.index")->with("success", "Account Created, Welcome!");
+        return redirect()->route("cars.index");
     }
 }
