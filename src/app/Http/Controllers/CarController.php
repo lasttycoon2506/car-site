@@ -21,6 +21,7 @@ class CarController extends Controller
                 "cars" => Car::with("images")
                     ->mostRecent()
                     ->filter($filters)
+                    ->withoutSold()
                     ->paginate(8)
                     ->withQueryString()
             ]

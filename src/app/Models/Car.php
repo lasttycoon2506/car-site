@@ -70,4 +70,9 @@ class Car extends Model
         )
         ;
     }
+
+    public function scopeWithoutSold(Builder $query): Builder
+    {
+        return $query->whereNull("sold_at");
+    }
 }
