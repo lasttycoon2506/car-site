@@ -1,13 +1,20 @@
 <template>
-    <div class="flex justify-between outline rounded-md py-2 px-2">
-        <div class="font-semibold">Offer Made: </div>
-        <div>{{ offerMadeOn }}</div>
+    <div class="outline rounded-md mt-5 py-2 px-2">
+        <div class="text-gray-500 text-md">Offer Made</div>
+        <div class="text-3xl mb-1 font-bold">
+            <PriceFormatter :price="props.offerMade.amount" :allow-negative="false" />
+        </div>
+        <div class="flex justify-between">
+            <div class="font-semibold">Made: </div>
+            <div>{{ offerMadeOn }}</div>
+        </div>
     </div>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue';
 import type { OfferMade } from "@/resources/types/offerMade"
+import PriceFormatter from './PriceFormatter.vue';
 
 
 const props = defineProps<{
