@@ -39,9 +39,10 @@ import { Car } from '@/resources/types/car';
 import PriceFormatter from '../../Components/PriceFormatter.vue';
 
 
-defineProps<{
+const props = defineProps<{
     car: Car,
 }>()
 
+console.log(props.car)
 
 </script>

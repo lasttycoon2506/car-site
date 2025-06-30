@@ -1,4 +1,5 @@
 import type { Image } from "./image";
+import { OfferMade } from "./offerMade";
 
 export type Car = {
     id?: number;
@@ -13,4 +14,5 @@ export type Car = {
     price: number;
     images: Image[];
     offers_count: number;
+    offers: OfferMade[];
 };
