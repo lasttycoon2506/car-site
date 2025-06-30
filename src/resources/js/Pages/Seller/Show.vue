@@ -1,6 +1,6 @@
 <template>
     <div class="grid grid-cols-3 mx-10 my-5">
-        <div class="col-span-2">toots</div>
+        <div v-for="offer in car.offers" class="col-span-2">{{ offer }}</div>
         <div
             class="grid col bg-sky-300/50 rounded-lg px-5 py-3 me-12 border border-black bg-clip-padding shadow-xl font-serif text-2xl font-bold">
             <div>
