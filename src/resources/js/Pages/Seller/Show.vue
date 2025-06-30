@@ -2,7 +2,7 @@
     <div class="grid grid-cols-3 mx-10 my-5">
         <div class="col-span-2">
             <div v-for="offer in car.offers">
-                {{ offer }}
+                <OfferCard :offer="offer"></OfferCard>
             </div>
         </div>
         <div>
@@ -14,6 +14,7 @@
 <script setup lang="ts">
 import { Car } from '@/resources/types/car';
 import CarDetails from '../../Components/CarDetails.vue';
+import OfferCard from '../../Components/OfferCard.vue';
 
 
 defineProps<{

@@ -1,6 +1,8 @@
 <template>
-    <PriceFormatter :price="offer.amount" :allow-negative="false"></PriceFormatter>
-    <div>{{ offerMadeOn }}</div>
+    <div class="outline rounded-md px-2 py-2">
+        <PriceFormatter :price="offer.amount" :allow-negative="false"></PriceFormatter>
+        <div>{{ offerMadeOn }}</div>
+    </div>
 </template>
 
 <script setup lang="ts">
