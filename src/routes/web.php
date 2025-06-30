@@ -21,6 +21,6 @@ Route::resource("user", UserController::class)->only(["create", "store"]);
 Route::resource("car.offer", OfferController::class)->middleware("auth")->only(["store"]);
 
 Route::prefix("seller")->name("seller.")->middleware("auth")->group(function () {
-    Route::resource("/cars", SellerController::class)->only("index", "create", "store", "edit", "update", "destroy");
+    Route::resource("/cars", SellerController::class);
     Route::resource("car.image", ImageUploadController::class)->only("create", "store", "destroy");
 });
