@@ -12,6 +12,6 @@ const props = defineProps<{
     offerMade: any
 }>()
 
-console.log(typeof props.offerMade)
+console.log(props.offerMade)
 // const offerMadeOn = computed(() => new Date(props.))
 </script>

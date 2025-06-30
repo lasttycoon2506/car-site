@@ -66,7 +66,7 @@
                 <MakeOffer :car-id="props.car.id ?? 0" :price="props.car.price" @updated-offer="updatedOffer = $event">
                 </MakeOffer>
             </div>
-            <OfferMade />
+            <OfferMade :offer-made="props.offerMade" />
         </div>
     </div>
 </template>
@@ -85,7 +85,7 @@ import OfferMade from '../../Components/OfferMade.vue';
 
 
 const page = usePage<PageProps>()
-const props = defineProps<{ car: Car }>()
+const props = defineProps<{ car: Car, offerMade: any }>()
 const mainImage = ref(props.car.images[0])
 const interestRate: Ref<number> = ref(3)
 const duration: Ref<number> = ref(5)
