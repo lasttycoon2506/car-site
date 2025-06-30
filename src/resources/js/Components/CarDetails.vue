@@ -1,6 +1,6 @@
 <template>
     <div
-        class="grid col bg-sky-300/50 rounded-lg px-5 py-3 me-12 border border-black bg-clip-padding shadow-xl font-serif text-2xl font-bold">
+        class=" bg-sky-300/50 rounded-lg px-5 py-3 me-12 border border-black bg-clip-padding shadow-xl font-serif text-2xl font-bold">
         <div>
             <span class="font-normal text-xl">Make: </span><span> {{ car.make }}</span>
         </div>
@@ -36,7 +36,7 @@ import { Car } from '@/resources/types/car';
 import PriceFormatter from './PriceFormatter.vue';
 
 
-const props = defineProps<{
+defineProps<{
     car: Car,
 }>()
 </script>
