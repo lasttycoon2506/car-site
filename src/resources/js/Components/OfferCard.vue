@@ -1,8 +1,18 @@
 <template>
     <div class="outline rounded-md px-2 py-2">
-        <PriceFormatter :price="offer.amount" :allow-negative="false"></PriceFormatter>
-        <div>{{ offer.bidder.name }}</div>
-        <div>{{ offerMadeOn }}</div>
+        <div class="flex justify-around">
+            <div>
+                <PriceFormatter :price="offer.amount" :allow-negative="false" class="text-xl"></PriceFormatter>
+                <div>Made By: {{ offer.bidder.name }}</div>
+                <div class="text-gray-500">Made: {{ offerMadeOn }}</div>
+            </div>
+            <div class="flex items-center">
+                <Link href="`/seller/cars/${car.id}`"
+                    class="rounded-lg bg-amber-400 py-2 px-10 font-semibold hover:bg-amber-800">
+                Accept
+                </Link>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -10,6 +20,7 @@
 import { OfferMade } from '@/resources/types/offerMade';
 import PriceFormatter from './PriceFormatter.vue';
 import { computed, ComputedRef } from 'vue';
+import { Link } from '@inertiajs/vue3';
 
 
 
