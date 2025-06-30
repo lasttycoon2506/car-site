@@ -66,6 +66,7 @@
                 <MakeOffer :car-id="props.car.id ?? 0" :price="props.car.price" @updated-offer="updatedOffer = $event">
                 </MakeOffer>
             </div>
+            <OfferMade />
         </div>
     </div>
 </template>
@@ -80,6 +81,7 @@ import { User } from '@/resources/types/user';
 import { usePage } from '@inertiajs/vue3';
 import Alert from '../../Components/Alert.vue';
 import type { PageProps } from "@/resources/types/pageProps"
+import OfferMade from '../../Components/OfferMade.vue';
 
 
 const page = usePage<PageProps>()
