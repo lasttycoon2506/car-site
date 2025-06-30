@@ -32,6 +32,10 @@
                         class="rounded-lg bg-red-600 py-2 px-7 font-semibold hover:bg-red-900">
                     Delete
                     </Link>
+                    <Link :href="`/seller/cars/${car.id}`"
+                        class="rounded-lg bg-red-600 py-2 px-7 font-semibold hover:bg-red-900">
+                    {{ car.offers_count }}
+                    </Link>
                 </div>
             </div>
         </div>

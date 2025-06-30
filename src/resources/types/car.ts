@@ -12,4 +12,5 @@ export type Car = {
     miles: number;
     price: number;
     images: Image[];
+    offers_count: number;
 };
