@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ComputedRef } from 'vue';
 import type { OfferMade } from "@/resources/types/offerMade"
 import PriceFormatter from './PriceFormatter.vue';
 
@@ -21,5 +21,5 @@ const props = defineProps<{
     offerMade: OfferMade
 }>()
 
-const offerMadeOn = computed(() => new Date(props.offerMade.created_at).toLocaleDateString())
+const offerMadeOn: ComputedRef<string> = computed(() => new Date(props.offerMade.created_at).toLocaleDateString())
 </script>
