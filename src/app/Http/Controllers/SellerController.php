@@ -23,6 +23,17 @@ class SellerController extends Controller
     }
 
 
+    public function show(Car $car)
+    {
+        return inertia(
+            "Seller/Show",
+            [
+                "car" => $car->load("offers")
+            ]
+        );
+    }
+
+
     public function create()
     {
         return inertia(
