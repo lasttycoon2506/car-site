@@ -95,7 +95,8 @@ const carForm: InertiaForm<Car> = useForm<Car>({
     mpg: props.car.mpg,
     miles: props.car.miles,
     price: props.car.price,
-    images: props.car.images
+    images: props.car.images,
+    offers_count: props.car.offers_count
 })
 
 const editCar: () => void = () => carForm.put(`/seller/cars/${props.car.id}`)

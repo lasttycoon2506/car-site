@@ -25,7 +25,7 @@
             <span class="font-bold">{{ car.transmission }}</span>
         </div>
         <div class="flex justify-center"><span class="font-bold">
-                <PriceFormatter :price=car.price></PriceFormatter>
+                <PriceFormatter :price=car.price :allow-negative="false"></PriceFormatter>
             </span><span class="text-gray-500"> &nbsp or &nbsp</span>
             <MonthlyPayment :car="car" />
             <span> &nbsp/ month</span>

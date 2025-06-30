@@ -1,5 +1,5 @@
 <template>
-    <PriceFormatter :price="monthlyPayment" />
+    <PriceFormatter :price="monthlyPayment" :allow-negative="false" />
     <slot></slot>
 </template>
 
