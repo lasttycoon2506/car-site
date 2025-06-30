@@ -7,7 +7,7 @@
                 <div class="text-gray-500">Made: {{ offerMadeOn }}</div>
             </div>
             <div class="flex items-center">
-                <Link href="`/seller/cars/${car.id}`"
+                <Link :href="`/seller/offer/${offer.id}/accept`" method="put"
                     class="rounded-lg bg-amber-400 py-2 px-10 font-semibold hover:bg-amber-800">
                 Accept
                 </Link>

@@ -1,7 +1,7 @@
 <template>
     <div class="grid grid-cols-3 mx-10 my-5">
         <div class="col-span-2">
-            <div v-for="offer in car.offers">
+            <div v-for="offer in car.offers" :key="offer.id">
                 <OfferCard :offer="offer"></OfferCard>
             </div>
         </div>

@@ -34,8 +34,8 @@ class Offer extends Model
         return $query->where("bidder_id", Auth::user()?->id);
     }
 
-    public function scopeExcept(Builder $query, Offer $offer): Builder
+    public function scopeExcept(Builder $query): Builder
     {
-        return $query->where("car_id", "!=", $offer->id());
+        return $query->where("bidder_id", "!=", Auth::user()->id());
     }
 }

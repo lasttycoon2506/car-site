@@ -27,7 +27,7 @@
             <div v-else class="flex items-center me-10 gap-7">
                 <Link href="/login"> <button class="rounded-lg bg-lime-500 py-2 px-10 font-semibold">Login</button>
                 </Link>
-                <Link href="/user/create"> <button class="rounded-lg bg-orange-700 py-2 px-5 font-semibold">
+                <Link href="/user/create"> <button class="rounded-lg bg-orange-700 py-2 px-7 font-semibold">
                     Join Us!</button>
                 </Link>
             </div>
