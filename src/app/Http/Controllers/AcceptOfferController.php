@@ -12,7 +12,10 @@ class AcceptOfferController extends Controller
 
         $offer->update(["accepted_at" => now()]);
 
-        $try = $offer->car()->offers()->except();
-        dd($try);
+        $offer->car->offers()
+            ->except($offer)
+            ->update(["declined_at" => now()]);
+
+        return;
     }
 }
