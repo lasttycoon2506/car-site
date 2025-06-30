@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Car;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class CarController extends Controller
@@ -25,9 +26,14 @@ class CarController extends Controller
     public function show(Car $car)
     {
         $car->load(["images"]);
+        $offer = Auth::user() ? $car->offers()->byMe()->first() : null;
+
         return inertia(
             "Car/Show",
-            ["car" => $car]
+            [
+                "car" => $car,
+                "offerMade" => $offer
+            ]
         );
     }
 }
