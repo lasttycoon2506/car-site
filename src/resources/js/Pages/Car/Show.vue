@@ -3,35 +3,8 @@
         <Alert :success="alertMsg" />
     </div>
     <div class="grid grid-cols-4 gap-5 mx-12 my-10">
-        <div
-            class="grid col bg-sky-300/50 rounded-lg px-5 py-3 me-12 border border-black bg-clip-padding shadow-xl font-serif text-2xl font-bold">
-            <div>
-                <span class="font-normal text-xl">Make: </span><span> {{ car.make }}</span>
-            </div>
-            <div>
-                <span class="font-normal text-xl">Model: </span><span> {{ car.model }}</span>
-            </div>
-            <div>
-                <span class="font-normal text-xl">Year: </span><span> {{ car.year }}</span>
-            </div>
-            <div>
-                <span class="font-normal text-xl">Condition: </span><span> {{ car.condition }}</span>
-            </div>
-            <div>
-                <span class="font-normal text-xl">Drive-Type: </span><span> {{ car.drive_type }}</span>
-            </div>
-            <div>
-                <span class="font-normal text-xl">Miles: </span><span> {{ car.miles.toLocaleString() }}</span>
-            </div>
-            <div>
-                <span class="font-normal text-xl">MPG: </span><span> {{ car.mpg }}</span>
-            </div>
-            <span>
-                <PriceFormatter :price="car.price" :allow-negative="false"></PriceFormatter>
-            </span>
-            <div>
-                <span class="font-normal text-xl">Transmission: </span><span> {{ car.transmission }}</span>
-            </div>
+        <div>
+            <CarDetails :car="car"></CarDetails>
         </div>
         <div class="col-span-2">
             <img v-if="car.images.length > 0" :src="mainImage.file_url"
@@ -83,6 +56,7 @@ import Alert from '../../Components/Alert.vue';
 import type { PageProps } from "@/resources/types/pageProps"
 import OfferMade from '../../Components/OfferMade.vue';
 import type { OfferMade as OfferMadeType } from '@/resources/types/offerMade';
+import CarDetails from '../../Components/CarDetails.vue';
 
 
 const page = usePage<PageProps>()
