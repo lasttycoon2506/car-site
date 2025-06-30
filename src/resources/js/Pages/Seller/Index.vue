@@ -25,16 +25,16 @@
                 </div>
                 <div class="flex justify-center gap-4">
                     <Link :href="`/seller/cars/${car.id}/edit`"
-                        class="rounded-lg bg-lime-500 py-2 px-10 font-semibold hover:bg-lime-900">
+                        class="rounded-lg bg-lime-500 py-2 px-7 font-semibold hover:bg-lime-900">
                     Edit
                     </Link>
                     <Link :href="`/seller/cars/${car.id}`" method="delete"
-                        class="rounded-lg bg-red-600 py-2 px-7 font-semibold hover:bg-red-900">
+                        class="rounded-lg bg-red-600 py-2 px-5 font-semibold hover:bg-red-900">
                     Delete
                     </Link>
                     <Link :href="`/seller/cars/${car.id}`"
-                        class="rounded-lg bg-red-600 py-2 px-7 font-semibold hover:bg-red-900">
-                    {{ car.offers_count }}
+                        class="rounded-lg bg-amber-400 py-2 px-3 font-semibold hover:bg-amber-800">
+                    Offers ({{ car.offers_count }})
                     </Link>
                 </div>
             </div>
