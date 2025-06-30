@@ -66,7 +66,7 @@
                 <MakeOffer :car-id="props.car.id ?? 0" :price="props.car.price" @updated-offer="updatedOffer = $event">
                 </MakeOffer>
             </div>
-            <OfferMade :offer-made="props.offerMade" />
+            <OfferMade v-if="user && props.offerMade" :offer-made="props.offerMade" />
         </div>
     </div>
 </template>
