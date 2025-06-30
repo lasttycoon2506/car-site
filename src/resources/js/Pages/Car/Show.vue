@@ -63,7 +63,9 @@
             </div>
             <div v-if="user" class="outline py-2 px-2 rounded-md mt-5">
                 <header class="mb-1 font-bold">Offer: </header>
-                <MakeOffer :car-id="props.car.id ?? 0" :price="props.car.price"></MakeOffer>
+                <MakeOffer :car-id="props.car.id ?? 0" :price="props.car.price"
+                    @updated-offer="updatedOffer.value = $event">
+                </MakeOffer>
             </div>
         </div>
     </div>
@@ -82,12 +84,13 @@ import type { PageProps } from "@/resources/types/pageProps"
 
 
 const page = usePage<PageProps>()
-const user: ComputedRef<User | undefined> = computed(() => page.props.user)
 const props = defineProps<{ car: Car }>()
 const mainImage = ref(props.car.images[0])
 const interestRate: Ref<number> = ref(3)
 const duration: Ref<number> = ref(5)
+const updatedOffer: Ref<number> = ref(props.car.price)
 
+const user: ComputedRef<User | undefined> = computed(() => page.props.user)
 const alertMsg: ComputedRef<string | undefined> = computed(() => page.props.flash?.success)
-const monthlyPayment: ComputedRef<number> = useMonthlyPayment(props.car.price, interestRate, duration)
+const monthlyPayment: ComputedRef<number> = useMonthlyPayment(updatedOffer, interestRate, duration)
 </script>

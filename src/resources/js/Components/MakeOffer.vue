@@ -44,6 +44,6 @@ const makeOffer: () => void
 
 watch(
     () => offerForm.amount,
-    debounce((value: number) => emit('updatedOffer', value), 300)
+    (value: number) => emit('updatedOffer', value)
 )
 </script>
