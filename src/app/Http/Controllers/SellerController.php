@@ -28,7 +28,7 @@ class SellerController extends Controller
         return inertia(
             "Seller/Show",
             [
-                "car" => $car->load("offers")
+                "car" => $car->load(["offers", "offers.bidder"])
             ]
         );
     }
