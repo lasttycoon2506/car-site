@@ -10,11 +10,11 @@
 </template>
 
 <script setup lang="ts">
-import type { Notification } from 
-import { Car } from "@/resources/types/car";
+import type { Notification } from "@/resources/types/notification"
+
 
 const props = defineProps<{
-    notifications: Notification[]
+    notifications: { data: Notification[] }
 }>()
 
 console.log(props.notifications.data)

@@ -1,6 +1,0 @@
-export type Notification = {
-    amount: number;
-    bidder_id: number;
-    car_id: number;
-    offer_id: number;
-};
