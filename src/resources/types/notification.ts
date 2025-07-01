@@ -1,4 +1,5 @@
 export type Notification = {
+    id: string;
     created_at: string;
     data: {
         car_id: number;
