@@ -14,4 +14,6 @@
 const props = defineProps<{
     notifications: []
 }>()
+
+console.log(props.notifications.data)
 </script>
