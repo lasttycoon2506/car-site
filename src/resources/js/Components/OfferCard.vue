@@ -29,7 +29,5 @@ const props = defineProps<{
     offer: OfferMade,
 }>()
 
-console.log(props.offer)
-
 const offerMadeOn: ComputedRef<string> = computed(() => new Date(props.offer.created_at).toLocaleDateString())
 </script>

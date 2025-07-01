@@ -32,7 +32,10 @@ class CarPolicy
      */
     public function view(?User $user, Car $car): bool
     {
-        return true;
+
+        if ($user?->id === $car->user_id) return true;
+
+        return $car->sold_at === null;
     }
 
     /**
