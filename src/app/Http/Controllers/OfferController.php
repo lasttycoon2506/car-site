@@ -10,6 +10,7 @@ class OfferController extends Controller
 {
     public function store(Request $request, Car $car)
     {
+        $this->authorize("view", $car);
 
         $car->offers()->save(Offer::make(
             $request->validate(["amount" => "required|integer|min:1|max:500000"])
