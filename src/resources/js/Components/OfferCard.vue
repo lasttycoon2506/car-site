@@ -8,7 +8,7 @@
                 <div>Made By: {{ offer.bidder.name }}</div>
                 <div class="text-gray-500">Made: {{ offerMadeOn }}</div>
             </div>
-            <div v-if="!offer.declined_at && !offer.accepted_at" class="flex items-center">
+            <div v-if="!isSold" class="flex items-center">
                 <Link :href="`/seller/offer/${offer.id}/accept`" method="put"
                     class="rounded-lg bg-amber-400 py-2 px-10 font-semibold hover:bg-amber-800">
                 Accept
