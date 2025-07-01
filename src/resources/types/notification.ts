@@ -3,8 +3,8 @@ export type Notification = {
     created_at: string;
     data: {
         car_id: number;
-        make: string;
-        model: string;
+        car_make: string;
+        car_model: string;
         bidder_id: number;
         offer_id: number;
         amount: number;
