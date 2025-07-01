@@ -16,6 +16,9 @@
                 </div>
             </div>
             <div v-if="user" class="flex justify-end items-center gap-6">
+                <div>🔔
+                    <div>{{ user.notificationCount }}</div>
+                </div>
                 <div class="text-md text-rose-600">{{ user.email }}</div>
                 <Link href="/seller/cars/create"> <button
                     class="rounded-lg bg-lime-500 py-2 px-10 font-semibold">Sell</button>
@@ -46,4 +49,5 @@ import type { PageProps } from "@/resources/types/pageProps"
 const page = usePage<PageProps>()
 
 const user: ComputedRef<User | undefined> = computed(() => page.props.user)
+const notificationCount = computed(() => page.props.user.notificationCount)
 </script>
