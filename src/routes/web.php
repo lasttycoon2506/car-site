@@ -8,6 +8,7 @@ use App\Http\Controllers\SellerController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AcceptOfferController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\NotificationReadController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -41,3 +42,5 @@ Route::prefix("seller")->name("seller.")
 Route::resource("notifications", NotificationController::class)
     ->middleware("auth")
     ->only(["index"]);
+
+Route::put("/notification/{notification}/read", NotificationReadController::class);
