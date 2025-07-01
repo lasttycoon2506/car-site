@@ -15,7 +15,7 @@
         </div>
         <div>
             <Link :href="`/seller/cars/${notification.data.car_id}`"
-                class="rounded-lg bg-amber-400 py-2 px-4 font-semibold hover:bg-amber-800">
+                class="rounded-lg bg-lime-600 py-2 px-4 font-semibold hover:bg-amber-800">
             See Offer
             </Link>
         </div>
