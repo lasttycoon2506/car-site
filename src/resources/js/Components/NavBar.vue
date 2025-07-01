@@ -49,5 +49,7 @@ import type { PageProps } from "@/resources/types/pageProps"
 const page = usePage<PageProps>()
 
 const user: ComputedRef<User | undefined> = computed(() => page.props.user)
-const notificationCount = computed(() => page.props.user.notificationCount)
+const notificationCount: ComputedRef<number | null> = computed(() =>
+    page.props.user ? page.props.user.notificationCount : null
+)
 </script>
