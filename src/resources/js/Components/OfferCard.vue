@@ -27,6 +27,7 @@ import { Link } from '@inertiajs/vue3';
 
 const props = defineProps<{
     offer: OfferMade,
+    isSold: boolean
 }>()
 
 const offerMadeOn: ComputedRef<string> = computed(() => new Date(props.offer.created_at).toLocaleDateString())

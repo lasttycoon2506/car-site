@@ -15,4 +15,5 @@ export type Car = {
     images: Image[];
     offers_count: number;
     offers: OfferMade[];
+    is_sold: boolean;
 };
