@@ -10,5 +10,4 @@ export type Notification = {
         amount: number;
     };
     read_at: null | string;
-    updated_at: string;
 };
