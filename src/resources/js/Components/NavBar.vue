@@ -17,12 +17,12 @@
             </div>
             <div v-if="user" class="flex justify-end items-center gap-6">
                 <div class="relative">🔔
-                    <div
+                    <div v-if="user.notificationCount"
                         class="absolute -right-1 bottom-2 w-4 h-4 font-semibold text-white bg-red-600 rounded-full flex items-center justify-center">
                         {{ user.notificationCount }}
                     </div>
                 </div>
-                <div class="text-md text-rose-600">{{ user.email }}</div>
+                <div class="text-md text-white">{{ user.email }}</div>
                 <Link href="/seller/cars/create"> <button
                     class="rounded-lg bg-lime-500 py-2 px-10 font-semibold">Sell</button>
                 </Link>
