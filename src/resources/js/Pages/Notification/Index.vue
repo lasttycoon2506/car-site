@@ -21,18 +21,15 @@ import NotificationCard from "../../Components/NotificationCard.vue";
 import { usePage } from "@inertiajs/vue3";
 import type { PageProps } from "@/resources/types/pageProps";
 import { computed, ComputedRef } from "vue";
-import type { User } from "@/resources/types/user";
 import Pagination from "../../Components/Pagination.vue";
+import { Link } from "@/resources/types/link";
 
 
 const page = usePage<PageProps>()
-const props = defineProps<{
-    notifications: { data: Notification[] }
+defineProps<{
+    notifications: { data: Notification[], links: Link[] }
 }>()
 
-console.log(props.notifications)
-
-const user: ComputedRef<User | undefined> = computed(() => page.props.user)
 const notificationCount: ComputedRef<number> = computed(() =>
     page.props.user!.notificationCount
 )
