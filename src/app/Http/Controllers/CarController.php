@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Auth;
 
 class CarController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Car::class, "car");
+    }
+
+
     public function index(Request $request)
     {
 
