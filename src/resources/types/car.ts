@@ -15,5 +15,5 @@ export type Car = {
     images: Image[];
     offers_count: number;
     offers: OfferMade[];
-    sold_at: string;
+    sold_at: string | null;
 };

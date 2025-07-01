@@ -7,5 +7,5 @@ export type OfferMade = {
     created_at: string;
     declined_at: string;
     updated_at: string;
-    bidder: string;
+    bidder: { name: string };
 };
