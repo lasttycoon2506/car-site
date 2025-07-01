@@ -49,6 +49,8 @@ class OfferMade extends Notification
     {
         return [
             "car_id" => $this->offer->car_id,
+            "car_make" => $this->offer->car->make,
+            "car_model" => $this->offer->car->model,
             "bidder_id" => $this->offer->bidder_id,
             "offer_id" => $this->offer->id,
             "amount" => $this->offer->amount
