@@ -3,8 +3,9 @@
         <div class="col-span-2 flex justify-center">
             <PriceFormatter :price="notification.data.amount" :allow-negative="false" class="font-semibold">
             </PriceFormatter>
-            &nbsp; for {{ notification.data.car_make }} {{ notification.data.car_model }}
-            on {{ notifCreatedAt }}
+            &nbsp; for {{ notification.data.car_make.toUpperCase() }}
+            {{ notification.data.car_model.charAt(0).toUpperCase() + notification.data.car_model.slice(1) }}
+            on &nbsp;<span class="font-semibold">{{ notifCreatedAt }}</span>
         </div>
         <div>
             <Link :href="`/cars/${notification.data.car_id}`"
