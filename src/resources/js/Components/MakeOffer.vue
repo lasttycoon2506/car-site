@@ -21,7 +21,6 @@
 import { InertiaForm, useForm } from '@inertiajs/vue3';
 import { computed, ComputedRef, watch } from 'vue';
 import PriceFormatter from './PriceFormatter.vue';
-import debounce from 'lodash/debounce';
 
 
 const props = defineProps<{

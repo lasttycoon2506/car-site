@@ -50,7 +50,7 @@ import { computed, ComputedRef, Ref, ref } from 'vue'
 import PriceFormatter from '../../Components/PriceFormatter.vue';
 import { useMonthlyPayment } from '../../Composables/useMonthlyPayment';
 import MakeOffer from '../../Components/MakeOffer.vue';
-import { User } from '@/resources/types/user';
+import type { User } from '@/resources/types/user';
 import { usePage } from '@inertiajs/vue3';
 import Alert from '../../Components/Alert.vue';
 import type { PageProps } from "@/resources/types/pageProps"

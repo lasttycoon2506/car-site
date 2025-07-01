@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { OfferMade } from '@/resources/types/offerMade';
+import type { OfferMade } from '@/resources/types/offerMade';
 import PriceFormatter from './PriceFormatter.vue';
 import { computed, ComputedRef } from 'vue';
 import { Link } from '@inertiajs/vue3';

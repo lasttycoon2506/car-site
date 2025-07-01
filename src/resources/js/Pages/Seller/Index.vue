@@ -55,7 +55,7 @@
 <script setup lang="ts">
 import { Link, usePage } from '@inertiajs/vue3';
 import PriceFormatter from '../../Components/PriceFormatter.vue';
-import { Cars } from '@/resources/types/cars';
+import type { Cars } from '@/resources/types/cars';
 import Pagination from '../../Components/Pagination.vue';
 import { computed, ComputedRef } from 'vue';
 import Alert from '../../Components/Alert.vue';

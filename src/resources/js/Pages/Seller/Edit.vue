@@ -80,7 +80,7 @@
 </template>
 
 <script setup lang="ts">
-import { Car } from "@/resources/types/car";
+import type { Car } from "@/resources/types/car";
 import { InertiaForm, Link, useForm } from "@inertiajs/vue3"
 
 const props = defineProps<{ car: Car }>()

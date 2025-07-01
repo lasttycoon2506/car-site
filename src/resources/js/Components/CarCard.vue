@@ -34,7 +34,7 @@
 </template>
 
 <script setup lang="ts">
-import { Car } from '@/resources/types/car';
+import type { Car } from '@/resources/types/car';
 import PriceFormatter from './PriceFormatter.vue';
 import MonthlyPayment from './MonthlyPayment.vue';
 

@@ -5,7 +5,7 @@
 
 
 <script setup lang="ts">
-import { Car } from '@/resources/types/car';
+import type { Car } from '@/resources/types/car';
 import { useMonthlyPayment } from '../Composables/useMonthlyPayment';
 import PriceFormatter from './PriceFormatter.vue';
 

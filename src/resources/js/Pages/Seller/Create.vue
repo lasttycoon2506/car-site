@@ -76,7 +76,7 @@
 </template>
 
 <script setup lang="ts">
-import { Car } from "@/resources/types/car";
+import type { Car } from "@/resources/types/car";
 import { InertiaForm, useForm } from "@inertiajs/vue3"
 
 const carForm: InertiaForm<Car> = useForm<Car>({
