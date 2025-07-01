@@ -23,7 +23,7 @@
 
 <script setup lang="ts">
 import type { Notification } from "@/resources/types/notification"
-import { computed } from "vue";
+import { computed, ComputedRef } from "vue";
 import PriceFormatter from "./PriceFormatter.vue";
 import { Link } from "@inertiajs/vue3";
 
@@ -32,5 +32,5 @@ const props = defineProps<{
     notification: Notification
 }>()
 
-const notifCreatedAt = computed(() => new Date(props.notification.created_at).toLocaleDateString())
+const notifCreatedAt: ComputedRef<string> = computed(() => new Date(props.notification.created_at).toLocaleDateString())
 </script>
