@@ -16,7 +16,6 @@ class NotificationController extends Controller
                 $request
                     ->user()
                     ->notifications()
-                    ->mostRecent()
                     ->paginate(10)
             ]
         );
