@@ -3,7 +3,7 @@
         <Alert :success="alertMsg" />
     </div>
     <h1 class="text-shadow-lg font-bold text-center text-4xl mt-5 mb-8">Your Cars</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-10 my-3">
+    <div v-if="sellerCars.data" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-10 my-3">
         <div v-for="car in sellerCars.data">
             <div v-if="car.sold_at !== null" class="bg-green-500 rounded-md text-center py-1">SOLD</div>
             <div class="border border-grey-500 shadow-2xl rounded-lg px-3 py-3">
@@ -41,6 +41,7 @@
             </div>
         </div>
     </div>
+    <div v-if="sellerCars.data.length === 0" class="text-center text-8xl text-red-600">Get Selling!</div>
     <div v-if="sellerCars.data.length" class="flex flex-col items-center my-10">
         <div class="mb-3">
             <span class="font-semibold">{{ sellerCars.total }}</span> cars
