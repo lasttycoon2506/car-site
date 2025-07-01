@@ -18,6 +18,10 @@
                 class="rounded-lg bg-lime-600 py-2 px-4 font-semibold hover:bg-amber-800">
             See Offer
             </Link>
+            <Link :href="`/notification/${notification.id}/read`" method="put"
+                class="rounded-lg bg-lime-600 py-2 px-4 font-semibold hover:bg-amber-800">
+            Mark as Read
+            </Link>
         </div>
     </div>
 </template>
