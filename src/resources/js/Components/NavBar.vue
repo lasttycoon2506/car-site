@@ -16,9 +16,9 @@
                 </div>
             </div>
             <div v-if="user" class="flex justify-end items-center gap-6">
-                <div class="relative">🔔
+                <div class="relative text-xl">🔔
                     <div v-if="user.notificationCount"
-                        class="absolute -right-1 bottom-2 w-4 h-4 font-semibold text-white bg-red-600 rounded-full flex items-center justify-center">
+                        class="absolute -right-1 bottom-3 w-4 h-4 text-white text-base bg-red-600 rounded-full flex items-center justify-center">
                         {{ user.notificationCount }}
                     </div>
                 </div>
