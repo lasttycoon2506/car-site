@@ -1,7 +1,7 @@
 <template>
     <div class="mx-12 my-5">
         <h1 class="text-shadow-lg font-bold text-center text-4xl mt-5 mb-12">Your Notifications</h1>
-        <Tabs>
+        <Tabs v-model:activeTab="activeTab">
             <template #unreadNotifications>
                 <div v-for="notification in unreadNotifications.data" :key="notification.id">
                     <NotificationCard :notification="notification" />
@@ -18,14 +18,14 @@
                 </div>
             </template>
         </Tabs>
-        <!-- <div v-if="notificationCount > 0" class="flex flex-col items-center my-10">
+        <div v-if="notificationCount > 0" class="flex flex-col items-center my-10">
             <div class="mb-3">
                 <span class="font-semibold">{{ notificationCount }}</span> notifications
             </div>
             <div>
-                <Pagination :links="notifications.links" />
+                <Pagination :links="selectedNotifications!.links" />
             </div>
-        </div> -->
+        </div>
     </div>
 </template>
 
@@ -34,7 +34,7 @@ import type { Notification } from "@/resources/types/notification"
 import NotificationCard from "../../Components/NotificationCard.vue";
 import { usePage } from "@inertiajs/vue3";
 import type { PageProps } from "@/resources/types/pageProps";
-import { computed, ComputedRef } from "vue";
+import { computed, ComputedRef, ref } from "vue";
 import Pagination from "../../Components/Pagination.vue";
 import type { Link } from "@/resources/types/link";
 import Tabs from "../../Components/Tabs.vue";
@@ -47,6 +47,13 @@ const props = defineProps<{
     readNotifications: { data: Notification[], links: Link[] }
 }>()
 
+
+const activeTab = ref("unreadNotifications")
+const selectedNotifications = computed(() => {
+    if (activeTab.value === "readNotifications") return props.readNotifications
+    else if (activeTab.value === "allNotifications") return props.allNotifications
+    else if (activeTab.value === "unreadNotifications") return props.unreadNotifications
+})
 const notificationCount: ComputedRef<number> = computed(() =>
     page.props.user!.notificationCount)
 
