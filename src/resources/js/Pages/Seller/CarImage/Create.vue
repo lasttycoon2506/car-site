@@ -8,18 +8,18 @@
     <div class="border border-gray-400 w-3/4 mt-10 ms-10 rounded-md py-5 px-5">
         <form @submit.prevent="uploadImages">
             <div v-if="errorMsg.length" class="text-red-500 mb-4 text-lg font-semibold">{{ errorMsg[0] }}</div>
-            <header class=" text-gray-600 mb-2">Upload Pictures</header>
             <input type="hidden" name="_token" :value="csrf" />
-            <div class="flex justify-between items-center">
-                <div class="w-3/5">
+            <div class="grid grid-cols-5">
+                <div class="col-span-3">
+                    <header class=" text-gray-600 mb-2">Upload Pictures</header>
                     <input type="file" ref="fileInput" multiple @input="addFiles"
                         class="file:border-0 file:py-2 file:px-3 file:me-3 rounded-md border border-gray-300 w-full">
                 </div>
-                <div>
+                <div class="col-span-2 flex justify-center items-center">
                     <button type="submit" :disabled="!fileExists"
-                        class=" bg-lime-500 disabled:opacity-30 rounded-lg py-3 px-10 me-10 font-semibold">upload</button>
+                        class=" bg-lime-500 disabled:opacity-30 rounded-lg px-10 py-3 me-10 font-semibold">upload</button>
                     <button type="reset" @click="reset"
-                        class="bg-red-600 rounded-lg py-3 px-11 font-semibold">reset</button>
+                        class="bg-red-600 rounded-lg px-11 py-3 font-semibold">reset</button>
                 </div>
             </div>
         </form>
