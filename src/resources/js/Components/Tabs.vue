@@ -1,7 +1,7 @@
 <template>
     <div class="flex border-b mb-4 gap-10">
         <button v-for="tab in tabs" :key="tab"
-            :class="['px-4 py-2', props.activeTab === tab ? 'font-bold border-b-2 border-lime-500' : '']"
+            :class="['px-4 py-2', props.activeTab === tab ? 'font-bold border-b-2 border-s-2 border-e-2 border-t-2 rounded-lg border-lime-500' : 'text-gray-500']"
             @click="setTab(tab)">
             {{ tab }}
         </button>
@@ -18,18 +18,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-
 const tabs = ['Unread', 'Read', "All"]
 
 const props = defineProps<{
     activeTab: string
 }>()
-const emit = defineEmits<{
+const emit: __VLS_Emit = defineEmits<{
     (e: 'update:activeTab', value: string): void
 }>()
 
-function setTab(tab: string) {
-    emit('update:activeTab', tab)
-}
+const setTab: (tab: string) => void
+    = (tab: string) => {
+        emit('update:activeTab', tab)
+    }
 </script>

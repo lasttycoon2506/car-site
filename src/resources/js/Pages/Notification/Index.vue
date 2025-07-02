@@ -55,5 +55,4 @@ const selectedNotifications = computed(() => {
 })
 const notificationCount: ComputedRef<number> = computed(() =>
     page.props.user!.notificationCount)
-console.log(selectedNotifications.value)
 </script>
