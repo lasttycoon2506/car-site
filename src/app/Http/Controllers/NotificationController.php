@@ -12,10 +12,17 @@ class NotificationController extends Controller
         return inertia(
             "Notification/Index",
             [
-                "notifications" =>
-                $request
+                "notifications" => $request
                     ->user()
                     ->notifications()
+                    ->paginate(10),
+                "unreadNotifications" => $request
+                    ->user()
+                    ->unreadNotifications()
+                    ->paginate(10),
+                "readNotifications" => $request
+                    ->user()
+                    ->readNotifications()
                     ->paginate(10)
             ]
         );

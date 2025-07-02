@@ -46,12 +46,13 @@ const props = defineProps<{
 }>()
 
 const notificationCount: ComputedRef<number> = computed(() =>
-    page.props.user!.notificationCount
-)
+    page.props.user!.notificationCount)
 const unreadNotifications: ComputedRef<Notification[]> = computed(() => (
     props.notifications.data.filter(element => !element.read_at)))
 const readNotifications: ComputedRef<Notification[]> = computed(() => (
     props.notifications.data.filter(element => element.read_at)))
 const allNotifications: ComputedRef<Notification[]> = computed(() => (
     props.notifications.data))
+
+console.log(props.notifications.data)
 </script>
