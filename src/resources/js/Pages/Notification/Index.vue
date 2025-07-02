@@ -18,7 +18,7 @@
                 </div>
             </template>
         </Tabs>
-        <div v-if="notificationCount > 0" class="flex flex-col items-center my-10">
+        <div class="flex flex-col items-center my-10">
             <div class="mb-3">
                 <span class="font-semibold">{{ selectedNotifications!.total }}</span> notifications
             </div>
@@ -34,25 +34,28 @@ import type { Notification } from "@/resources/types/notification"
 import NotificationCard from "../../Components/NotificationCard.vue";
 import { usePage } from "@inertiajs/vue3";
 import type { PageProps } from "@/resources/types/pageProps";
-import { computed, ComputedRef, ref } from "vue";
+import { computed, ComputedRef, Ref, ref } from "vue";
 import Pagination from "../../Components/Pagination.vue";
 import type { Link } from "@/resources/types/link";
 import Tabs from "../../Components/Tabs.vue";
 
 
-const page = usePage<PageProps>()
 const props = defineProps<{
     allNotifications: { data: Notification[], links: Link[], total: number }
     unreadNotifications: { data: Notification[], links: Link[], total: number },
     readNotifications: { data: Notification[], links: Link[], total: number }
 }>()
 
-const activeTab = ref("Unread")
-const selectedNotifications = computed(() => {
-    if (activeTab.value === "Read") return props.readNotifications
-    else if (activeTab.value === "All") return props.allNotifications
-    else if (activeTab.value === "Unread") return props.unreadNotifications
-})
-const notificationCount: ComputedRef<number> = computed(() =>
-    page.props.user!.notificationCount)
+const activeTab: Ref<string, string> = ref("Unread")
+const selectedNotifications: ComputedRef<{
+    data: Notification[];
+    links: Link[];
+    total: number;
+} | undefined> =
+    computed(() => {
+        if (activeTab.value === "Read") return props.readNotifications
+        else if (activeTab.value === "All") return props.allNotifications
+        else if (activeTab.value === "Unread") return props.unreadNotifications
+    })
+
 </script>
