@@ -1,7 +1,6 @@
-# Laravel Application
+# Car Website
 
-Vue  
-Tailwind
+Buy and sell cars using Vue/Tailwind/Typescript/PHP/Laravel/MySQL (Docker)
 
 
 
