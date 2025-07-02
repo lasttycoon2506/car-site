@@ -20,7 +20,7 @@
         </Tabs>
         <div v-if="notificationCount > 0" class="flex flex-col items-center my-10">
             <div class="mb-3">
-                <span class="font-semibold">{{ notificationCount }}</span> notifications
+                <span class="font-semibold">{{ selectedNotifications!.total }}</span> notifications
             </div>
             <div>
                 <Pagination :links="selectedNotifications!.links" />
@@ -42,19 +42,18 @@ import Tabs from "../../Components/Tabs.vue";
 
 const page = usePage<PageProps>()
 const props = defineProps<{
-    allNotifications: { data: Notification[], links: Link[] }
-    unreadNotifications: { data: Notification[], links: Link[] },
-    readNotifications: { data: Notification[], links: Link[] }
+    allNotifications: { data: Notification[], links: Link[], total: number }
+    unreadNotifications: { data: Notification[], links: Link[], total: number },
+    readNotifications: { data: Notification[], links: Link[], total: number }
 }>()
 
-
-const activeTab = ref("unreadNotifications")
+const activeTab = ref("Unread")
 const selectedNotifications = computed(() => {
-    if (activeTab.value === "readNotifications") return props.readNotifications
-    else if (activeTab.value === "allNotifications") return props.allNotifications
-    else if (activeTab.value === "unreadNotifications") return props.unreadNotifications
+    if (activeTab.value === "Read") return props.readNotifications
+    else if (activeTab.value === "All") return props.allNotifications
+    else if (activeTab.value === "Unread") return props.unreadNotifications
 })
 const notificationCount: ComputedRef<number> = computed(() =>
     page.props.user!.notificationCount)
-
+console.log(selectedNotifications.value)
 </script>
