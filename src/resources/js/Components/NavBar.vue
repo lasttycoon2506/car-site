@@ -17,9 +17,9 @@
             </div>
             <div v-if="user" class="flex justify-end items-center gap-6">
                 <Link class="relative text-xl" href="/notifications">🔔
-                <div v-if="user.notificationCount"
+                <div v-if="notificationCount"
                     class="absolute -right-1 bottom-3 w-4 h-4 text-white text-base bg-red-600 rounded-full flex items-center justify-center">
-                    {{ user.notificationCount }}
+                    {{ notificationCount }}
                 </div>
                 </Link>
                 <div class="text-md text-white">{{ user.email }}</div>

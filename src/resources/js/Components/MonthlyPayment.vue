@@ -8,9 +8,10 @@
 import type { Car } from '@/resources/types/car';
 import { useMonthlyPayment } from '../Composables/useMonthlyPayment';
 import PriceFormatter from './PriceFormatter.vue';
+import { ComputedRef } from 'vue';
+
 
 const props = defineProps<{ car: Car }>()
 
-const monthlyPayment = useMonthlyPayment(props.car.price, 3, 5)
-
+const monthlyPayment: ComputedRef<number> = useMonthlyPayment(props.car.price, 3, 5)
 </script>
