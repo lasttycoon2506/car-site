@@ -40,7 +40,7 @@
 
 <script setup lang="ts">
 import Alert from '../../../Components/Alert.vue';
-import { Car } from '@/resources/types/car';
+import type { Car } from '@/resources/types/car';
 import { InertiaForm, Link, useForm, usePage } from '@inertiajs/vue3';
 import { computed, ComputedRef, Ref, ref } from 'vue';
 import NProgress from 'nprogress'

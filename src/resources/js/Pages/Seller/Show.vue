@@ -20,6 +20,4 @@ import OfferCard from '../../Components/OfferCard.vue';
 defineProps<{
     car: Car,
 }>()
-
-
 </script>

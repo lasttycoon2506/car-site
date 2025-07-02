@@ -22,7 +22,7 @@ import { usePage } from "@inertiajs/vue3";
 import type { PageProps } from "@/resources/types/pageProps";
 import { computed, ComputedRef } from "vue";
 import Pagination from "../../Components/Pagination.vue";
-import { Link } from "@/resources/types/link";
+import type { Link } from "@/resources/types/link";
 
 
 const page = usePage<PageProps>()

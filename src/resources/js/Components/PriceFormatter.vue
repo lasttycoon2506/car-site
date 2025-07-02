@@ -9,6 +9,7 @@
 <script setup lang="ts">
 import { computed, ComputedRef } from 'vue';
 
+
 const props = defineProps<{ price: number, allowNegative: boolean }>()
 
 const formattedPrice: ComputedRef<string> = computed(() => props.price.toLocaleString("en-US",

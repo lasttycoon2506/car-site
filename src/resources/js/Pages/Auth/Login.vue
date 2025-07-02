@@ -24,6 +24,7 @@
 <script setup lang="ts">
 import { InertiaForm, useForm } from '@inertiajs/vue3';
 
+
 type credentials = {
     email: string, password: string
 }

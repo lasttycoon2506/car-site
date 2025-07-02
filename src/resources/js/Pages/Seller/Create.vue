@@ -79,6 +79,7 @@
 import type { Car } from "@/resources/types/car";
 import { InertiaForm, useForm } from "@inertiajs/vue3"
 
+
 const carForm: InertiaForm<Car> = useForm<Car>({
     make: "",
     model: "",
@@ -96,6 +97,4 @@ const carForm: InertiaForm<Car> = useForm<Car>({
 })
 
 const createCar: () => void = () => carForm.post("/seller/cars")
-
-
 </script>
