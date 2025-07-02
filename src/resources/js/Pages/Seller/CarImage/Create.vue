@@ -17,7 +17,7 @@
                 </div>
                 <div class="col-span-2 flex justify-center items-center">
                     <button type="submit" :disabled="!fileExists"
-                        class=" bg-lime-500 disabled:opacity-30 rounded-lg px-10 py-3 me-10 font-semibold">upload</button>
+                        class=" bg-lime-500 disabled:opacity-30 rounded-lg px-10 py-3 ms-10 me-10 font-semibold">upload</button>
                     <button type="reset" @click="reset"
                         class="bg-red-600 rounded-lg px-11 py-3 font-semibold">reset</button>
                 </div>
