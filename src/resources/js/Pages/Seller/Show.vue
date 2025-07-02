@@ -4,7 +4,7 @@
             <div v-for="offer in car.offers" :key="offer.id">
                 <OfferCard :offer="offer" :is-sold="car.sold_at !== null"></OfferCard>
             </div>
-            <div v-if="!car.offers_count" class="text-center mt-12 text-xl">No Offers</div>
+            <div v-if="car.offers.length === 0" class="text-center mt-12 text-xl">No Offers</div>
         </div>
         <div>
             <CarDetails :car="car"></CarDetails>
