@@ -3,12 +3,19 @@
         <h1 class="text-shadow-lg font-bold text-center text-4xl mt-5 mb-12">Your Notifications</h1>
         <Tabs>
             <template #unreadNotifications>
-                <div v-for="notification in notifications.data" :key="notification.id">
+                <div v-for="notification in unreadNotifications" :key="notification.id">
                     <NotificationCard :notification="notification" />
                 </div>
             </template>
             <template #readNotifications>
-                <!-- Your offers list or component -->
+                <div v-for="notification in readNotifications" :key="notification.id">
+                    <NotificationCard :notification="notification" />
+                </div>
+            </template>
+            <template #allNotifications>
+                <div v-for="notification in allNotifications" :key="notification.id">
+                    <NotificationCard :notification="notification" />
+                </div>
             </template>
         </Tabs>
         <div v-if="notificationCount > 0" class="flex flex-col items-center my-10">
@@ -43,4 +50,8 @@ const notificationCount: ComputedRef<number> = computed(() =>
 )
 const unreadNotifications: ComputedRef<Notification[]> = computed(() => (
     props.notifications.data.filter(element => !element.read_at)))
+const readNotifications: ComputedRef<Notification[]> = computed(() => (
+    props.notifications.data.filter(element => element.read_at)))
+const allNotifications: ComputedRef<Notification[]> = computed(() => (
+    props.notifications.data))
 </script>
