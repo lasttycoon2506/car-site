@@ -25,11 +25,11 @@
                     </div>
                 </div>
                 <div class="flex justify-center gap-4">
-                    <Link :href="`/seller/cars/${car.id}/edit`"
+                    <Link v-if="!car.sold_at" :href="`/seller/cars/${car.id}/edit`"
                         class="rounded-lg bg-lime-500 py-2 px-7 font-semibold hover:bg-lime-900">
                     Edit
                     </Link>
-                    <Link :href="`/seller/cars/${car.id}`" method="delete"
+                    <Link v-if="!car.sold_at" :href="`/seller/cars/${car.id}`" method="delete"
                         class="rounded-lg bg-red-600 py-2 px-5 font-semibold hover:bg-red-900">
                     Delete
                     </Link>

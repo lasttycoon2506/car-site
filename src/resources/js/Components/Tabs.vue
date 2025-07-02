@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-const tabs = ['Unread', 'Read', "All"]
+const tabs: string[] = ['Unread', 'Read', "All"]
 
 const props = defineProps<{
     activeTab: string
