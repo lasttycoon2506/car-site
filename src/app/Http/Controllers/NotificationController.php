@@ -9,21 +9,26 @@ class NotificationController extends Controller
 
     public function index(Request $request)
     {
+        $tab = $request->query("tab");
+
         return inertia(
             "Notification/Index",
             [
                 "allNotifications" => $request
                     ->user()
                     ->notifications()
-                    ->paginate(10),
+                    ->paginate(10)
+                    ->append(["tab" => $tab]),
                 "unreadNotifications" => $request
                     ->user()
                     ->unreadNotifications()
-                    ->paginate(10),
+                    ->paginate(10)
+                    ->append(["tab" => $tab]),
                 "readNotifications" => $request
                     ->user()
                     ->readNotifications()
                     ->paginate(10)
+                    ->append(["tab" => $tab])
             ]
         );
     }
