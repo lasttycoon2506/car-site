@@ -32,10 +32,11 @@
 <script setup lang="ts">
 import type { Notification } from "@/resources/types/notification"
 import NotificationCard from "../../Components/NotificationCard.vue";
-import { computed, ComputedRef, Ref, ref } from "vue";
+import { computed, ComputedRef, Ref, ref, watch } from "vue";
 import Pagination from "../../Components/Pagination.vue";
 import type { Link } from "@/resources/types/link";
 import Tabs from "../../Components/Tabs.vue";
+import { router } from "@inertiajs/vue3";
 
 
 const props = defineProps<{
@@ -43,8 +44,16 @@ const props = defineProps<{
     unreadNotifications: { data: Notification[], links: Link[], total: number },
     readNotifications: { data: Notification[], links: Link[], total: number }
 }>()
-
 const activeTab: Ref<string, string> = ref(new URLSearchParams(window.location.search).get('tab') || "Unread")
+
+watch(activeTab, (newTab: string) => {
+    router.get(
+        "/notifications",
+        { tab: newTab },
+        { preserveState: true, replace: true, preserveScroll: true }
+    )
+})
+
 const selectedNotifications: ComputedRef<{
     data: Notification[];
     links: Link[];
@@ -55,6 +64,4 @@ const selectedNotifications: ComputedRef<{
         else if (activeTab.value === "All") return props.allNotifications
         else if (activeTab.value === "Unread") return props.unreadNotifications
     })
-console.log(props.unreadNotifications)
-
 </script>
