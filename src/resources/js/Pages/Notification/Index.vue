@@ -18,7 +18,7 @@
                 </div>
             </template>
         </Tabs>
-        <div class="flex flex-col items-center my-10">
+        <div v-if="selectedNotifications!.total" class="flex flex-col items-center my-10">
             <div class="mb-3">
                 <span class="font-semibold">{{ selectedNotifications!.total }}</span> notifications
             </div>
@@ -32,8 +32,6 @@
 <script setup lang="ts">
 import type { Notification } from "@/resources/types/notification"
 import NotificationCard from "../../Components/NotificationCard.vue";
-import { usePage } from "@inertiajs/vue3";
-import type { PageProps } from "@/resources/types/pageProps";
 import { computed, ComputedRef, Ref, ref } from "vue";
 import Pagination from "../../Components/Pagination.vue";
 import type { Link } from "@/resources/types/link";
@@ -57,5 +55,4 @@ const selectedNotifications: ComputedRef<{
         else if (activeTab.value === "All") return props.allNotifications
         else if (activeTab.value === "Unread") return props.unreadNotifications
     })
-
 </script>
