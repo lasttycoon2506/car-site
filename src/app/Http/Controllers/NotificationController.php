@@ -18,17 +18,17 @@ class NotificationController extends Controller
                     ->user()
                     ->notifications()
                     ->paginate(10)
-                    ->append(["tab" => $tab]),
+                    ->appends(["tab" => $tab]),
                 "unreadNotifications" => $request
                     ->user()
                     ->unreadNotifications()
                     ->paginate(10)
-                    ->append(["tab" => $tab]),
+                    ->appends(["tab" => $tab]),
                 "readNotifications" => $request
                     ->user()
                     ->readNotifications()
                     ->paginate(10)
-                    ->append(["tab" => $tab])
+                    ->appends(["tab" => $tab])
             ]
         );
     }

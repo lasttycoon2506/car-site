@@ -44,7 +44,7 @@ const props = defineProps<{
     readNotifications: { data: Notification[], links: Link[], total: number }
 }>()
 
-const activeTab: Ref<string, string> = ref("Unread")
+const activeTab: Ref<string, string> = ref(new URLSearchParams(window.location.search).get('tab') || "Unread")
 const selectedNotifications: ComputedRef<{
     data: Notification[];
     links: Link[];
@@ -55,4 +55,6 @@ const selectedNotifications: ComputedRef<{
         else if (activeTab.value === "All") return props.allNotifications
         else if (activeTab.value === "Unread") return props.unreadNotifications
     })
+console.log(props.unreadNotifications)
+
 </script>
