@@ -21,7 +21,7 @@ class CarPolicy
     /**
      * Determine whether the user can view any models.
      */
-    public function viewAny(?User $user): bool
+    public function viewAny(): bool
     {
         return true;
     }
@@ -40,7 +40,7 @@ class CarPolicy
     /**
      * Determine whether the user can create models.
      */
-    public function create(User $user): bool
+    public function create(): bool
     {
         return true;
     }
