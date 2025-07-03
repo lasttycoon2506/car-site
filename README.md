@@ -2,7 +2,7 @@
 
 Buy and sell cars using Vue/Tailwind/Typescript/PHP/Laravel/MySQL (Docker)
 
-
+## Features
 
 ## Setup Instructions
 
@@ -29,3 +29,5 @@ Buy and sell cars using Vue/Tailwind/Typescript/PHP/Laravel/MySQL (Docker)
    ```
    docker-compose exec php php artisan migrate
    ```
+
+
