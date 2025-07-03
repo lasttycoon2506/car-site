@@ -74,7 +74,8 @@ Buy and sell cars using Vue/Tailwind/Typescript/PHP/Laravel/MySQL (Docker)
 ![Screenshot 2025-07-03 123235](https://github.com/user-attachments/assets/bfc7803b-9f6a-4977-9f44-97a108373b4b)
 ### Offers Pg
 ![Screenshot 2025-07-03 122837](https://github.com/user-attachments/assets/99d29f0d-67ce-4896-9ff7-7b04f3ea134e)
-![Screenshot 2025-07-03 123112](https://github.com/user-attachments/assets/3cf527b1-0818-455a-b228-43e77cce2b69)
+![Screenshot 2025-07-03 123615](https://github.com/user-attachments/assets/0ab208f8-82f4-493e-a330-690c100d162c)
+
 
 
 
