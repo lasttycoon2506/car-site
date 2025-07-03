@@ -3,6 +3,13 @@
 Buy and sell cars using Vue/Tailwind/Typescript/PHP/Laravel/MySQL (Docker)
 
 ## Features
+-View/Filter cars
+-Create/Login to account
+-Sell cars
+-Make offer(s) for cars
+-Edit/Delete cars
+-View/Read notifications
+-Upload car images to Cloudinary
 
 ## Setup Instructions
 
