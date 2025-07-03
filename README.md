@@ -1,4 +1,4 @@
-![Screenshot 2025-07-03 122308](https://github.com/user-attachments/assets/8671d50d-28a3-4e30-ad73-424729710367)# Car Website
+# Car Website
 
 Buy and sell cars using Vue/Tailwind/Typescript/PHP/Laravel/MySQL (Docker)
 
