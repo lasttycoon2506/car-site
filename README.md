@@ -1,4 +1,4 @@
-# Car Website
+![Screenshot 2025-07-03 122308](https://github.com/user-attachments/assets/8671d50d-28a3-4e30-ad73-424729710367)# Car Website
 
 Buy and sell cars using Vue/Tailwind/Typescript/PHP/Laravel/MySQL (Docker)
 
@@ -55,6 +55,40 @@ Buy and sell cars using Vue/Tailwind/Typescript/PHP/Laravel/MySQL (Docker)
 ![Screenshot 2025-07-03 121024](https://github.com/user-attachments/assets/1e73f184-8a1d-41ee-abcf-221acd21313a)
 ### Cars Selling List
 ![Screenshot 2025-07-03 121337](https://github.com/user-attachments/assets/f0cb43f5-755b-48b9-93da-43b70c424942)
+### Edit Car
+![Screenshot 2025-07-03 121708](https://github.com/user-attachments/assets/3873cf23-8d7b-4866-9eb0-b1190a051f60)
+![Screenshot 2025-07-03 121755](https://github.com/user-attachments/assets/c35fbb65-e5d1-420a-816c-f1d450494ffc)
+### Upload Pics
+![Screenshot 2025-07-03 121854](https://github.com/user-attachments/assets/e561b2b2-ef84-4a9a-95e4-661ccb393221)
+![Screenshot 2025-07-03 122008](https://github.com/user-attachments/assets/6c261c79-5aa4-4f19-a2d8-462a875e427b)
+### Delete Pic
+![Screenshot 2025-07-03 122050](https://github.com/user-attachments/assets/d6c4dad4-8719-40c8-8e76-a6f29c96e1bb)
+### Make Offer
+![Screenshot 2025-07-03 122353](https://github.com/user-attachments/assets/36b4b882-a50c-4d76-b9c5-77b87e7ede45)
+![Screenshot 2025-07-03 122440](https://github.com/user-attachments/assets/f4fe6aee-4df3-448c-9d48-6b90026630a7)
+### Notifications Alert
+![Screenshot 2025-07-03 122650](https://github.com/user-attachments/assets/532039e2-95d9-4278-b332-d031bd6a756c)
+### Notifications Pg
+![Screenshot 2025-07-03 122736](https://github.com/user-attachments/assets/d34f659f-9ce3-4480-81cf-7257a874d16f)
+### Read Notification
+![Screenshot 2025-07-03 123235](https://github.com/user-attachments/assets/bfc7803b-9f6a-4977-9f44-97a108373b4b)
+### Offers Pg
+![Screenshot 2025-07-03 122837](https://github.com/user-attachments/assets/99d29f0d-67ce-4896-9ff7-7b04f3ea134e)
+![Screenshot 2025-07-03 123112](https://github.com/user-attachments/assets/3cf527b1-0818-455a-b228-43e77cce2b69)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
